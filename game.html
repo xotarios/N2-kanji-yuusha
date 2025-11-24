@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>N2漢字勇者</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;700&family=DotGothic16&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #1a1c2c;
+            --box-bg: rgba(41, 43, 65, 0.95);
+            --border-color: #f4f4f4;
+            --highlight: #f1c40f;
+            --hp-color: #2ecc71;
+            --danger: #e74c3c;
+            --text-main: #ffffff;
+            --text-sub: #bdc3c7;
+            --font-main: 'Kaisei Tokumin', serif;
+            --font-ui: 'DotGothic16', sans-serif;
+            --key-bg: #4a4d66;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            /* 背景圖交由 #background-layer 處理，這裡保持透明或底色 */
+            color: var(--text-main);
+            font-family: var(--font-main);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overscroll-behavior: none;
+            /* Google Sites 導航欄防遮擋 */
+            padding-top: 80px; 
+            box-sizing: border-box;
+        }
+
+        /* 獨立背景層 (用於過場動畫放大變暗) */
+        #background-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+            transition: transform 2s ease-in-out, filter 2s ease-in-out;
+        }
+
+        /* 過場動畫狀態 */
+        .stage-entering #background-layer {
+            transform: scale(1.2);
+            filter: brightness(0.4);
+        }
+
+        /* =========================================
+           Start Screen Styling
+           ========================================= */
+        #start-screen {
+            /* Title Background Image */
+            background: url('https://lh3.googleusercontent.com/sitesv/AAzXCkegrAISNTC-dLpVQFUX8w8a3U1yMrlvZfcrrDFsZ8mQJBpuYTEg_cFV2Gc4I9JyAYRpjFNiTnJESN4d9JAvN4k6OxyzXix8tUhVYGaPCbEjvNJkWQjV5Wks5CxmLGbIer4WksIEjwzuKo2udkOzBKXxYdQvrYTfXOvQa06XZ0DEjdtxLqFcgIBBEvORbZCQrwJ7FEDt32FLVBt4-oDuhHEyoMZDdPVJIwePL3o=w1280') no-repeat center center;
+            background-size: cover;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            /* 限制在手機寬度並置中 */
+            position: fixed;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            max-width: 600px;
+            left: 50%;
+            transform: translateX(-50%);
+            
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            z-index: 2000;
+        }
+
+        /* Hide text title as image has it */
+        #start-screen .title-logo {
+            display: none;
+        }
+
+        /* Content positioning */
+        #start-screen .result-content {
+            padding-bottom: 20vh; /* 避開圖片標題 */
+            max-width: 800px;
+            margin: 0 auto;
+            color: white;
+            text-align: center;
+            width: 90%;
+        }
+
+        .start-credits {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #ddd;
+            line-height: 1.6;
+            font-family: var(--font-ui);
+            text-shadow: 2px 2px 2px #000;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* =========================================
+           Game Container & Layout
+           ========================================= */
+        .game-container {
+            width: 90%;
+            max-width: 600px;
+            background: var(--box-bg);
+            border: 4px double var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            padding-bottom: 60px; /* Space for return button */
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            position: relative;
+            backdrop-filter: blur(5px);
+            /* 背景濾鏡變色由 JS 控制 (gameContainer.style.background) */
+            transition: box-shadow 0.3s ease;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            font-family: var(--font-ui);
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .stage-name-small {
+            font-size: 0.85rem;
+            color: #aaa;
+            font-weight: bold;
+        }
+
+        .hp-container {
+            width: 50%;
+            background: #000;
+            border: 2px solid var(--border-color);
+            height: 20px;
+            position: relative;
+            margin-top: 5px;
+        }
+
+        .hp-bar {
+            height: 100%;
+            background: var(--hp-color);
+            width: 100%;
+            transition: width 0.3s ease;
+        }
+
+        /* HP Text below bar */
+        .hp-text {
+            position: absolute;
+            bottom: -22px;
+            right: 0;
+            font-size: 0.85em;
+            color: var(--text-main);
+            text-shadow: 1px 1px 0 #000;
+            font-family: var(--font-ui);
+        }
+
+        /* =========================================
+           Boss Battle UI
+           ========================================= */
+        #boss-section {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            animation: fadeIn 0.5s;
+        }
+
+        .boss-warning {
+            width: 100%;
+            background: linear-gradient(90deg, transparent, #e74c3c, transparent);
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-family: var(--font-ui);
+            padding: 5px 0;
+            margin-bottom: 10px;
+            letter-spacing: 0.2em;
+            animation: flashRed 1s infinite;
+        }
+
+        .boss-image-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 5px;
+        }
+
+        .boss-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 10px rgba(255,0,0,0.5));
+            transition: filter 0.2s;
+        }
+
+        .boss-hp-bar-container {
+            width: 80%;
+            height: 15px;
+            background: #333;
+            border: 2px solid #fff;
+            margin-bottom: 5px;
+            position: relative;
+        }
+
+        .boss-hp-bar {
+            width: 100%;
+            height: 100%;
+            background: #e74c3c;
+            transition: width 0.3s ease;
+        }
+
+        .boss-timer {
+            font-family: var(--font-ui);
+            font-size: 1.5rem;
+            color: #f1c40f;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        /* =========================================
+           Question Area
+           ========================================= */
+        .kanji-display {
+            text-align: center;
+            font-size: 3.5rem;
+            margin: 30px 0;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+            position: relative;
+            min-height: 80px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hint-overlay {
+            font-size: 1.5rem;
+            color: var(--highlight);
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--font-ui);
+            width: 100%;
+            white-space: nowrap;
+            text-shadow: 1px 1px 0 #000;
+        }
+        
+        /* Red Answer Style (Answer revealed) */
+        .hint-answer {
+            color: var(--danger) !important;
+            font-weight: bold;
+            font-size: 1.6rem;
+        }
+
+        .info-box {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .meaning {
+            font-size: 1.1rem;
+            color: var(--highlight);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .example-sentence {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        .highlight-word {
+            color: var(--highlight);
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .trans-sentence {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* =========================================
+           Input Area & Virtual Keyboard
+           ========================================= */
+        .input-area {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        input[type="text"] {
+            background: #000;
+            border: 2px solid var(--border-color);
+            color: white;
+            font-size: 1.3rem;
+            padding: 10px;
+            text-align: center;
+            font-family: var(--font-main);
+            border-radius: 4px;
+            ime-mode: disabled; 
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--highlight);
+        }
+
+        input:disabled {
+            background: #222;
+            color: #aaa;
+            border-color: #444;
+        }
+
+        /* Overlay for Ghost Text */
+        #virtual-input-display {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            font-family: var(--font-main);
+            color: white;
+            background: transparent;
+        }
+
+        input.virtual-active {
+            color: transparent !important;
+            caret-color: transparent;
+            background: #111;
+        }
+
+        .ghost-text { color: #666; }
+
+        .keyboard-switch {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 5px;
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+        }
+        .switch-label { margin-right: 10px; cursor: pointer; display: flex; align-items: center; }
+        .switch-input { margin-right: 5px; }
+
+        /* Virtual Keyboard */
+        #virtual-keyboard {
+            display: none;
+            margin-top: 15px;
+            background: rgba(0,0,0,0.5);
+            padding: 10px;
+            border-radius: 5px;
+            user-select: none;
+        }
+
+        .key-row { display: flex; justify-content: center; margin-bottom: 5px; gap: 4px; }
+
+        .key-btn {
+            background: var(--key-bg);
+            border: 1px solid #777;
+            color: white;
+            font-family: monospace;
+            font-size: 1.2rem;
+            width: 32px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 2px 0 #222;
+        }
+        .key-btn:active { transform: translateY(2px); box-shadow: none; }
+        .key-btn.wide { width: 45px; font-size: 0.9rem; }
+
+        /* Buttons */
+        .btn-group { display: flex; gap: 10px; }
+
+        button {
+            background: var(--box-bg);
+            border: 2px solid var(--border-color);
+            color: white;
+            padding: 10px;
+            font-family: var(--font-ui);
+            cursor: pointer;
+            transition: all 0.2s;
+            flex: 1;
+            font-size: 1rem;
+            touch-action: manipulation;
+        }
+
+        button:hover {
+            background: var(--highlight);
+            color: var(--bg-color);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .next-btn {
+            background: var(--danger);
+            display: none;
+            margin-top: 10px;
+            font-weight: bold;
+            animation: pulse 1s infinite;
+        }
+
+        .return-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 0.8rem;
+            padding: 5px 15px;
+            width: auto;
+            flex: none;
+            background: #444;
+            border-color: #888;
+        }
+
+        .hint-cost { display: block; font-size: 0.7em; margin-top: 2px; color: var(--danger); }
+
+        /* =========================================
+           Stage Select & Results
+           ========================================= */
+        .screen-overlay {
+            display: none; 
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 100;
+            overflow-y: auto;
+            padding: 20px;
+            box-sizing: border-box;
+            padding-bottom: 50px;
+        }
+
+        .result-content {
+            max-width: 800px;
+            margin: 0 auto;
+            color: white;
+            text-align: center;
+        }
+
+        .title-logo {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px var(--highlight);
+        }
+
+        #stage-select-screen .title-logo {
+            font-size: 2rem;
+        }
+
+        .stage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .stage-btn {
+            background-color: #333;
+            border: 2px solid #fff;
+            padding: 20px;
+            font-family: var(--font-ui);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 30px;
+            text-shadow: 2px 2px 4px #000;
+            position: relative;
+        }
+
+        .stage-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px var(--highlight);
+            z-index: 10;
+        }
+        
+        .stage-desc {
+            font-size: 0.8rem;
+            margin-top: 5px;
+            color: #eee;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .result-item {
+            background: var(--box-bg);
+            border: 1px solid #555;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: left;
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            gap: 10px;
+        }
+        .mark { font-size: 1.5rem; font-weight: bold; }
+        .mark.correct { color: var(--hp-color); }
+        .mark.wrong { color: var(--danger); }
+        .review-details p { margin: 2px 0; }
+        .correct-ans { color: var(--hp-color); font-weight: bold; }
+        .your-ans { color: var(--danger); text-decoration: line-through; }
+
+        #message-area {
+            text-align: center;
+            min-height: 1.5em;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 1.1em;
+            white-space: pre-wrap;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        /* Animations */
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+        .shake-anim { animation: shake 0.5s; border-color: var(--danger); }
+        
+        .flash-green { animation: flashGreen 0.5s; }
+        @keyframes flashGreen {
+            0% { box-shadow: 0 0 0px var(--hp-color); }
+            50% { box-shadow: 0 0 30px var(--hp-color); }
+            100% { box-shadow: 0 0 0px var(--hp-color); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes flashRed { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+    </style>
+</head>
+<body>
+    <!-- Background Layer for transitions -->
+    <div id="background-layer"></div>
+
+    <!-- Start Screen -->
+    <div id="start-screen" class="screen-overlay" style="display: flex;">
+        <div class="result-content">
+            <h1 class="title-logo">N2漢字勇者</h1>
+            <p style="margin-bottom: 5px;">日本語の漢字読みRPG</p>
+            <button onclick="goToStageSelect()" style="font-size: 1.5rem; padding: 20px 50px; margin-top: 0;">冒険を始める</button>
+            
+            <div class="start-credits">
+                制作：Xotarios（第一日語何先生）+ AI協力<br>
+                メール: xotarios@gmail.com
+            </div>
+        </div>
+    </div>
+
+    <!-- Stage Select Screen -->
+    <div id="stage-select-screen" class="screen-overlay">
+        <div class="result-content">
+            <h2 class="title-logo">行き先を選択せよ</h2>
+            <p>各エリアには異なる言葉が待ち受けている…</p>
+            <div id="stage-container" class="stage-grid">
+                <!-- Buttons generated by JS -->
+            </div>
+            <button onclick="backToTitle()" style="margin-top: 30px; background: #555;">戻る</button>
+        </div>
+    </div>
+
+    <!-- Main Game Screen -->
+    <div class="game-container" id="game-screen" style="display:none;">
+        <div class="header">
+            <div class="header-left">
+                <div>正解数: <span id="level-display">0</span> / 20</div>
+                <div id="stage-name-display" class="stage-name-small"></div>
+            </div>
+            <div class="hp-container">
+                <div class="hp-bar" id="hp-bar"></div>
+                <div class="hp-text">HP: <span id="hp-val">120</span></div>
+            </div>
+        </div>
+
+        <!-- Boss UI -->
+        <div id="boss-section">
+            <div class="boss-warning">WARNING: BOSS BATTLE</div>
+            <div class="boss-image-container">
+                <img src="" class="boss-img" id="boss-img">
+            </div>
+            <div class="boss-hp-bar-container">
+                <div class="boss-hp-bar" id="boss-hp-bar"></div>
+            </div>
+            <div class="boss-timer">TIME: <span id="boss-timer-val">40</span></div>
+        </div>
+        
+        <div class="kanji-display">
+            <div id="hint-display" class="hint-overlay"></div>
+            <span id="kanji-text"></span>
+        </div>
+
+        <div class="info-box">
+            <div class="meaning" id="meaning-text"></div>
+            <div class="example-sentence" id="sentence-text"></div>
+            <div class="trans-sentence">（<span id="trans-text"></span>）</div>
+        </div>
+
+        <!-- Input Mode Switch -->
+        <div class="keyboard-switch">
+            <label class="switch-label">
+                <input type="checkbox" id="vk-toggle" class="switch-input" checked onchange="toggleInputMode()">
+                仮想キーボードを使用（推奨）
+            </label>
+        </div>
+
+        <div class="input-area">
+            <div class="input-wrapper">
+                <input type="text" id="answer-input" 
+                    placeholder="読み方（送り仮名含む）" 
+                    autocomplete="off" 
+                    autocorrect="off" 
+                    autocapitalize="off" 
+                    spellcheck="false"
+                    enterkeyhint="done">
+                
+                <!-- Overlay for Virtual Keyboard -->
+                <div id="virtual-input-display"></div>
+            </div>
+                   
+            <div class="btn-group">
+                <button onclick="checkAnswer()" id="submit-btn">決定</button>
+                <button onclick="useHint()" id="hint-btn">ヒント <span class="hint-cost">-5 HP</span></button>
+            </div>
+            <button onclick="manualNext()" id="next-btn" class="next-btn">次へ進む</button>
+        </div>
+        
+        <!-- Virtual Keyboard (QWERTY) -->
+        <div id="virtual-keyboard">
+            <div class="key-row">
+                <div class="key-btn" onclick="vkPress('q')">q</div>
+                <div class="key-btn" onclick="vkPress('w')">w</div>
+                <div class="key-btn" onclick="vkPress('e')">e</div>
+                <div class="key-btn" onclick="vkPress('r')">r</div>
+                <div class="key-btn" onclick="vkPress('t')">t</div>
+                <div class="key-btn" onclick="vkPress('y')">y</div>
+                <div class="key-btn" onclick="vkPress('u')">u</div>
+                <div class="key-btn" onclick="vkPress('i')">i</div>
+                <div class="key-btn" onclick="vkPress('o')">o</div>
+                <div class="key-btn" onclick="vkPress('p')">p</div>
+            </div>
+            <div class="key-row">
+                <div class="key-btn" onclick="vkPress('a')">a</div>
+                <div class="key-btn" onclick="vkPress('s')">s</div>
+                <div class="key-btn" onclick="vkPress('d')">d</div>
+                <div class="key-btn" onclick="vkPress('f')">f</div>
+                <div class="key-btn" onclick="vkPress('g')">g</div>
+                <div class="key-btn" onclick="vkPress('h')">h</div>
+                <div class="key-btn" onclick="vkPress('j')">j</div>
+                <div class="key-btn" onclick="vkPress('k')">k</div>
+                <div class="key-btn" onclick="vkPress('l')">l</div>
+            </div>
+            <div class="key-row">
+                <div class="key-btn" onclick="vkPress('z')">z</div>
+                <div class="key-btn" onclick="vkPress('x')">x</div>
+                <div class="key-btn" onclick="vkPress('c')">c</div>
+                <div class="key-btn" onclick="vkPress('v')">v</div>
+                <div class="key-btn" onclick="vkPress('b')">b</div>
+                <div class="key-btn" onclick="vkPress('n')">n</div>
+                <div class="key-btn" onclick="vkPress('m')">m</div>
+                <div class="key-btn wide" onclick="vkPress('bs')">⌫</div>
+            </div>
+        </div>
+
+        <div id="message-area"></div>
+
+        <!-- In-game Return Button -->
+        <button onclick="goToStageSelect()" class="return-btn">◀ 行き先を選び直す</button>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="result-screen" class="screen-overlay">
+        <div class="result-content">
+            <h1 id="result-title"></h1>
+            <p id="result-msg"></p>
+            <div id="review-list" style="margin-top: 20px;"></div>
+            <button onclick="goToStageSelect()" style="margin-top: 20px; padding: 15px 30px;">別のエリアへ</button>
+        </div>
+    </div>
+
+<script>
+    // ==========================================
+    // Stage & Word Data
+    // ==========================================
+
+let stageData = null; 
+const DATA_URL = "https://gist.githubusercontent.com/xotarios/e60e8ced412e992cc98780b4c2f21307/raw/29ca9fec64540b6912de097ab2c6c4cf39b11f59/questions.json"; 
+
+    // ==========================================
+    // Romaji to Hiragana Table (Updated)
+    // ==========================================
+    const kanaTable = {
+        'a':'あ','i':'い','u':'う','e':'え','o':'お',
+        'ka':'か','ki':'き','ku':'く','ke':'け','ko':'こ',
+        'sa':'さ','si':'し','shi':'し','su':'す','se':'せ','so':'そ',
+        'ta':'た','ti':'ち','chi':'ち','tu':'つ','tsu':'つ','te':'て','to':'と',
+        'na':'な','ni':'に','nu':'ぬ','ne':'ね','no':'の',
+        'ha':'は','hi':'ひ','hu':'ふ','fu':'ふ','he':'へ','ho':'ほ',
+        'ma':'ま','mi':'み','mu':'む','me':'め','mo':'も',
+        'ya':'や','yi':'い','yu':'ゆ','ye':'いぇ','yo':'よ',
+        'ra':'ら','ri':'り','ru':'る','re':'れ','ro':'ろ',
+        'wa':'わ','wo':'を','nn':'ん',
+        'ga':'が','gi':'ぎ','gu':'ぐ','ge':'げ','go':'ご',
+        'za':'ざ','zi':'じ','ji':'じ','zu':'ず','ze':'ぜ','zo':'ぞ',
+        'da':'だ','di':'ぢ','du':'づ','de':'で','do':'ど',
+        'ba':'ば','bi':'び','bu':'ぶ','be':'べ','bo':'ぼ',
+        'pa':'ぱ','pi':'ぴ','pu':'ぷ','pe':'ぺ','po':'ぽ',
+        'vu':'ゔ',
+        'xtu':'っ','xtsu':'っ','ltu':'っ','ltsu':'っ', 
+        'kya':'きゃ','kyu':'きゅ','kyo':'きょ',
+        'sha':'しゃ','shu':'しゅ','sho':'しょ','sya':'しゃ','syu':'しゅ','syo':'しょ',
+        'cha':'ちゃ','chu':'ちゅ','cho':'ちょ','tya':'ちゃ','tyu':'ちゅ','tyo':'ちょ',
+        'nya':'にゃ','nyu':'にゅ','nyo':'にょ',
+        'hya':'ひゃ','hyu':'ひゅ','hyo':'ひょ',
+        'mya':'みゃ','myu':'みゅ','myo':'みょ',
+        'rya':'りゃ','ryu':'りゅ','ryo':'りょ',
+        'gya':'ぎゃ','gyu':'ぎゅ','gyo':'ぎょ',
+        'ja':'じゃ','ju':'じゅ','jo':'じょ','jya':'じゃ','jyu':'じゅ','jyo':'じょ',
+        'bya':'びゃ','byu':'びゅ','byo':'びょ',
+        'pya':'ぴゃ','pyu':'ぴゅ','pyo':'ぴょ',
+        'xya':'ゃ','xyu':'ゅ','xyo':'ょ','lya':'ゃ','lyu':'ゅ','lyo':'ょ',
+        '-':'ー'
+    };
+
+    // ==========================================
+    // Game State & Variables
+    // ==========================================
+    let hp = 120;
+    const MAX_HP = 120;
+    let currentQuestions = [];
+    let currentIndex = 0;
+    let correctCount = 0;
+    let hintLevel = 0; 
+    let gameHistory = []; 
+    let mistakeCount = 0; 
+    let isVirtualKeyboard = true; 
+    let romajiBuffer = ""; 
+    let currentStageId = "";
+    
+    // Boss State
+    let isBossBattle = false;
+    let bossHP = 100;
+    let bossTimer = 40;
+    let bossInterval = null;
+
+    const PASS_COST = 5;
+
+    // ==========================================
+    // DOM Elements
+    // ==========================================
+    const body = document.body;
+    const bgLayer = document.getElementById('background-layer');
+    const hpBar = document.getElementById('hp-bar');
+    const hpVal = document.getElementById('hp-val');
+    const levelDisp = document.getElementById('level-display');
+    const stageNameDisp = document.getElementById('stage-name-display'); // 小字 Stage Name
+    const kanjiText = document.getElementById('kanji-text');
+    const hintDisp = document.getElementById('hint-display');
+    const meaningText = document.getElementById('meaning-text');
+    const sentenceText = document.getElementById('sentence-text');
+    const transText = document.getElementById('trans-text');
+    const answerInput = document.getElementById('answer-input');
+    const virtualDisplay = document.getElementById('virtual-input-display');
+    const hintBtn = document.getElementById('hint-btn');
+    const msgArea = document.getElementById('message-area');
+    const gameContainer = document.querySelector('.game-container');
+    const nextBtn = document.getElementById('next-btn');
+    const submitBtn = document.getElementById('submit-btn');
+    const vkDiv = document.getElementById('virtual-keyboard');
+    const vkToggle = document.getElementById('vk-toggle');
+    const startScreen = document.getElementById('start-screen');
+    const stageScreen = document.getElementById('stage-select-screen');
+    const gameScreen = document.getElementById('game-screen');
+    const resultScreen = document.getElementById('result-screen');
+    const stageContainer = document.getElementById('stage-container');
+    
+    // Boss DOM
+    const bossSection = document.getElementById('boss-section');
+    const bossHpBar = document.getElementById('boss-hp-bar');
+    const bossTimerVal = document.getElementById('boss-timer-val');
+    const bossImgElement = document.getElementById('boss-img');
+
+    // ==========================================
+    // Scene Management
+    // ==========================================
+    function goToStageSelect() {
+        startScreen.style.display = 'none';
+        resultScreen.style.display = 'none';
+        gameScreen.style.display = 'none';
+        stageScreen.style.display = 'flex';
+        
+        // 重置背景層
+        document.body.classList.remove('stage-entering');
+        bgLayer.style.backgroundImage = 'none';
+        if (!stageData) {
+            loadStageData();
+        } else {
+            renderStageButtons();
+        }
+    }
+
+    function backToTitle() {
+        stageScreen.style.display = 'none';
+        startScreen.style.display = 'flex';
+    }
+
+    function renderStageButtons() {
+        stageContainer.innerHTML = "";
+        for (const [key, data] of Object.entries(stageData)) {
+            const btn = document.createElement('div');
+            btn.className = 'stage-btn';
+            
+            // Set Background with dimming
+            btn.style.background = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${data.img}')`;
+            btn.style.backgroundSize = "cover"; 
+            btn.style.backgroundPosition = "center";
+
+            btn.innerHTML = `<div>${data.name}</div><div class="stage-desc">${data.desc}</div>`;
+            btn.onclick = () => initGame(key);
+            stageContainer.appendChild(btn);
+        }
+    }
+
+    // ==========================================
+    // Game Initialization
+    // ==========================================
+    function initGame(stageKey) {
+        currentStageId = stageKey;
+        const stage = stageData[stageKey];
+
+        // 1. 設定背景層 (獨立層)
+        bgLayer.style.backgroundImage = `url('${stage.img}')`;
+        document.body.classList.remove('stage-entering'); // Reset animation class
+        
+        // 2. 設定 Game Container (變暗濾鏡)
+        gameContainer.style.background = `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${stage.img}')`;
+        gameContainer.style.backgroundSize = "cover";
+        gameContainer.style.backgroundPosition = "center";
+
+        // Setup Game Logic
+        hp = 120;
+        updateHP(0);
+        currentIndex = 0;
+        correctCount = 0;
+        gameHistory = [];
+        
+        // Reset Boss State
+        isBossBattle = false;
+        clearInterval(bossInterval);
+        bossSection.style.display = 'none';
+        
+        // UI Info
+        stageNameDisp.innerText = `🚩 ${stage.name}`;
+
+        // Prepare Questions
+        let source = stage.words;
+        if(!source || source.length === 0) {
+            alert("このエリアにはまだ問題がありません。");
+            return;
+        }
+        currentQuestions = [...source].sort(() => 0.5 - Math.random());
+        
+        // 3. 執行過場動畫 (Transition)
+        stageScreen.style.display = 'none';
+        document.body.classList.add('stage-entering'); // Trigger CSS scale/dim animation
+        
+        // 延遲顯示遊戲畫面
+        setTimeout(() => {
+            gameScreen.style.display = 'block';
+            toggleInputMode();
+            loadQuestion();
+        }, 1500);
+    }
+
+    // ==========================================
+    // Question Loading Logic
+    // ==========================================
+    function loadQuestion() {
+        // 每次加載問題時，回復 GameContainer 的背景 (移除綠色，變回黑色濾鏡)
+        if (currentStageId && stageData[currentStageId]) {
+            const imgUrl = stageData[currentStageId].img;
+            gameContainer.style.background = `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${imgUrl}')`;
+            gameContainer.style.backgroundSize = "cover";
+            gameContainer.style.backgroundPosition = "center";
+        }
+
+        // 判斷是否進入 Boss 戰
+        if (!isBossBattle) {
+            // 一般模式：答對 20 題 -> 進入 Boss 戰
+            if (correctCount >= 20) {
+                startBossBattle();
+                return; 
+            }
+        } else {
+            // Boss 模式：Boss HP 歸零 -> 勝利
+            if (bossHP <= 0) {
+                clearInterval(bossInterval);
+                endGame(true);
+                return;
+            }
+        }
+
+        // Game Over 判斷
+        if (hp <= 0) {
+            clearInterval(bossInterval);
+            endGame(false);
+            return;
+        }
+        
+        // 題庫用完判斷
+        if (currentIndex >= currentQuestions.length) {
+            // Boss 戰中題目不夠，重洗
+            if (isBossBattle) {
+                currentIndex = 0;
+                currentQuestions = [...stageData[currentStageId].words].sort(() => 0.5 - Math.random());
+            } else {
+                // 一般模式題目不夠，視為勝利
+                endGame(true); 
+                return;
+            }
+        }
+
+        const q = currentQuestions[currentIndex];
+        
+        // UI Reset
+        levelDisp.innerText = correctCount;
+        kanjiText.innerText = q.kanji;
+        meaningText.innerText = "【意味】" + q.meaning;
+        sentenceText.innerHTML = "【例句】" + q.sentence;
+        transText.innerText = q.trans;
+        
+        answerInput.value = "";
+        answerInput.disabled = false;
+        romajiBuffer = "";
+        updateVirtualDisplay();
+        
+        msgArea.innerText = "";
+        nextBtn.style.display = "none";
+        
+        // Hint Reset
+        hintLevel = 0;
+        mistakeCount = 0;
+        hintDisp.innerText = "";
+        hintDisp.classList.remove("hint-answer"); // Reset red color
+        
+        hintBtn.innerHTML = 'ヒント <span class="hint-cost">-5 HP</span>';
+        hintBtn.disabled = false;
+        submitBtn.disabled = false;
+        submitBtn.style.display = "block";
+    }
+
+     // ★★★負責下載 JSON ★★★
+    async function loadStageData() {
+        const container = document.getElementById('stage-container');
+        // 顯示載入中文字
+        container.innerHTML = '<div style="color:white; text-align:center; margin-top:50px; font-family:var(--font-ui);">データを読み込んでいます...<br>(Loading...)</div>';
+
+        try {
+            const response = await fetch(DATA_URL);
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            
+            stageData = await response.json(); // 將下載到的資料放入 stageData
+            renderStageButtons(); // 資料到了，產生按鈕
+        } catch (error) {
+            console.error("Error loading stage data:", error);
+            container.innerHTML = '<div style="color:#e74c3c; text-align:center; margin-top:50px;">データの読み込みに失敗しました。<br>インターネット接続を確認してください。</div>';
+        }
+    }
+
+    // ==========================================
+    // Boss Battle Logic
+    // ==========================================
+    function startBossBattle() {
+        isBossBattle = true;
+        bossHP = 100;
+        bossTimer = 40;
+        
+        // Boss Image
+        const stage = stageData[currentStageId];
+        bossImgElement.src = stage.bossImg || "https://cdn-icons-png.flaticon.com/512/1998/1998610.png"; 
+        
+        // UI Show
+        bossSection.style.display = 'flex';
+        bossHpBar.style.width = "100%";
+        bossTimerVal.innerText = bossTimer;
+        
+        // Timer Start
+        clearInterval(bossInterval);
+        bossInterval = setInterval(() => {
+            bossTimer--;
+            bossTimerVal.innerText = bossTimer;
+            
+            if (bossTimer <= 0) {
+                clearInterval(bossInterval);
+                if (bossHP > 0) {
+                    endGame(false); // Time over
+                }
+            }
+        }, 1000);
+        
+        // Continue loading questions
+        loadQuestion();
+    }
+
+    function updateHP(change) {
+        hp += change;
+        if (hp > MAX_HP) hp = MAX_HP;
+        if (hp < 0) hp = 0;
+        
+        const pct = (hp / MAX_HP) * 100;
+        hpBar.style.width = pct + "%";
+        hpVal.innerText = hp;
+        
+        if (pct > 50) hpBar.style.background = "#2ecc71";
+        else if (pct > 20) hpBar.style.background = "#f1c40f";
+        else hpBar.style.background = "#e74c3c";
+
+        if (change < 0) {
+            gameContainer.classList.add('shake-anim');
+            setTimeout(() => gameContainer.classList.remove('shake-anim'), 500);
+        } else if (change > 0) {
+            gameContainer.classList.add('flash-green');
+            setTimeout(() => gameContainer.classList.remove('flash-green'), 500);
+        }
+
+        if (hp <= 0) {
+            setTimeout(() => endGame(false), 1000);
+        }
+    }
+
+    // ==========================================
+    // Input & Keyboard Logic
+    // ==========================================
+    function toggleInputMode() {
+        isVirtualKeyboard = vkToggle.checked;
+        if (isVirtualKeyboard) {
+            vkDiv.style.display = "block";
+            answerInput.classList.add("virtual-active");
+            answerInput.readOnly = true; 
+            virtualDisplay.style.display = "flex";
+            updateVirtualDisplay();
+            answerInput.blur();
+        } else {
+            vkDiv.style.display = "none";
+            answerInput.classList.remove("virtual-active");
+            answerInput.readOnly = false;
+            virtualDisplay.style.display = "none";
+        }
+    }
+
+    function updateVirtualDisplay() {
+        let ghost = "";
+        if (isVirtualKeyboard && romajiBuffer.length > 0) {
+            ghost = `<span class="ghost-text">${romajiBuffer}</span>`;
+        }
+        virtualDisplay.innerHTML = answerInput.value + ghost;
+    }
+
+    function vkPress(key) {
+        if (answerInput.disabled) return;
+
+        if (key === 'bs') {
+            if (romajiBuffer.length > 0) {
+                romajiBuffer = romajiBuffer.slice(0, -1);
+            } else {
+                answerInput.value = answerInput.value.slice(0, -1);
+            }
+        } else {
+            romajiBuffer += key;
+            
+            if (kanaTable[romajiBuffer]) {
+                answerInput.value += kanaTable[romajiBuffer];
+                romajiBuffer = "";
+            } else {
+                // Special n handling
+                if (romajiBuffer.length >= 2 && romajiBuffer[0] === 'n' && !['y','a','i','u','e','o'].includes(romajiBuffer[1])) {
+                    if (romajiBuffer[1] === 'n') {
+                        answerInput.value += 'ん';
+                        romajiBuffer = "";
+                    } else {
+                        answerInput.value += 'ん';
+                        romajiBuffer = romajiBuffer.substring(1);
+                        if (kanaTable[romajiBuffer]) {
+                             answerInput.value += kanaTable[romajiBuffer];
+                             romajiBuffer = "";
+                        }
+                    }
+                }
+                // Small tsu handling
+                if (romajiBuffer.length >= 2 && romajiBuffer[0] === romajiBuffer[1] && !['a','i','u','e','o','n'].includes(romajiBuffer[0])) {
+                    answerInput.value += 'っ';
+                    romajiBuffer = romajiBuffer.substring(1);
+                }
+                // Flush if too long
+                if (romajiBuffer.length > 3) {
+                    answerInput.value += romajiBuffer[0];
+                    romajiBuffer = romajiBuffer.substring(1);
+                }
+            }
+        }
+        updateVirtualDisplay();
+    }
+
+    // ==========================================
+    // Hint & Answer Checking
+    // ==========================================
+    function useHint() {
+        const q = currentQuestions[currentIndex];
+        
+        if (hintLevel === 0) {
+            updateHP(-5);
+            hintLevel = 1;
+            hintDisp.innerText = q.hint1;
+        } else if (hintLevel === 1) {
+            updateHP(-5);
+            hintLevel = 2;
+            hintDisp.innerText = q.hint2;
+            hintBtn.innerHTML = `パス <span class="hint-cost">-${PASS_COST} HP</span>`;
+        } else if (hintLevel === 2) {
+            triggerPass(q);
+        }
+    }
+
+    function triggerPass(q) {
+        updateHP(-PASS_COST);
+        let correctR = Array.isArray(q.reading) ? q.reading[0] : q.reading;
+        
+        gameHistory.push({
+            ...q,
+            userAns: "パス",
+            isCorrect: false,
+            correctAnswer: correctR
+        });
+        
+        // Show Pass in Input
+        answerInput.value = "パスしました";
+        romajiBuffer = "";
+        updateVirtualDisplay();
+        answerInput.disabled = true;
+        
+        // Show Answer Red
+        hintDisp.innerHTML = `正解：${correctR}`;
+        hintDisp.classList.add("hint-answer");
+        msgArea.innerText = ""; 
+        
+        onWrongAnswerState();
+    }
+
+    function checkAnswer() {
+        const userVal = answerInput.value.trim();
+        if (!userVal) return;
+
+        const q = currentQuestions[currentIndex];
+        let isCorrect = false;
+        
+        // Context strict check
+        if (q.strict) {
+            if (userVal === q.reading) isCorrect = true;
+            else if (userVal === q.altReading) {
+                 msgArea.style.color = "#e74c3c";
+                 msgArea.innerText = `不正解！文脈が違います。\n${q.altExplain}`;
+                 handleWrongAnswer(q, userVal, true); 
+                 return;
+            } else isCorrect = false;
+        } else {
+            if (Array.isArray(q.reading)) {
+                if (q.reading.includes(userVal)) isCorrect = true;
+            } else {
+                if (userVal === q.reading) isCorrect = true;
+            }
+        }
+
+        if (isCorrect) {
+            handleCorrectAnswer(q, userVal);
+        } else {
+            handleWrongAnswer(q, userVal, false);
+        }
+    }
+
+    function handleCorrectAnswer(q, userVal) {
+        updateHP(5);
+        
+        // Change Background Filter to Green
+        if (currentStageId && stageData[currentStageId]) {
+            const imgUrl = stageData[currentStageId].img;
+            gameContainer.style.background = `linear-gradient(rgba(46, 204, 113, 0.6), rgba(46, 204, 113, 0.6)), url('${imgUrl}')`;
+            gameContainer.style.backgroundSize = "cover";
+            gameContainer.style.backgroundPosition = "center";
+        }
+
+        correctCount++;
+        levelDisp.innerText = correctCount;
+        
+        msgArea.style.color = "#2ecc71";
+        msgArea.innerText = "正解！";
+        
+        gameHistory.push({ ...q, userAns: userVal, isCorrect: true });
+        
+        // Boss Damage
+        if (isBossBattle) {
+            bossHP -= 20; 
+            if (bossHP < 0) bossHP = 0;
+            bossHpBar.style.width = `${bossHP}%`;
+            
+            // Flash effect
+            bossImgElement.style.filter = "brightness(5) sepia(1) hue-rotate(-50deg) saturate(5)";
+            setTimeout(() => {
+                bossImgElement.style.filter = ""; 
+            }, 200);
+        }
+
+        submitBtn.disabled = true;
+        hintBtn.disabled = true;
+        
+        setTimeout(() => {
+            currentIndex++;
+            loadQuestion();
+        }, 1000);
+    }
+
+    function handleWrongAnswer(q, userVal, isContextError) {
+        let correctR = Array.isArray(q.reading) ? q.reading[0] : q.reading;
+        
+        if (mistakeCount === 0) {
+            // 1st Mistake
+            updateHP(-5);
+            mistakeCount = 1;
+            hintLevel = 1;
+            hintDisp.innerText = q.hint1;
+            if(!isContextError) {
+                msgArea.style.color = "#e74c3c";
+                msgArea.innerText = "不正解。もう一度！";
+            }
+        } 
+        else if (mistakeCount === 1) {
+            // 2nd Mistake
+            updateHP(-5);
+            mistakeCount = 2;
+            hintLevel = 2;
+            hintDisp.innerText = q.hint2;
+            hintBtn.innerHTML = `パス <span class="hint-cost">-${PASS_COST} HP</span>`;
+
+            if(!isContextError) {
+                msgArea.style.color = "#e74c3c";
+                msgArea.innerText = "不正解。最後のチャンス！";
+            }
+        }
+        else if (mistakeCount === 2) {
+            // 3rd Mistake (Fail)
+            updateHP(-5);
+            
+            hintDisp.innerHTML = `正解：${correctR}`;
+            hintDisp.classList.add("hint-answer");
+            msgArea.innerText = ""; 
+
+            answerInput.value = "パスしました";
+            romajiBuffer = "";
+            updateVirtualDisplay();
+            
+            gameHistory.push({ 
+                ...q, 
+                userAns: userVal, 
+                isCorrect: false,
+                correctAnswer: correctR
+            });
+            onWrongAnswerState();
+        }
+    }
+
+    function onWrongAnswerState() {
+        answerInput.disabled = true;
+        submitBtn.style.display = "none";
+        hintBtn.disabled = true;
+        nextBtn.style.display = "block";
+    }
+
+    function manualNext() {
+        currentIndex++;
+        loadQuestion();
+    }
+
+    answerInput.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            if(!submitBtn.disabled && submitBtn.style.display !== "none") {
+                checkAnswer();
+            } else if (nextBtn.style.display === "block") {
+                manualNext();
+            }
+        }
+    });
+
+    function endGame(isWin) {
+        clearInterval(bossInterval);
+        document.body.classList.remove('stage-entering');
+        
+        gameScreen.style.display = 'none';
+        resultScreen.style.display = 'flex';
+        
+        const title = document.getElementById('result-title');
+        const msg = document.getElementById('result-msg');
+        const list = document.getElementById('review-list');
+        
+        list.innerHTML = "";
+
+        if (isWin) {
+            title.innerText = "🎉 エリアクリア！ 🎉";
+            title.style.color = "#2ecc71";
+            msg.innerText = `見事、${correctCount}問正解で「${stageData[currentStageId].name}」を制覇しました！`;
+        } else {
+            title.innerText = "💀 GAME OVER 💀";
+            title.style.color = "#e74c3c";
+            msg.innerText = `「${stageData[currentStageId].name}」の探索は失敗に終わりました…。`;
+        }
+
+        gameHistory.forEach((item, idx) => {
+            const div = document.createElement('div');
+            div.className = 'result-item';
+            
+            const mark = item.isCorrect ? '<span class="mark correct">✔</span>' : '<span class="mark wrong">✖</span>';
+            const ansDisplay = item.isCorrect 
+                ? `<span class="correct-ans">${item.userAns}</span>` 
+                : `<span class="your-ans">${item.userAns}</span> → <span class="correct-ans">${item.correctAnswer}</span>`;
+
+            div.innerHTML = `
+                <div>${mark}</div>
+                <div class="review-details">
+                    <div style="font-size:1.2em; font-weight:bold;">${item.kanji}</div>
+                    <div style="font-size:0.9em; color:#aaa;">${item.meaning}</div>
+                    <div style="font-style:italic; margin: 5px 0;">${item.sentence}</div>
+                    <div style="font-size:0.8em; color:#aaa;">（${item.trans}）</div>
+                    <div style="margin-top:5px;">回答: ${ansDisplay}</div>
+                </div>
+            `;
+            list.appendChild(div);
+        });
+    }
+</script>
+</body>
+</html>
