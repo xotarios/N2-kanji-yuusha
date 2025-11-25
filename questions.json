@@ -5,7 +5,7 @@
     "img": "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/dc8441fdee6db64f7271c53d58911a7904838584/images/office.png",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/1548/1548993.png",
     "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
-    "bgm": "/bgm/neonpurple.mp3", 
+    "bgm": "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/neonpurple.mp3", 
     "words": [
       {
         "kanji": "削除",
@@ -353,7 +353,7 @@
     "img": "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/dc8441fdee6db64f7271c53d58911a7904838584/images/newsstand.png",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/1548/1548993.png",
     "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
-    "bgm": "/bgm/amenohinoneon.mp3", 
+    "bgm": "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/amenohinoneon.mp3", 
     "words": [
       {
         "kanji": "赤字",
@@ -661,7 +661,7 @@
     "img": "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/dc8441fdee6db64f7271c53d58911a7904838584/images/houses.png",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/1548/1548993.png",
     "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
-    "bgm": "/bgm/hinatabokko.mp3", 
+    "bgm": "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/hinatabokko.mp3", 
     "words": [
       {
         "kanji": "荷造り",
@@ -1585,7 +1585,7 @@
     "img": "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/images/friends.png",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/2328/2328439.png",
     "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
-    "bgm": "/bgm/ukiukilalala.mp3", 
+    "bgm": "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/ukiukilalala.mp3", 
         "words": [
       { "kanji": "編む", "reading": "あむ", "hint1": "●む", "meaning": "編織", "sentence": "「彼氏のためにマフラーを<span class='highlight-word'>編ん</span>でるの。」", "trans": "「我織緊頸巾俾男朋友。」" },
       { "kanji": "偉い", "reading": "えらい", "hint1": "●●い", "meaning": "偉大、了不起", "sentence": "「毎日自炊してるなんて<span class='highlight-word'>偉い</span>じゃん。」", "trans": "「每日自己煮飯真係好叻（了不起）。」" },
@@ -2160,7 +2160,7 @@
     "img": "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/dc8441fdee6db64f7271c53d58911a7904838584/images/armors_in_museum.png",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/1548/1548993.png",
     "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
-    "bgm": "/bgm/heiannoyoi.mp3", 
+    "bgm": "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/heiannoyoi.mp3", 
     "words": [
       {
         "kanji": "開始",
@@ -2728,7 +2728,7 @@
     "img": "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/images/castle.png",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/2328/2328439.png",
     "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
-    "bgm": "/bgm/kamigaminoyadorubasho.mp3", 
+    "bgm": "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/kamigaminoyadorubasho.mp3", 
     "words": [], 
     "bossWords": [] 
   }
