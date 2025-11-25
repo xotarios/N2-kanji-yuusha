@@ -87,7 +87,7 @@
 
         /* Content positioning */
         #start-screen .result-content {
-            padding-bottom: 0vh; /* 避開圖片標題 */
+            padding-bottom: 5vh; /* 避開圖片標題 */
             max-width: 800px;
             margin: 0 auto;
             color: white;
@@ -773,7 +773,7 @@
         <div id="message-area"></div>
 
         <!-- In-game Return Button -->
-        <button onclick="goToStageSelect()" class="return-btn">◀ 行き先を選び直す</button>
+        <button onclick="goToStageSelect()" class="return-btn">◀ 諦める</button>
     </div>
 
     <!-- Result Screen -->
@@ -818,7 +818,7 @@
 
 let stageData = null; 
 let currentQ = null;
-const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/questions.json"; 
+const DATA_URL = "/questions.json"; 
 
 document.addEventListener('click', function(e) {
         // 檢查點擊的元素是否為 Button 或者是 .stage-btn (關卡選擇鈕)
@@ -1244,7 +1244,7 @@ document.addEventListener('click', function(e) {
         if (isBossBattle && isFinalBoss) {
             hintBtn.innerHTML = 'NO HINT'; 
         } else {
-            hintBtn.innerHTML = 'ヒント <span class="hint-cost">-5 HP</span>';
+             hintBtn.innerHTML = 'ヒント1（仮名の数） <span class="hint-cost">-5 HP</span>';
         }
         submitBtn.disabled = false;
         submitBtn.style.display = "block";
@@ -1597,11 +1597,14 @@ document.addEventListener('click', function(e) {
         if (hintLevel === 0) {
             updateHP(-5);
             hintLevel = 1;
+            mistakeCount = 1;
             hintDisp.innerText = q.hint1;
+            hintBtn.innerHTML = `ヒント2（ランダムかな表示） <span class="hint-cost">-5 HP</span>`;
         } else if (hintLevel === 1) {
             updateHP(-5);
             hintLevel = 2;
-            hintDisp.innerText = q.hint2;
+            mistakeCount = 2; 
+            hintDisp.innerText = generateRandomHint(q);
             hintBtn.innerHTML = `パス <span class="hint-cost">-${PASS_COST} HP</span>`;
         } else if (hintLevel === 2) {
             triggerPass(q);
@@ -1750,6 +1753,7 @@ document.addEventListener('click', function(e) {
             mistakeCount = 1;
             hintLevel = 1;
             hintDisp.innerText = q.hint1;
+            hintBtn.innerHTML = `ヒント2（ランダムかな表示） <span class="hint-cost">-5 HP</span>`;
             if(!isContextError) {
                 msgArea.style.color = "#e74c3c";
                 msgArea.innerText = "不正解。もう一度！";
@@ -1760,7 +1764,7 @@ document.addEventListener('click', function(e) {
             updateHP(-5);
             mistakeCount = 2;
             hintLevel = 2;
-            hintDisp.innerText = q.hint2;
+            hintDisp.innerText = generateRandomHint(q);
             hintBtn.innerHTML = `パス <span class="hint-cost">-${PASS_COST} HP</span>`;
 
             if(!isContextError) {
@@ -1780,9 +1784,7 @@ document.addEventListener('click', function(e) {
                 msgArea.innerText = ""; 
             }
 
-            answerInput.value = "パスしました";
-            romajiBuffer = "";
-            updateVirtualDisplay();
+            answerInput.disabled = true;
             
             gameHistory.push({ 
                 ...q, 
@@ -1817,6 +1819,58 @@ document.addEventListener('click', function(e) {
         }
     });
 
+    function generateRandomHint(q) {
+        // 取得讀音 (如果是多讀音陣列，取第一個)
+        const reading = Array.isArray(q.reading) ? q.reading[0] : q.reading;
+        const hint1 = q.hint1;
+
+        // 1. 找出所有被隱藏 (●) 的位置 index
+        let hiddenIndices = [];
+        for (let i = 0; i < hint1.length; i++) {
+            if (hint1[i] === '●') {
+                hiddenIndices.push(i);
+            }
+        }
+
+        const hiddenCount = hiddenIndices.length;
+
+        // 2. 根據隱藏數量決定要公開多少個字
+        // 只有 1 個：無法再給提示
+        if (hiddenCount <= 1) {
+            return "（これ以上ヒントが出せない）";
+        }
+
+        let revealNum = 0;
+        if (hiddenCount >= 2 && hiddenCount <= 4) {
+            revealNum = 1;
+        } else if (hiddenCount >= 5 && hiddenCount <= 7) {
+            revealNum = 2;
+        } else if (hiddenCount >= 8) {
+            revealNum = 3;
+        }
+
+        // 3. 隨機抽出要公開的位置
+        // 洗牌 (Fisher-Yates 簡化版)
+        const shuffled = hiddenIndices.sort(() => 0.5 - Math.random());
+        const selectedIndices = shuffled.slice(0, revealNum);
+
+        // 4. 組合新的 Hint 字串
+        let newHint = "";
+        for (let i = 0; i < reading.length; i++) {
+            if (selectedIndices.includes(i)) {
+                // 這是被選中要公開的字
+                newHint += reading[i];
+            } else if (hiddenIndices.includes(i)) {
+                // 這是原本隱藏，且沒被選中的 -> 繼續隱藏
+                newHint += "●";
+            } else {
+                // 這是原本就顯示的字 (送假名)
+                newHint += reading[i];
+            }
+        }
+        return newHint;
+    }
+    
     function endGame(isWin) {
         clearInterval(bossInterval);
         document.body.classList.remove('stage-entering');
