@@ -1582,7 +1582,7 @@
   "friend": {
     "name": "親友との閑談",
     "desc": "会話・交流・見聞",
-    "img": "/images/friends.png",
+    "img": "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/images/friends.png",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/2328/2328439.png",
     "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
     "bgm": "/bgm/ukiukilalala.mp3", 
@@ -1655,7 +1655,7 @@
   "knowledge": {
     "name": "知恵の図書館",
     "desc": "学問・言葉・概念",
-    "img": "/images/classic_library.png",
+    "img": "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/images/classic_library.png",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/1548/1548993.png",
     "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
     "words": [
@@ -2725,7 +2725,7 @@
   "demon_castle": {
     "name": "終焉の城",
     "desc": "【最終決戦】",
-    "img": "/images/castle.png",
+    "img": "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/images/castle.png",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/2328/2328439.png",
     "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
     "bgm": "/bgm/kamigaminoyadorubasho.mp3", 
