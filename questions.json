@@ -4,6 +4,7 @@
     "desc": "仕事・経済・雇用",
     "img": "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/dc8441fdee6db64f7271c53d58911a7904838584/images/office.png",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/1548/1548993.png",
+    "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
     "words": [
       {
         "kanji": "削除",
@@ -347,6 +348,7 @@
     "desc": "社会・政治・問題",
     "img": "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/dc8441fdee6db64f7271c53d58911a7904838584/images/newsstand.png",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/1548/1548993.png",
+    "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
     "words": [
       {
         "kanji": "赤字",
@@ -645,6 +647,7 @@
     "desc": "日常・家族・手続き",
     "img": "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/dc8441fdee6db64f7271c53d58911a7904838584/images/houses.png",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/1548/1548993.png",
+    "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
     "words": [
       {
         "kanji": "荷造り",
@@ -916,6 +919,7 @@
     "desc": "料理・買い物・食材",
     "img": "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/dc8441fdee6db64f7271c53d58911a7904838584/images/sushi_store.png",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/1548/1548993.png",
+    "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
     "words": [
       {
         "kanji": "売り買い",
@@ -1160,6 +1164,7 @@
     "desc": "感情・関係・人生",
     "img": "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/dc8441fdee6db64f7271c53d58911a7904838584/images/classroom.png",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/1548/1548993.png",
+    "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
     "words": [
       {
         "kanji": "妬む",
@@ -1512,6 +1517,7 @@
     "desc": "学問・言葉・概念",
     "img": "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/dc8441fdee6db64f7271c53d58911a7904838584/images/classic_library.png",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/1548/1548993.png",
+    "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
     "words": [
       {
         "kanji": "外国語",
@@ -2090,6 +2096,7 @@
     "desc": "動詞・状態・その他",
     "img": "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/dc8441fdee6db64f7271c53d58911a7904838584/images/armors_in_museum.png",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/1548/1548993.png",
+    "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
     "words": [
       {
         "kanji": "開始",
@@ -2469,6 +2476,7 @@
     "desc": "対立・トラブル・犯罪",
     "img": "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/dc8441fdee6db64f7271c53d58911a7904838584/images/dark_back_alley.png",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/1548/1548993.png",
+    "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
     "words": [
       {
         "kanji": "脅かす",
@@ -2749,6 +2757,7 @@
     "desc": "？？？",
     "img": "https://raw.githubusercontent.com/xotarios/kanji-game-assets/main/demon_castle_bg.jpg",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/2328/2328439.png",
+    "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
     "words": [], 
     "bossWords": [] 
   }
