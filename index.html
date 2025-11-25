@@ -59,7 +59,7 @@
            ========================================= */
         #start-screen {
             /* Title Background Image */
-            background: url('https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/images/N2yuusha_2.png') no-repeat center center;
+            background: url('https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/images/N2yuusha_2.png') no-repeat center top;
             background-size: cover;
             
             display: flex;
@@ -87,7 +87,7 @@
 
         /* Content positioning */
         #start-screen .result-content {
-            padding-bottom: 20vh; /* 避開圖片標題 */
+            padding-bottom: 0vh; /* 避開圖片標題 */
             max-width: 800px;
             margin: 0 auto;
             color: white;
@@ -173,28 +173,87 @@
             font-family: var(--font-ui);
         }
 
-        /* =========================================
-           Boss Battle UI
-           ========================================= */
-        #boss-section {
-            display: none; /* Hidden by default */
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-            animation: fadeIn 0.5s;
+             
+        #boss-overlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 3000;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: fadeIn 0.5s;
         }
 
-        .boss-warning {
-            width: 100%;
-            background: linear-gradient(90deg, transparent, #e74c3c, transparent);
-            color: white;
-            text-align: center;
-            font-weight: bold;
-            font-family: var(--font-ui);
-            padding: 5px 0;
-            margin-bottom: 10px;
-            letter-spacing: 0.2em;
-            animation: flashRed 1s infinite;
+        .boss-intro-banner {
+        width: 100%;
+        background: linear-gradient(90deg, transparent, #870000, transparent);
+        padding: 20px 0;
+        text-align: center;
+        color: #fff;
+        font-family: var(--font-ui);
+        border-top: 2px solid #ff0000;
+        border-bottom: 2px solid #ff0000;
+        margin-bottom: 20px;
+            position: relative;
+        }
+
+        .boss-intro-title {
+        font-size: 2rem;
+        font-weight: bold;
+        text-shadow: 0 0 10px #ff0000;
+        margin-bottom: 10px;
+        }
+
+        .boss-intro-img-container {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+        filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.8));
+        }
+    
+        .boss-intro-img {
+        width: 100%; height: 100%; object-fit: contain;
+        }
+
+        .boss-intro-desc {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        color: #f1c40f;
+        }
+
+        .boss-start-btn {
+        background: #e74c3c;
+        border: 2px solid #fff;
+        color: white;
+        font-size: 1.5rem;
+        font-family: var(--font-ui);
+        cursor: pointer;
+        transition: transform 0.2s;
+        animation: pulse 1s infinite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;      /* 寬度隨文字縮放 */
+        min-width: 200px;        /* 最小寬度 */
+        height: 60px;            /* ★固定高度，解決太長問題★ */
+        padding: 0 20px;         /* 左右留白 */
+        margin: 20px auto 0;     /* 與上方橫條保持距離，並置中 */
+        flex: none;              /* ★關鍵：防止被父容器拉伸★ */
+    }
+    
+        .boss-start-btn:hover {
+        transform: scale(1.1);
+        background: #c0392b;
+        }
+
+        /* Boss Battle UI tweaks */
+        #boss-section {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
         }
 
         .boss-image-container {
@@ -582,12 +641,13 @@
     <div id="start-screen" class="screen-overlay" style="display: flex;">
         <div class="result-content">
             <h1 class="title-logo">N2漢字勇者</h1>
-            <p style="margin-bottom: 5px;">日本語の漢字読みRPG</p>
+            <p style="margin-bottom: 5px;">日本語の漢字読みRPG　beta</p>
             <button onclick="goToStageSelect()" style="font-size: 1.5rem; padding: 20px 50px; margin-top: 0;">冒険を始める</button>
             
             <div class="start-credits">
-                制作：Xotarios（第一日語何先生）+ AI協力<br>
-                メール: xotarios@gmail.com
+                制　作：<a href="https://linktr.ee/Xotarios/" style="color:#c6f2ff;">Xotarios</a>（第一日語何先生）+ AI協力<br>
+                音　楽：<a href="https://amachamusic.chagasi.com/index.html" style="color:#c6f2ff;">甘茶の音楽工房</a>　
+                効果音：<a href="https://soundeffect-lab.info/" style="color:#c6f2ff;">効果音ラボ</a>
             </div>
         </div>
     </div>
@@ -601,6 +661,11 @@
                 <!-- Buttons generated by JS -->
             </div>
             <button onclick="backToTitle()" style="margin-top: 30px; background: #555;">戻る</button>
+            <div style="margin-top: 20px; padding-top: 10px; border-top: 1px solid #444;">
+                <label style="color: #666; font-size: 0.8rem; cursor: pointer;">
+                    <input type="checkbox" id="debug-toggle" onchange="toggleDebugMode()"> Debug Mode
+                </label>
+            </div>
         </div>
     </div>
 
@@ -608,7 +673,7 @@
     <div class="game-container" id="game-screen" style="display:none;">
         <div class="header">
             <div class="header-left">
-                <div>正解数: <span id="level-display">0</span> / 20</div>
+                <div>正解数: <span id="level-display">0</span> / <span id="total-display">20</span></div>
                 <div id="stage-name-display" class="stage-name-small"></div>
             </div>
             <div class="hp-container">
@@ -619,14 +684,13 @@
 
         <!-- Boss UI -->
         <div id="boss-section">
-            <div class="boss-warning">WARNING: BOSS BATTLE</div>
             <div class="boss-image-container">
                 <img src="" class="boss-img" id="boss-img">
             </div>
             <div class="boss-hp-bar-container">
                 <div class="boss-hp-bar" id="boss-hp-bar"></div>
             </div>
-            <div class="boss-timer">TIME: <span id="boss-timer-val">40</span></div>
+            <div class="boss-timer">残り時間：<span id="boss-timer-val">45</span> 秒</div>
         </div>
         
         <div class="kanji-display">
@@ -716,11 +780,36 @@
     <div id="result-screen" class="screen-overlay">
         <div class="result-content">
             <h1 id="result-title"></h1>
+            <img id="result-boss-img" src="" style="display:none; width:120px; height:120px; object-fit:contain; margin:10px auto; filter: drop-shadow(0 0 10px #fff);">
             <p id="result-msg"></p>
             <div id="review-list" style="margin-top: 20px;"></div>
             <button onclick="goToStageSelect()" style="margin-top: 20px; padding: 15px 30px;">別のエリアへ</button>
         </div>
     </div>
+    <!-- ★★★ 新增：Boss 進場 Overlay ★★★ -->
+    <div id="boss-overlay">
+        <div class="boss-intro-banner">
+            <div class="boss-intro-title">ボスが現れました</div>
+            <div class="boss-intro-img-container">
+                <img src="" id="intro-boss-img" class="boss-intro-img">
+            </div>
+            <div class="boss-intro-desc" id="boss-intro-text">
+                制限時間45秒以内に5問正解せよ！
+            </div>
+        </div>
+        <button class="boss-start-btn" onclick="startActualBossBattle()">かかってこい！</button>
+    </div>
+
+    <div id="boss-section">
+        <div class="boss-image-container">
+            <img src="" class="boss-img" id="boss-img">
+        </div>
+        <div class="boss-hp-bar-container">
+            <div class="boss-hp-bar" id="boss-hp-bar"></div>
+        </div>
+        <div class="boss-timer">TIME: <span id="boss-timer-val">0</span></div>
+    </div>
+    <audio id="bgm-player" loop preload="auto"></audio>
 
 <script>
     // ==========================================
@@ -728,7 +817,35 @@
     // ==========================================
 
 let stageData = null; 
+let currentQ = null;
 const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/questions.json"; 
+
+document.addEventListener('click', function(e) {
+        // 檢查點擊的元素是否為 Button 或者是 .stage-btn (關卡選擇鈕)
+        const target = e.target;
+        
+        if (target.closest('.stage-btn')) {
+            playSE('btn');
+            return;
+        }
+
+        if (target.tagName === 'BUTTON' && !target.classList.contains('key-btn')) {
+            
+            // ★★★ 修改：決定按鈕 (submit-btn) 不播音效 ★★★
+            if (target.id === 'submit-btn') {
+                return; 
+            }
+
+            // ★★★ 修改：提示按鈕 (hint-btn) 播 Wrong 音效 ★★★
+            if (target.id === 'hint-btn') {
+                playSE('wrong');
+                return;
+            }
+
+            // 其他按鈕 (如：Start, Back, Restart) 播普通音效
+            playSE('btn');
+        }
+    });
 
     // ==========================================
     // Romaji to Hiragana Table (Updated)
@@ -779,13 +896,24 @@ const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/ref
     let mistakeCount = 0; 
     let isVirtualKeyboard = true; 
     let romajiBuffer = ""; 
-    let currentStageId = "";
+    let currentStageId = null; //用來儲存「當前顯示的題目物件」
     
     // Boss State
     let isBossBattle = false;
     let bossHP = 100;
-    let bossTimer = 40;
+    let maxBossHP = 100;
+    let bossTimer = 45;
     let bossInterval = null;
+    let bossDefeatedAt = -1;
+
+    // Boss & Demon Castle Logic
+    let isDemonCastleMode = false; // 是否為魔王城模式
+    let demonCastleProgress = 0;   // 魔王城進度 (0-50)
+    let activeBossData = null;     // 當前 Boss 的資料 (用於隨機抽取 Mid-Boss)
+    let isFinalBoss = false;       // 是否為最終魔王
+    let bossQuestionCount = 0;     // 當前 Boss 戰已出題數 (用於判斷頭2題)
+
+    let isDebugMode = false; // 新增 Debug 狀態變數
 
     const PASS_COST = 5;
 
@@ -797,6 +925,7 @@ const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/ref
     const hpBar = document.getElementById('hp-bar');
     const hpVal = document.getElementById('hp-val');
     const levelDisp = document.getElementById('level-display');
+    const totalDisp = document.getElementById('total-display');
     const stageNameDisp = document.getElementById('stage-name-display'); // 小字 Stage Name
     const kanjiText = document.getElementById('kanji-text');
     const hintDisp = document.getElementById('hint-display');
@@ -817,17 +946,56 @@ const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/ref
     const gameScreen = document.getElementById('game-screen');
     const resultScreen = document.getElementById('result-screen');
     const stageContainer = document.getElementById('stage-container');
-    
-    // Boss DOM
     const bossSection = document.getElementById('boss-section');
     const bossHpBar = document.getElementById('boss-hp-bar');
     const bossTimerVal = document.getElementById('boss-timer-val');
     const bossImgElement = document.getElementById('boss-img');
+    const bossOverlay = document.getElementById('boss-overlay');
+    const introBossImg = document.getElementById('intro-boss-img');
+    const bossIntroText = document.getElementById('boss-intro-text');
+
+    const BGM_FILES = {
+        menu: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/natsuyasuminotanken.mp3", 
+        boss: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/norainutonoranekonokousou.mp3",
+        finalBoss: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/odysseia.mp3"
+    };
+
+    const SE_FILES = {
+        btn: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/se/%E6%B1%BA%E5%AE%9A%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%92%E6%8A%BC%E3%81%9923.mp3",
+        correct: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/se/%E6%B1%BA%E5%AE%9A%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%92%E6%8A%BC%E3%81%9947.mp3",
+        wrong: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/se/%E5%B0%8F%E3%83%91%E3%83%B3%E3%83%81.mp3",
+        boss_hit: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/se/%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%E5%91%BD%E4%B8%AD.mp3",
+        timer: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/se/beep5.mp3"
+    };
+
+    const bgmPlayer = document.getElementById('bgm-player');
+    bgmPlayer.volume = 0.4; // 設定音量 (0.0 - 1.0)
+
+    function playBGM(url) {
+        if (!url) return;
+        
+        // 如果已經在播同一首，就不要重頭播
+        // 注意：有些 CDN URL 可能會變，這裡做簡單判斷
+        if (bgmPlayer.src === url && !bgmPlayer.paused) return;
+
+        bgmPlayer.src = url;
+        bgmPlayer.play().catch(e => console.log("BGM Autoplay blocked:", e));
+    }
+
+    function playSE(key) {
+        if (!SE_FILES[key]) return;
+        
+        // 每次建立新的 Audio 物件，確保可以重疊播放（例如連按按鈕）
+        const audio = new Audio(SE_FILES[key]);
+        audio.volume = 0.8; // 音效音量
+        audio.play().catch(e => {}); // 忽略自動播放限制錯誤
+    }
 
     // ==========================================
     // Scene Management
     // ==========================================
     function goToStageSelect() {
+        playBGM(BGM_FILES.menu);
         startScreen.style.display = 'none';
         resultScreen.style.display = 'none';
         gameScreen.style.display = 'none';
@@ -844,6 +1012,7 @@ const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/ref
     }
 
     function backToTitle() {
+        playBGM(BGM_FILES.menu);
         stageScreen.style.display = 'none';
         startScreen.style.display = 'flex';
     }
@@ -865,17 +1034,43 @@ const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/ref
         }
     }
 
+    function toggleDebugMode() {
+        isDebugMode = document.getElementById('debug-toggle').checked;
+        console.log("Debug Mode:", isDebugMode ? "ON" : "OFF");
+    }
+
     // ==========================================
     // Game Initialization
     // ==========================================
-    function initGame(stageKey) {
+    async function initGame(stageKey) {
+        if (stageKey === 'demon_castle') {
+            const password = prompt("入城暗号（各エリアのボスを撃破したら貰えます。ひらがなで入力）");
+            if (!password) return; 
+            
+            const inputHash = await sha256(password);
+            const correctHash = "38d7a13a71896294f0650098eb57d0724bdce53346016a68c9b8fd4e2e9a4c16"; 
+
+            if (inputHash !== correctHash) {
+                alert("入城暗号が違います。");
+                return;
+            }
+            
+            isDemonCastleMode = true;
+            demonCastleProgress = 0;
+        } else {
+            isDemonCastleMode = false;
+        }
+
         currentStageId = stageKey;
         const stage = stageData[stageKey];
+
+        if (stage.bgm) {
+            playBGM(stage.bgm);
+        }
 
         // 1. 設定背景層 (獨立層)
         bgLayer.style.backgroundImage = `url('${stage.img}')`;
         document.body.classList.remove('stage-entering'); // Reset animation class
-        
         // 2. 設定 Game Container (變暗濾鏡)
         gameContainer.style.background = `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${stage.img}')`;
         gameContainer.style.backgroundSize = "cover";
@@ -886,23 +1081,46 @@ const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/ref
         updateHP(0);
         currentIndex = 0;
         correctCount = 0;
+        demonCastleProgress = 0;
         gameHistory = [];
-        
-        // Reset Boss State
         isBossBattle = false;
+        isFinalBoss = false;
+        bossDefeatedAt = -1;
         clearInterval(bossInterval);
         bossSection.style.display = 'none';
+
+        let targetCount;
+        if (isDemonCastleMode) {
+            targetCount = isDebugMode ? 10 : 50; // Debug:10, Normal:50
+        } else {
+            targetCount = isDebugMode ? 3 : 20;  // Debug:3, Normal:20
+        }
+        totalDisp.innerText = targetCount;
+        levelDisp.innerText = 0;
         
         // UI Info
         stageNameDisp.innerText = `🚩 ${stage.name}`;
 
-        // Prepare Questions
-        let source = stage.words;
-        if(!source || source.length === 0) {
-            alert("このエリアにはまだ問題がありません。");
-            return;
+        // ★★★ 題庫準備 ★★★
+        if (isDemonCastleMode) {
+            // 魔王城：將所有其他 Stage 的 words 合併
+            let allWords = [];
+            for (const key in stageData) {
+                if (key !== 'demon_castle' && stageData[key].words) {
+                    allWords = allWords.concat(stageData[key].words);
+                }
+            }
+            if (allWords.length === 0) { alert("データ不足"); return; }
+            currentQuestions = allWords.sort(() => 0.5 - Math.random());
+            // 魔王城不設 currentIndex 限制，因為我們會不斷隨機抽
+            currentIndex = 0; 
+        } else {
+            // 普通關卡
+            let source = stage.words;
+            if(!source || source.length === 0) { alert("No Data"); return; }
+            currentQuestions = [...source].sort(() => 0.5 - Math.random());
+            currentIndex = 0;
         }
-        currentQuestions = [...source].sort(() => 0.5 - Math.random());
         
         // 3. 執行過場動畫 (Transition)
         stageScreen.style.display = 'none';
@@ -930,54 +1148,89 @@ const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/ref
 
         // 判斷是否進入 Boss 戰
         if (!isBossBattle) {
-            // 一般模式：答對 20 題 -> 進入 Boss 戰
-            if (correctCount >= 20) {
-                startBossBattle();
-                return; 
+            // 設定目標數值 (Debug vs Normal)
+            const normalBossTarget = isDebugMode ? 3 : 20;       // 普通關卡: 3題 vs 20題
+            const dcBossInterval = isDebugMode ? 2 : 10;         // 魔王城間隔: 2題 vs 10題
+            const dcFinalTarget = isDebugMode ? 10 : 50;         // 魔王城Final: 10題 vs 50題
+
+            if (isDemonCastleMode) {
+                // 魔王城邏輯
+                if (demonCastleProgress > 0 && demonCastleProgress % dcBossInterval === 0) {
+                    // ★★★ 關鍵修正：檢查這個進度的 Boss 是否已經打贏過 ★★★
+                    if (demonCastleProgress !== bossDefeatedAt) {
+                        // 如果達到 Final 目標
+                        if (demonCastleProgress === dcFinalTarget) {
+                            triggerBossIntro(true);
+                        } else {
+                            triggerBossIntro(false);
+                        }
+                        return; 
+                    }
+                }
+            } else {
+                // 普通關卡邏輯
+                if (correctCount >= normalBossTarget) {
+                    triggerBossIntro(false);
+                    return;
+                }
             }
         } else {
-            // Boss 模式：Boss HP 歸零 -> 勝利
+            // Boss 戰中：檢查 Boss HP
             if (bossHP <= 0) {
-                clearInterval(bossInterval);
-                endGame(true);
+                handleBossVictory();
                 return;
             }
         }
 
-        // Game Over 判斷
+        // Game Over & End Checks
         if (hp <= 0) {
             clearInterval(bossInterval);
             endGame(false);
             return;
         }
         
-        // 題庫用完判斷
-        if (currentIndex >= currentQuestions.length) {
-            // Boss 戰中題目不夠，重洗
-            if (isBossBattle) {
-                currentIndex = 0;
-                currentQuestions = [...stageData[currentStageId].words].sort(() => 0.5 - Math.random());
-            } else {
-                // 一般模式題目不夠，視為勝利
-                endGame(true); 
-                return;
-            }
+        // 普通模式題庫用完
+        if (!isDemonCastleMode && !isBossBattle && currentIndex >= currentQuestions.length) {
+            endGame(true);
+            return;
         }
 
-        const q = currentQuestions[currentIndex];
+        // 決定題目來源 (保持不變)
+        let q;
+        // 注意：請確保這裡使用全域變數 currentQ
+        if (isBossBattle) {
+            currentQ = getBossQuestion();
+        } else {
+            // 普通題目
+            if (isDemonCastleMode) {
+                // 魔王城：隨機抽，不依賴 currentIndex
+                currentQ = currentQuestions[Math.floor(Math.random() * currentQuestions.length)];
+            } else {
+                // 普通關卡：依序出題
+                currentQ = currentQuestions[currentIndex];
+            }
+        }
+        const displayQ = currentQ; // 用於顯示
+
+        // UI
+        levelDisp.innerText = isDemonCastleMode ? demonCastleProgress : correctCount;
+        let targetCount;
+        if (isDemonCastleMode) {
+            targetCount = isDebugMode ? 10 : 50;
+        } else {
+            targetCount = isDebugMode ? 3 : 20;
+        }
+        totalDisp.innerText = targetCount;
+        kanjiText.innerText = displayQ.kanji;
+        meaningText.innerText = "【意味】" + displayQ.meaning;
+        sentenceText.innerHTML = "【例句】" + displayQ.sentence;
+        transText.innerText = displayQ.trans;
         
-        // UI Reset
-        levelDisp.innerText = correctCount;
-        kanjiText.innerText = q.kanji;
-        meaningText.innerText = "【意味】" + q.meaning;
-        sentenceText.innerHTML = "【例句】" + q.sentence;
-        transText.innerText = q.trans;
-        
+        // Input Reset
         answerInput.value = "";
         answerInput.disabled = false;
         romajiBuffer = "";
         updateVirtualDisplay();
-        
         msgArea.innerText = "";
         nextBtn.style.display = "none";
         
@@ -985,12 +1238,186 @@ const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/ref
         hintLevel = 0;
         mistakeCount = 0;
         hintDisp.innerText = "";
-        hintDisp.classList.remove("hint-answer"); // Reset red color
+        hintDisp.classList.remove("hint-answer");
         
-        hintBtn.innerHTML = 'ヒント <span class="hint-cost">-5 HP</span>';
         hintBtn.disabled = false;
+        if (isBossBattle && isFinalBoss) {
+            hintBtn.innerHTML = 'NO HINT'; 
+        } else {
+            hintBtn.innerHTML = 'ヒント <span class="hint-cost">-5 HP</span>';
+        }
         submitBtn.disabled = false;
         submitBtn.style.display = "block";
+    }
+
+    function triggerBossIntro(isFinal) {
+        isFinalBoss = isFinal;
+        
+        // 設定 Boss 資料
+        if (isDemonCastleMode) {
+            if (isFinal) {
+                // Final Boss: 使用 Demon Castle 自己的設定
+                activeBossData = stageData['demon_castle']; 
+            } else {
+                // Mid Boss: 隨機抽一個其他關卡的 Boss
+                const keys = Object.keys(stageData).filter(k => k !== 'demon_castle');
+                const randomKey = keys[Math.floor(Math.random() * keys.length)];
+                activeBossData = stageData[randomKey];
+            }
+        } else {
+            // 普通關卡 Boss
+            activeBossData = stageData[currentStageId];
+        }
+
+        // 設定 Overlay 內容
+        introBossImg.src = activeBossData.bossImg || "https://cdn-icons-png.flaticon.com/512/1998/1998610.png";
+        
+        if (isFinal) {
+            bossIntroText.innerHTML = "FINAL BOSS出現！<br>制限時間80秒 - 10問正解せよ！<br><span style='color:red; font-size:0.8em;'>※ヒント使用不可・ミス大ダメージ</span>";
+            // ★★★ 新增：在此處播放 Final Boss BGM ★★★
+            playBGM(BGM_FILES.finalBoss);
+        } else {
+            bossIntroText.innerHTML = "ボスが現れました！<br>制限時間45秒 - 5問正解せよ！";
+            // ★★★ 新增：在此處播放 Boss BGM ★★★
+            playBGM(BGM_FILES.boss);
+        }
+
+        // 顯示 Overlay
+        bossOverlay.style.display = 'flex';
+    }
+
+    function startActualBossBattle() {
+        bossOverlay.style.display = 'none';
+        bossSection.style.display = 'flex';
+        
+        isBossBattle = true;
+
+        bossQuestionCount = 0; // 重置出題數
+        
+        // 設定數值
+        if (isFinalBoss) {
+            bossHP = 200; // 需答對 10 題 (200 / 20)
+            maxBossHP = 200;
+            bossTimer = 80;
+        } else {
+            bossHP = 100; // 需答對 5 題 (100 / 20)
+            maxBossHP = 100;
+            bossTimer = 45;
+        }
+        
+        bossImgElement.src = activeBossData.bossImg || "https://cdn-icons-png.flaticon.com/512/1998/1998610.png";
+        bossHpBar.style.width = "100%";
+        bossTimerVal.innerText = bossTimer;
+        
+        // 啟動計時
+        clearInterval(bossInterval);
+        bossInterval = setInterval(() => {
+            bossTimer--;
+            bossTimerVal.innerText = bossTimer;
+            if (bossTimer <= 10 && bossTimer > 0) {
+                // 1. 播放音效
+                playSE('timer');
+                
+                // 2. 變紅變大
+                timerContainer.classList.add('critical');
+                
+                // 3. 晃動動畫 (利用 CSS Reflow 重置動畫)
+                timerContainer.classList.remove('shake-anim');
+                void timerContainer.offsetWidth; // Trigger Reflow
+                timerContainer.classList.add('shake-anim');
+            }
+
+            if (bossTimer <= 0) {
+                clearInterval(bossInterval);
+                if (bossHP > 0) endGame(false);
+            }
+        }, 1000);
+        
+        loadQuestion();
+    }
+
+    function getBossQuestion() {
+        bossQuestionCount++;
+        
+        // Final Boss: 從所有 Boss 題庫中隨機抽
+        if (isFinalBoss) {
+            let allBossWords = [];
+            for (const key in stageData) {
+                if (stageData[key].bossWords) {
+                    allBossWords = allBossWords.concat(stageData[key].bossWords);
+                }
+            }
+            if(allBossWords.length > 0) {
+                return allBossWords[Math.floor(Math.random() * allBossWords.length)];
+            }
+            // Fallback if no boss words
+            return currentQuestions[Math.floor(Math.random() * currentQuestions.length)];
+        }
+        
+        // 普通 Boss / Mid Boss
+        // 第 1-2 題：普通題庫
+        if (bossQuestionCount <= 2) {
+            // 如果是魔王城 Mid Boss，activeBossData 是隨機抽的 stage，用它的 words
+            // 如果是普通關卡，activeBossData 就是 currentStage，用 currentQuestions
+            if (isDemonCastleMode) {
+                 // Mid boss uses its origin stage's normal words first
+                 const originWords = activeBossData.words;
+                 return originWords[Math.floor(Math.random() * originWords.length)];
+            } else {
+                 return currentQuestions[currentIndex]; // 繼續順序出題
+            }
+        } 
+        // 第 3 題以後：Boss 專屬題庫
+        else {
+            const bWords = activeBossData.bossWords;
+            if (bWords && bWords.length > 0) {
+                return bWords[Math.floor(Math.random() * bWords.length)];
+            } else {
+                // Fallback
+                return currentQuestions[Math.floor(Math.random() * currentQuestions.length)];
+            }
+        }
+    }
+
+    function handleBossVictory() {
+        clearInterval(bossInterval);
+        isBossBattle = false;
+        //bossSection.style.display = 'none';//
+        const defaultDefeatedImg = "https://cdn-icons-png.flaticon.com/512/8890/8890786.png";
+        if (activeBossData && activeBossData.bossDefeatedImg) {
+            bossImgElement.src = activeBossData.bossDefeatedImg;
+        } else {
+            bossImgElement.src = defaultDefeatedImg;
+        }
+        
+        if (isDemonCastleMode) {
+            if (isFinalBoss) {
+                // 為了讓玩家看到 Final Boss 的戰敗圖，延遲一點才跳轉
+                setTimeout(() => {
+                    endGame(true);
+                }, 2000);
+            } else {
+                bossDefeatedAt = demonCastleProgress;
+
+                if (stageData[currentStageId].bgm) {
+                    playBGM(stageData[currentStageId].bgm);
+                }
+
+                updateHP(20); 
+                msgArea.style.color = "#f1c40f";
+                msgArea.innerText = "ボス撃破！HP +20 回復！";
+                
+                setTimeout(() => {
+                    bossSection.style.display = 'none'; 
+                    loadQuestion();
+                }, 2000);
+            }
+        } else {
+            // 普通關卡：延遲後通關
+            setTimeout(() => {
+                endGame(true);
+            }, 2000);
+        }
     }
 
      // ★★★負責下載 JSON ★★★
@@ -1011,13 +1438,20 @@ const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/ref
         }
     }
 
+    async function sha256(message) {
+        const msgBuffer = new TextEncoder().encode(message);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
     // ==========================================
     // Boss Battle Logic
     // ==========================================
     function startBossBattle() {
         isBossBattle = true;
         bossHP = 100;
-        bossTimer = 40;
+        bossTimer = 45;
         
         // Boss Image
         const stage = stageData[currentStageId];
@@ -1101,6 +1535,9 @@ const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/ref
     }
 
     function vkPress(key) {
+        if (navigator.vibrate) {
+            navigator.vibrate(15);
+        }
         if (answerInput.disabled) return;
 
         if (key === 'bs') {
@@ -1149,7 +1586,13 @@ const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/ref
     // Hint & Answer Checking
     // ==========================================
     function useHint() {
-        const q = currentQuestions[currentIndex];
+        if (isFinalBoss) {
+            msgArea.style.color = "#e74c3c";
+            msgArea.innerText = "魔王の威圧でヒントが使えない！";
+            return; // 禁止使用
+        }
+
+        const q = currentQ;
         
         if (hintLevel === 0) {
             updateHP(-5);
@@ -1194,8 +1637,10 @@ const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/ref
         const userVal = answerInput.value.trim();
         if (!userVal) return;
 
-        const q = currentQuestions[currentIndex];
+        const q = currentQ;
+
         let isCorrect = false;
+        let correctPrimary = Array.isArray(q.reading) ? q.reading[0] : q.reading; // 用於顯示答案
         
         // Context strict check
         if (q.strict) {
@@ -1217,7 +1662,18 @@ const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/ref
         if (isCorrect) {
             handleCorrectAnswer(q, userVal);
         } else {
-            handleWrongAnswer(q, userVal, false);
+            // Final Boss 懲罰
+            if (isFinalBoss) {
+                updateHP(-15); // 直接扣 15
+                hintDisp.innerHTML = `正解：${correctPrimary}`;
+                hintDisp.classList.add("hint-answer");
+                msgArea.style.color = "#e74c3c";
+                msgArea.innerText = `不正解！ダメージを受けた！\n正解は「${Array.isArray(q.reading)?q.reading[0]:q.reading}」`;
+                // 扣血，然後當作 MistakeCount 3 (直接輸掉這題)
+                handleWrongAnswer(q, userVal, false, true); // true = force fail
+            } else {
+                handleWrongAnswer(q, userVal, false, false);
+            }
         }
     }
 
@@ -1232,8 +1688,15 @@ const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/ref
             gameContainer.style.backgroundPosition = "center";
         }
 
-        correctCount++;
-        levelDisp.innerText = correctCount;
+        if (!isBossBattle) {
+            if (isDemonCastleMode) {
+                demonCastleProgress++;
+                levelDisp.innerText = demonCastleProgress;
+            } else {
+                correctCount++;
+                levelDisp.innerText = correctCount;
+            }
+        }
         
         msgArea.style.color = "#2ecc71";
         msgArea.innerText = "正解！";
@@ -1242,28 +1705,44 @@ const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/ref
         
         // Boss Damage
         if (isBossBattle) {
+            // Boss 戰：播放受傷音效
+            playSE('boss_hit');
+            
             bossHP -= 20; 
             if (bossHP < 0) bossHP = 0;
-            bossHpBar.style.width = `${bossHP}%`;
+            
+            const hpPercent = (bossHP / maxBossHP) * 100;
+            bossHpBar.style.width = `${hpPercent}%`;
             
             // Flash effect
             bossImgElement.style.filter = "brightness(5) sepia(1) hue-rotate(-50deg) saturate(5)";
             setTimeout(() => {
                 bossImgElement.style.filter = ""; 
             }, 200);
+        } else {
+            // 一般戰：播放正確音效
+            playSE('correct');
         }
 
         submitBtn.disabled = true;
         hintBtn.disabled = true;
         
         setTimeout(() => {
-            currentIndex++;
+            currentIndex++; // 普通模式下有用，魔王城模式下 currentIndex 雖有增加但 loadQuestion 不會用它
             loadQuestion();
         }, 1000);
     }
 
-    function handleWrongAnswer(q, userVal, isContextError) {
+    function handleWrongAnswer(q, userVal, isContextError, forceFail = false) {
+        if (userVal || forceFail) {
+            playSE('wrong');
+        }
+        
         let correctR = Array.isArray(q.reading) ? q.reading[0] : q.reading;
+        
+        if (forceFail) {
+            mistakeCount = 2;
+        }
         
         if (mistakeCount === 0) {
             // 1st Mistake
@@ -1291,11 +1770,15 @@ const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/ref
         }
         else if (mistakeCount === 2) {
             // 3rd Mistake (Fail)
-            updateHP(-5);
+            if (!forceFail) {
+                updateHP(-5);
+            }
             
             hintDisp.innerHTML = `正解：${correctR}`;
             hintDisp.classList.add("hint-answer");
-            msgArea.innerText = ""; 
+            if (!forceFail) {
+                msgArea.innerText = ""; 
+            }
 
             answerInput.value = "パスしました";
             romajiBuffer = "";
@@ -1344,17 +1827,30 @@ const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/ref
         const title = document.getElementById('result-title');
         const msg = document.getElementById('result-msg');
         const list = document.getElementById('review-list');
+        const resultImg = document.getElementById('result-boss-img');
         
         list.innerHTML = "";
+
+        playBGM(BGM_FILES.menu);
 
         if (isWin) {
             title.innerText = "🎉 エリアクリア！ 🎉";
             title.style.color = "#2ecc71";
             msg.innerText = `見事、${correctCount}問正解で「${stageData[currentStageId].name}」を制覇しました！`;
+            // 如果有 activeBossData (即是有打過 Boss) 且設定了圖片
+            const currentStage = stageData[currentStageId];
+            
+            if (currentStage && currentStage.bossDefeatedImg) {
+                resultImg.src = currentStage.bossDefeatedImg;
+                resultImg.style.display = "block";
+            } else {
+                resultImg.style.display = "none";
+            }
         } else {
             title.innerText = "💀 GAME OVER 💀";
             title.style.color = "#e74c3c";
             msg.innerText = `「${stageData[currentStageId].name}」の探索は失敗に終わりました…。`;
+            resultImg.style.display = "none";
         }
 
         gameHistory.forEach((item, idx) => {
