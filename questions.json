@@ -329,6 +329,17 @@
         "sentence": "ライバルと<span class='highlight-word'>競争</span>する。",
         "trans": "同對手競爭。"
       }
+    ],
+    "bossWords": [
+      {
+        "kanji": "饕餮",
+        "reading": "とうてつ",
+        "hint1": "●●●●",
+        "hint2": "と●●●",
+        "meaning": "傳說大食怪獸",
+        "sentence": "<span class='highlight-word'>饕餮</span>が飛び出してきた！",
+        "trans": "饕餮飛出嚟喇！"
+      }
     ]
   },
   "society": {
@@ -616,6 +627,17 @@
         "sentence": "宝くじに<span class='highlight-word'>当選</span>する。",
         "trans": "中六合彩（彩票）。"
       }
+    ],
+    "bossWords": [
+      {
+        "kanji": "饕餮",
+        "reading": "とうてつ",
+        "hint1": "●●●●",
+        "hint2": "と●●●",
+        "meaning": "傳說大食怪獸",
+        "sentence": "<span class='highlight-word'>饕餮</span>が飛び出してきた！",
+        "trans": "饕餮飛出嚟喇！"
+      }
     ]
   },
   "life": {
@@ -876,6 +898,17 @@
         "sentence": "明日は<span class='highlight-word'>祝日</span>で休みだ。",
         "trans": "聽日係公眾假期放假。"
       }
+    ],
+    "bossWords": [
+      {
+        "kanji": "饕餮",
+        "reading": "とうてつ",
+        "hint1": "●●●●",
+        "hint2": "と●●●",
+        "meaning": "傳說大食怪獸",
+        "sentence": "<span class='highlight-word'>饕餮</span>が飛び出してきた！",
+        "trans": "饕餮飛出嚟喇！"
+      }
     ]
   },
   "gourmet": {
@@ -1108,6 +1141,17 @@
         "meaning": "國產",
         "sentence": "<span class='highlight-word'>国産</span>の肉を買う。",
         "trans": "買國產肉。"
+      }
+    ],
+    "bossWords": [
+      {
+        "kanji": "饕餮",
+        "reading": "とうてつ",
+        "hint1": "●●●●",
+        "hint2": "と●●●",
+        "meaning": "傳說大食怪獸",
+        "sentence": "<span class='highlight-word'>饕餮</span>が飛び出してきた！",
+        "trans": "饕餮飛出嚟喇！"
       }
     ]
   },
@@ -1450,6 +1494,17 @@
         "sentence": "名案が<span class='highlight-word'>浮かぶ</span>。",
         "trans": "浮現好主意。"
       }
+    ],
+    "bossWords": [
+      {
+        "kanji": "饕餮",
+        "reading": "とうてつ",
+        "hint1": "●●●●",
+        "hint2": "と●●●",
+        "meaning": "傳說大食怪獸",
+        "sentence": "<span class='highlight-word'>饕餮</span>が飛び出してきた！",
+        "trans": "饕餮飛出嚟喇！"
+      }
     ]
   },
   "knowledge": {
@@ -1737,6 +1792,17 @@
         "sentence": "言葉の<span class='highlight-word'>定義</span>。",
         "trans": "語言嘅定義。"
       }
+    ],
+    "bossWords": [
+      {
+        "kanji": "饕餮",
+        "reading": "とうてつ",
+        "hint1": "●●●●",
+        "hint2": "と●●●",
+        "meaning": "傳說大食怪獸",
+        "sentence": "<span class='highlight-word'>饕餮</span>が飛び出してきた！",
+        "trans": "饕餮飛出嚟喇！"
+      }
     ]
   },
   "nature": {
@@ -2005,6 +2071,17 @@
         "meaning": "正式/本格",
         "sentence": "<span class='highlight-word'>本格的</span>な冬が到来した。",
         "trans": "正式嘅冬天嚟到。"
+      }
+    ],
+    "bossWords": [
+      {
+        "kanji": "饕餮",
+        "reading": "とうてつ",
+        "hint1": "●●●●",
+        "hint2": "と●●●",
+        "meaning": "傳說大食怪獸",
+        "sentence": "<span class='highlight-word'>饕餮</span>が飛び出してきた！",
+        "trans": "饕餮飛出嚟喇！"
       }
     ]
   },
@@ -2374,6 +2451,17 @@
         "sentence": "好きなものを<span class='highlight-word'>選ぶ</span>。",
         "trans": "揀鍾意嘅嘢。"
       }
+    ],
+    "bossWords": [
+      {
+        "kanji": "饕餮",
+        "reading": "とうてつ",
+        "hint1": "●●●●",
+        "hint2": "と●●●",
+        "meaning": "傳說大食怪獸",
+        "sentence": "<span class='highlight-word'>饕餮</span>が飛び出してきた！",
+        "trans": "饕餮飛出嚟喇！"
+      }
     ]
   },
   "danger": {
@@ -2643,6 +2731,25 @@
         "sentence": "<span class='highlight-word'>性的</span>暴行は重大な人権侵害です。",
         "trans": "性暴力係嚴重侵犯人權。"
       }
+    ],
+    "bossWords": [
+      {
+        "kanji": "饕餮",
+        "reading": "とうてつ",
+        "hint1": "●●●●",
+        "hint2": "と●●●",
+        "meaning": "傳說大食怪獸",
+        "sentence": "<span class='highlight-word'>饕餮</span>が飛び出してきた！",
+        "trans": "饕餮飛出嚟喇！"
+      }
     ]
+  },
+  "demon_castle": {
+    "name": "魔王の城",
+    "desc": "？？？",
+    "img": "https://raw.githubusercontent.com/xotarios/kanji-game-assets/main/demon_castle_bg.jpg",
+    "bossImg": "https://cdn-icons-png.flaticon.com/512/2328/2328439.png",
+    "words": [], 
+    "bossWords": [] 
   }
 }
