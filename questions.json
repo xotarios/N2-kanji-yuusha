@@ -5,6 +5,7 @@
     "img": "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/dc8441fdee6db64f7271c53d58911a7904838584/images/office.png",
     "bossImg": "https://cdn-icons-png.flaticon.com/512/1548/1548993.png",
     "bossDefeatedImg": "https://cdn-icons-png.flaticon.com/512/3135/3135768.png", 
+    "bgm": "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/neonpurple.mp3", 
     "words": [
       {
         "kanji": "削除",
