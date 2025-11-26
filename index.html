@@ -105,6 +105,7 @@
             background: rgba(0, 0, 0, 0.6);
             padding: 15px;
             border-radius: 8px;
+            text-align: left;
             display: inline-block;
         }
 
@@ -783,7 +784,7 @@
             
             <div class="start-credits">
                 制　作：<a href="https://linktr.ee/Xotarios/" style="color:#c6f2ff;">Xotarios</a>（第一日語何先生）+ AI協力<br>
-                音　楽：<a href="https://amachamusic.chagasi.com/index.html" style="color:#c6f2ff;">甘茶の音楽工房</a> & <a href="https://youfulca.com/" style="color:#c6f2ff;">ユーフルカ</a>
+                音　楽：<a href="https://amachamusic.chagasi.com/index.html" style="color:#c6f2ff;">甘茶の音楽工房</a> & <a href="https://youfulca.com/" style="color:#c6f2ff;">ユーフルカ</a><br>
                 効果音：<a href="https://soundeffect-lab.info/" style="color:#c6f2ff;">効果音ラボ</a>
             </div>
         </div>
@@ -1148,7 +1149,7 @@ document.addEventListener('click', function(e) {
 
     const BGM_FILES = {
         menu: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/natsuyasuminotanken.mp3", 
-        boss: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/Bgm-Sonic.mp3",
+        boss: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/norainutonoranekonokousou.mp3",
         finalBoss: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/odysseia.mp3"
     };
 
@@ -1457,7 +1458,7 @@ document.addEventListener('click', function(e) {
         
         hintBtn.disabled = false;
         if (isBossBattle && isFinalBoss) {
-            hintBtn.innerHTML = 'NO HINT'; 
+            hintBtn.innerHTML = 'ヒント'; 
         } else {
              hintBtn.innerHTML = 'ヒント1（仮名の数） <span class="hint-cost">-5 HP</span>';
         }
@@ -1547,10 +1548,15 @@ document.addEventListener('click', function(e) {
             img.classList.add('anim-boss-entry'); // 圖片縮放動畫
 
             await new Promise(r => setTimeout(r, 1500)); // 等圖片定格
-
+            
             // Step 3: 顯示對話框並打字
             dialogue.classList.remove('hidden-el');
-            const introText = activeBossData.dialogueIntro || "......";
+            let introText = activeBossData.dialogueIntro || "......";
+            if (isDemonCastleMode && !isFinal) {
+                if (activeBossData.dialogueDemonCastleIntro) {
+                    introText = activeBossData.dialogueDemonCastleIntro;
+                }
+            }
             await typeWriter(introText, 'intro-dialogue', 30); // 打字速度
 
             // Step 4: 顯示按鈕
@@ -2003,7 +2009,7 @@ document.addEventListener('click', function(e) {
                 hintDisp.innerHTML = `正解：${correctPrimary}`;
                 hintDisp.classList.add("hint-answer");
                 msgArea.style.color = "#e74c3c";
-                msgArea.innerText = `不正解！ダメージを受けた！\n正解は「${Array.isArray(q.reading)?q.reading[0]:q.reading}」`;
+                msgArea.innerText = `不正解！ダメージを受けた！」`;
                 // 扣血，然後當作 MistakeCount 3 (直接輸掉這題)
                 handleWrongAnswer(q, userVal, false, true); // true = force fail
             } else {
