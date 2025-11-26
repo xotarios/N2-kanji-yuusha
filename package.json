@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/xotarios/N2-kanji-yuusha/issues"
   },
-  "homepage": "https://github.com/xotarios/N2-kanji-yuusha#readme"
+  "homepage": "https://github.com/xotarios/N2-kanji-yuusha#readme",
+  "devDependencies": {
+    "vite": "^7.2.4"
+  }
 }

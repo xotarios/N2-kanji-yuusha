@@ -294,6 +294,143 @@
             text-shadow: 2px 2px 0 #000;
         }
 
+        .boss-display-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 10px;
+        position: relative;
+        }
+
+        /* 粗獷字體樣式 */
+         .boss-text-style {
+        font-family: "Arial Black", "Impact", sans-serif; /* 粗體 */
+        color: white;
+        text-shadow: 3px 3px 0 #000, -1px -1px 0 #000;
+        font-size: 1.5rem;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        white-space: nowrap;
+        }
+
+        .boss-title-label {
+        text-align: right;
+        color: #f1c40f; /* 金色稱號 */
+        transform: rotate(-5deg); /* 稍微傾斜增加動感 */
+        }
+
+        .boss-name-label {
+        text-align: left;
+        color: #e74c3c; /* 紅色名字 */
+        transform: rotate(5deg);
+        }
+
+        .boss-name-ruby {
+        display: block;
+        font-size: 0.5em;
+        color: #fff;
+        text-shadow: 1px 1px 0 #000;
+        margin-bottom: -5px;
+        text-align: center;
+        font-weight: normal;
+        }
+
+        /* Boss Dialogue Box */
+        .boss-dialogue {
+        background: rgba(0, 0, 0, 0.8);
+        border: 2px solid #fff;
+        border-radius: 8px;
+        padding: 10px 15px;
+        color: #fff;
+        font-family: var(--font-ui);
+        font-size: 1rem;
+        min-height: 3.6em; /* 預留兩行空間 */
+        width: 90%;
+        max-width: 500px;
+        margin: 10px auto;
+        text-align: left;
+        line-height: 1.6;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .boss-silhouette {
+        /* 變全黑 + 白色外發光 */
+        filter: brightness(0) drop-shadow(0 0 15px rgba(255, 255, 255, 0.9)) !important;
+        opacity: 0.8;
+        transition: filter 0.5s ease;
+        }
+
+
+        /* ★★★ 新增：密碼獎勵框樣式 ★★★ */
+        .password-reward-box {
+        background: rgba(241, 196, 15, 0.2); /* 金色半透明背景 */
+        border: 2px solid #f1c40f;
+        border-radius: 8px;
+        padding: 15px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        color: #f1c40f;
+        font-family: var(--font-ui);
+        text-align: center;
+        animation: fadeIn 1s;
+        }
+
+        .password-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-top: 5px;
+        letter-spacing: 0.2em;
+        text-shadow: 0 0 10px #f1c40f;
+        }
+
+    /* =========================================
+       Animations
+       ========================================= */
+    
+        /* 標題彈出 */
+        @keyframes popIn {
+        0% { transform: scale(0); opacity: 0; }
+        60% { transform: scale(1.2); opacity: 1; }
+        100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Boss 圖片 Zoom Out 進場 */
+        @keyframes bossZoomEntry {
+            0% {
+            transform: scale(5); /* 超大 */
+            opacity: 0;
+            }
+            20% {
+            opacity: 0.2;
+            }
+            100% {
+            transform: scale(1); /* 正常 */
+            opacity: 1;
+            }
+        }
+
+        /* 應用動畫的 class */
+        .anim-pop-in {
+        animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .anim-boss-entry {
+        animation: bossZoomEntry 1.5s ease-out forwards;
+        }
+    
+        /* 隱藏元素 (用於動畫流程) */
+        .hidden-el {
+        opacity: 0; 
+        visibility: hidden;
+        transition: opacity 0.5s;
+        }
+        .visible-el {
+        opacity: 1;
+        visibility: visible;
+        }
+
+        
         /* =========================================
            Question Area
            ========================================= */
@@ -646,7 +783,7 @@
             
             <div class="start-credits">
                 制　作：<a href="https://linktr.ee/Xotarios/" style="color:#c6f2ff;">Xotarios</a>（第一日語何先生）+ AI協力<br>
-                音　楽：<a href="https://amachamusic.chagasi.com/index.html" style="color:#c6f2ff;">甘茶の音楽工房</a>　
+                音　楽：<a href="https://amachamusic.chagasi.com/index.html" style="color:#c6f2ff;">甘茶の音楽工房</a> & <a href="https://youfulca.com/" style="color:#c6f2ff;">ユーフルカ</a>
                 効果音：<a href="https://soundeffect-lab.info/" style="color:#c6f2ff;">効果音ラボ</a>
             </div>
         </div>
@@ -780,34 +917,86 @@
     <div id="result-screen" class="screen-overlay">
         <div class="result-content">
             <h1 id="result-title"></h1>
-            <img id="result-boss-img" src="" style="display:none; width:120px; height:120px; object-fit:contain; margin:10px auto; filter: drop-shadow(0 0 10px #fff);">
+            <div id="result-boss-area" style="display:none;">
+                <div class="boss-display-container">
+                    <div class="boss-text-style boss-title-label" id="result-boss-title"></div>
+                    
+                    <img id="result-boss-img" src="" style="width:120px; height:120px; object-fit:contain; filter: drop-shadow(0 0 10px #fff);">
+                    
+                    <div class="boss-text-style boss-name-label">
+                        <span class="boss-name-ruby" id="result-boss-kana"></span>
+                        <span id="result-boss-name"></span>
+                    </div>
+                </div>
+                <!-- 結果對話框 -->
+                <div class="boss-dialogue" id="result-dialogue"></div>
+            </div>
+            
             <p id="result-msg"></p>
+
             <div id="review-list" style="margin-top: 20px;"></div>
+
+            <div id="password-reward-container" class="password-reward-box" style="display:none;">
+                <div style="font-size:0.9rem;">終焉の城　入城暗号獲得：</div>
+                <div id="password-reward-text" class="password-text"></div>
+            </div>
+
             <button onclick="goToStageSelect()" style="margin-top: 20px; padding: 15px 30px;">別のエリアへ</button>
         </div>
     </div>
     <!-- ★★★ 新增：Boss 進場 Overlay ★★★ -->
     <div id="boss-overlay">
-        <div class="boss-intro-banner">
+        <!-- 1. 標題 -->
+        <div class="boss-intro-banner hidden-el" id="intro-banner">
             <div class="boss-intro-title">ボスが現れました</div>
+        </div>
+
+        <!-- 2. Boss 顯示區 (身分 - 圖片 - 名字) -->
+        <div class="boss-display-container hidden-el" id="intro-boss-container">
+            <!-- 左：身分 -->
+            <div class="boss-text-style boss-title-label" id="intro-boss-title">TITLE</div>
+            
+            <!-- 中：圖片 -->
             <div class="boss-intro-img-container">
                 <img src="" id="intro-boss-img" class="boss-intro-img">
             </div>
-            <div class="boss-intro-desc" id="boss-intro-text">
-                制限時間45秒以内に5問正解せよ！
+            
+            <!-- 右：名字 -->
+            <div class="boss-text-style boss-name-label">
+                <span class="boss-name-ruby" id="intro-boss-kana">kana</span>
+                <span id="intro-boss-name">NAME</span>
             </div>
         </div>
-        <button class="boss-start-btn" onclick="startActualBossBattle()">かかってこい！</button>
-    </div>
+
+        <!-- 3. 對話框 -->
+        <div class="boss-dialogue hidden-el" id="intro-dialogue"></div>
+
+        <!-- 4. 任務說明與按鈕 -->
+        <div class="hidden-el" id="intro-controls" style="text-align:center; width:100%;">
+            <div class="boss-intro-desc" id="boss-intro-text">
+                制限時間40秒以内に5問正解せよ！
+            </div>
+            <button class="boss-start-btn" onclick="startActualBossBattle()">かかってこい！</button>
+        </div>
 
     <div id="boss-section">
-        <div class="boss-image-container">
-            <img src="" class="boss-img" id="boss-img">
-        </div>
-        <div class="boss-hp-bar-container">
-            <div class="boss-hp-bar" id="boss-hp-bar"></div>
-        </div>
-        <div class="boss-timer">TIME: <span id="boss-timer-val">0</span></div>
+        <div class="boss-display-container">
+                <div class="boss-text-style boss-title-label" id="battle-boss-title" style="font-size:1rem;"></div>
+                
+                <div class="boss-image-container">
+                    <img src="" class="boss-img" id="boss-img">
+                </div>
+                
+                <div class="boss-text-style boss-name-label" style="font-size:1rem;">
+                    <span class="boss-name-ruby" id="battle-boss-kana"></span>
+                    <span id="battle-boss-name"></span>
+                </div>
+            </div>
+            
+            <div class="boss-hp-bar-container">
+                <div class="boss-hp-bar" id="boss-hp-bar"></div>
+            </div>
+            <div class="boss-timer">TIME: <span id="boss-timer-val">45</span></div>
     </div>
     <audio id="bgm-player" loop preload="auto"></audio>
 
@@ -818,7 +1007,8 @@
 
 let stageData = null; 
 let currentQ = null;
-const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/questions.json"; 
+//const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/questions.json";//
+const DATA_URL = "/questions.json"; 
 
 document.addEventListener('click', function(e) {
         // 檢查點擊的元素是否為 Button 或者是 .stage-btn (關卡選擇鈕)
@@ -910,8 +1100,10 @@ document.addEventListener('click', function(e) {
     let isDemonCastleMode = false; // 是否為魔王城模式
     let demonCastleProgress = 0;   // 魔王城進度 (0-50)
     let activeBossData = null;     // 當前 Boss 的資料 (用於隨機抽取 Mid-Boss)
+    let usedBossKeys = [];         // 已使用過的 Boss Key (避免重複出現)
     let isFinalBoss = false;       // 是否為最終魔王
     let bossQuestionCount = 0;     // 當前 Boss 戰已出題數 (用於判斷頭2題)
+    let currentBossQuestionPool = [];
 
     let isDebugMode = false; // 新增 Debug 狀態變數
 
@@ -956,7 +1148,7 @@ document.addEventListener('click', function(e) {
 
     const BGM_FILES = {
         menu: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/natsuyasuminotanken.mp3", 
-        boss: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/norainutonoranekonokousou.mp3",
+        boss: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/Bgm-Sonic.mp3",
         finalBoss: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/odysseia.mp3"
     };
 
@@ -965,7 +1157,8 @@ document.addEventListener('click', function(e) {
         correct: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/se/%E6%B1%BA%E5%AE%9A%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%92%E6%8A%BC%E3%81%9947.mp3",
         wrong: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/se/%E5%B0%8F%E3%83%91%E3%83%B3%E3%83%81.mp3",
         boss_hit: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/se/%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%E5%91%BD%E4%B8%AD.mp3",
-        timer: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/se/beep5.mp3"
+        timer: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/se/beep5.mp3",
+        warning: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/se/teki_unit.mp3"
     };
 
     const bgmPlayer = document.getElementById('bgm-player');
@@ -1085,7 +1278,9 @@ document.addEventListener('click', function(e) {
         gameHistory = [];
         isBossBattle = false;
         isFinalBoss = false;
+        activeBossData = null;
         bossDefeatedAt = -1;
+        usedBossKeys = [];
         clearInterval(bossInterval);
         bossSection.style.display = 'none';
 
@@ -1191,23 +1386,43 @@ document.addEventListener('click', function(e) {
         
         // 普通模式題庫用完
         if (!isDemonCastleMode && !isBossBattle && currentIndex >= currentQuestions.length) {
-            endGame(true);
-            return;
+            if (isDemonCastleMode) {
+                 // 重新生成題庫 (從 stageData 再抓一次)
+                 let allWords = [];
+                 for (const key in stageData) {
+                     if (key !== 'demon_castle' && stageData[key].words) {
+                         allWords = allWords.concat(stageData[key].words);
+                     }
+                 }
+                 currentQuestions = allWords.sort(() => 0.5 - Math.random());
+             } else {
+                 // 普通模式題庫用完 = 勝利
+                 endGame(true);
+                 return;
+             }
         }
 
-        // 決定題目來源 (保持不變)
-        let q;
-        // 注意：請確保這裡使用全域變數 currentQ
         if (isBossBattle) {
             currentQ = getBossQuestion();
         } else {
             // 普通題目
             if (isDemonCastleMode) {
-                // 魔王城：隨機抽，不依賴 currentIndex
-                currentQ = currentQuestions[Math.floor(Math.random() * currentQuestions.length)];
+                // ★★★ 魔王城修正：使用「抽牌」方式 (取出並移除)，確保不重複 ★★★
+                // shift() 會取出陣列第一個元素，並將其從陣列中刪除
+                if (currentQuestions.length > 0) {
+                    currentQ = currentQuestions.shift();
+                } else {
+                    // 萬一真的空了 (理論上上面有 refill 邏輯，這裡做保險)
+                    endGame(true); return; 
+                }
             } else {
-                // 普通關卡：依序出題
-                currentQ = currentQuestions[currentIndex];
+                // 普通關卡：依序出題 (currentIndex 會在答對時 +1)
+                // 這裡檢查是否超出範圍
+                if (currentIndex < currentQuestions.length) {
+                    currentQ = currentQuestions[currentIndex];
+                } else {
+                    endGame(true); return;
+                }
             }
         }
         const displayQ = currentQ; // 用於顯示
@@ -1256,20 +1471,38 @@ document.addEventListener('click', function(e) {
         // 設定 Boss 資料
         if (isDemonCastleMode) {
             if (isFinal) {
-                // Final Boss: 使用 Demon Castle 自己的設定
                 activeBossData = stageData['demon_castle']; 
             } else {
-                // Mid Boss: 隨機抽一個其他關卡的 Boss
-                const keys = Object.keys(stageData).filter(k => k !== 'demon_castle');
-                const randomKey = keys[Math.floor(Math.random() * keys.length)];
+                // ★★★ 修改：Mid Boss 防重複邏輯 ★★★
+                // 1. 取得所有可用的關卡 Key (排除魔王城本身)
+                const allKeys = Object.keys(stageData).filter(k => k !== 'demon_castle');
+                
+                // 2. 篩選出「還沒打過」的 Key
+                let availableKeys = allKeys.filter(k => !usedBossKeys.includes(k));
+                
+                // 3. 如果所有 Boss 都打過了（例如 Debug 模式頻繁出 Boss），則重置清單，重新循環
+                if (availableKeys.length === 0) {
+                    usedBossKeys = [];
+                    availableKeys = allKeys;
+                }
+                
+                // 4. 隨機抽一個
+                const randomKey = availableKeys[Math.floor(Math.random() * availableKeys.length)];
+                
+                // 5. 記錄起來
+                usedBossKeys.push(randomKey);
+                
                 activeBossData = stageData[randomKey];
+                // ★★★ 修改結束 ★★★
             }
         } else {
-            // 普通關卡 Boss
             activeBossData = stageData[currentStageId];
         }
 
         // 設定 Overlay 內容
+        document.getElementById('intro-boss-title').innerText = activeBossData.bossTitle || "BOSS";
+        document.getElementById('intro-boss-name').innerText = activeBossData.bossName || "???";
+        document.getElementById('intro-boss-kana').innerText = activeBossData.bossNameKana || "";
         introBossImg.src = activeBossData.bossImg || "https://cdn-icons-png.flaticon.com/512/1998/1998610.png";
         
         if (isFinal) {
@@ -1282,8 +1515,49 @@ document.addEventListener('click', function(e) {
             playBGM(BGM_FILES.boss);
         }
 
+        // 3. 重置動畫狀態 (隱藏所有元素)
+        const banner = document.getElementById('intro-banner');
+        const container = document.getElementById('intro-boss-container');
+        const img = document.getElementById('intro-boss-img');
+        const dialogue = document.getElementById('intro-dialogue');
+        const controls = document.getElementById('intro-controls');
+
+        banner.className = "boss-intro-banner hidden-el";
+        container.className = "boss-display-container hidden-el";
+        img.className = "boss-intro-img"; // 重置 zoom class
+        dialogue.className = "boss-dialogue hidden-el";
+        controls.className = "hidden-el";
+        dialogue.innerHTML = ""; // 清空對白
+
+
         // 顯示 Overlay
         bossOverlay.style.display = 'flex';
+
+        // 4. 開始動畫序列
+        setTimeout(async () => {
+            // Step 1: 標題彈出 + 警報聲
+            playSE('warning');
+            banner.classList.remove('hidden-el');
+            banner.classList.add('anim-pop-in');
+
+            await new Promise(r => setTimeout(r, 800));
+
+            // Step 2: Boss 圖片 Zoom Out 進場 + 顯示名字
+            container.classList.remove('hidden-el');
+            img.classList.add('anim-boss-entry'); // 圖片縮放動畫
+
+            await new Promise(r => setTimeout(r, 1500)); // 等圖片定格
+
+            // Step 3: 顯示對話框並打字
+            dialogue.classList.remove('hidden-el');
+            const introText = activeBossData.dialogueIntro || "......";
+            await typeWriter(introText, 'intro-dialogue', 30); // 打字速度
+
+            // Step 4: 顯示按鈕
+            controls.classList.remove('hidden-el');
+            controls.classList.add('visible-el');
+
+        }, 100);
     }
 
     function startActualBossBattle() {
@@ -1293,6 +1567,25 @@ document.addEventListener('click', function(e) {
         isBossBattle = true;
 
         bossQuestionCount = 0; // 重置出題數
+
+        // 準備 Boss 題庫池
+        currentBossQuestionPool = []; // 清空
+
+        if (isFinalBoss) {
+            // Final Boss: 集合所有關卡的 Boss 題目
+            for (const key in stageData) {
+                if (stageData[key].bossWords) {
+                    // 複製題目進池子
+                    currentBossQuestionPool = currentBossQuestionPool.concat(stageData[key].bossWords);
+                }
+            }
+        } else {
+            // 普通 Boss: 只用該關卡 Boss 題目
+            if (activeBossData.bossWords) {
+                // 複製題目進池子 (使用 [...array] 複製，避免影響原資料)
+                currentBossQuestionPool = [...activeBossData.bossWords];
+            }
+        }
         
         // 設定數值
         if (isFinalBoss) {
@@ -1304,10 +1597,17 @@ document.addEventListener('click', function(e) {
             maxBossHP = 100;
             bossTimer = 45;
         }
-        
+
+        document.getElementById('battle-boss-title').innerText = activeBossData.bossTitle || "";
+        document.getElementById('battle-boss-name').innerText = activeBossData.bossName || "";
+        document.getElementById('battle-boss-kana').innerText = activeBossData.bossNameKana || "";
         bossImgElement.src = activeBossData.bossImg || "https://cdn-icons-png.flaticon.com/512/1998/1998610.png";
         bossHpBar.style.width = "100%";
         bossTimerVal.innerText = bossTimer;
+
+        const timerContainer = document.querySelector('.boss-timer');
+        timerContainer.classList.remove('critical');
+        timerContainer.classList.remove('shake-anim');
         
         // 啟動計時
         clearInterval(bossInterval);
@@ -1357,27 +1657,59 @@ document.addEventListener('click', function(e) {
         // 普通 Boss / Mid Boss
         // 第 1-2 題：普通題庫
         if (bossQuestionCount <= 2) {
-            // 如果是魔王城 Mid Boss，activeBossData 是隨機抽的 stage，用它的 words
-            // 如果是普通關卡，activeBossData 就是 currentStage，用 currentQuestions
             if (isDemonCastleMode) {
-                 // Mid boss uses its origin stage's normal words first
                  const originWords = activeBossData.words;
-                 return originWords[Math.floor(Math.random() * originWords.length)];
+                 
+                 // 過濾掉已經在 gameHistory 出現過的題目
+                 // 找出「還沒答過」的該關卡題目
+                 const availableWords = originWords.filter(w => 
+                     !gameHistory.some(history => history.kanji === w.kanji && history.reading === w.reading)
+                 );
+
+                 if (availableWords.length > 0) {
+                     // 從沒答過的題目中隨機抽
+                     return availableWords[Math.floor(Math.random() * availableWords.length)];
+                 } else {
+                     // 如果該關卡所有普通題目都答過了，就只好隨機抽
+                     return originWords[Math.floor(Math.random() * originWords.length)];
+                 }
             } else {
-                 return currentQuestions[currentIndex]; // 繼續順序出題
+                 // 普通模式：繼續沿用 currentIndex 順序，確保不回頭
+                 // 因為 loadQuestion 用 currentIndex，這裡也用 currentIndex
+                 // 注意：handleCorrectAnswer 會 +1，所以這裡直接拿由它繼續
+                 if (currentIndex < currentQuestions.length) {
+                     return currentQuestions[currentIndex];
+                 } else {
+                     // 萬一題目不夠 (例如 Debug 模式題目少)，回傳最後一題或隨機
+                     return currentQuestions[Math.floor(Math.random() * currentQuestions.length)];
+                 }
             }
         } 
-        // 第 3 題以後：Boss 專屬題庫
+        // 第 3 題以後：Boss 專屬題庫 (從池中移除邏輯，保持不變)
         else {
-            const bWords = activeBossData.bossWords;
-            if (bWords && bWords.length > 0) {
-                return bWords[Math.floor(Math.random() * bWords.length)];
-            } else {
-                // Fallback
-                return currentQuestions[Math.floor(Math.random() * currentQuestions.length)];
+            if (currentBossQuestionPool.length === 0) {
+                if (activeBossData.bossWords) currentBossQuestionPool = [...activeBossData.bossWords];
+                if (currentBossQuestionPool.length === 0) return currentQuestions[0]; // Fallback
             }
+            const randomIndex = Math.floor(Math.random() * currentBossQuestionPool.length);
+            const q = currentBossQuestionPool[randomIndex];
+            currentBossQuestionPool.splice(randomIndex, 1);
+            return q;
         }
+    
+        // 隨機選一個 index
+        const randomIndex = Math.floor(Math.random() * currentBossQuestionPool.length);
+            
+            // 取出題目
+        const q = currentBossQuestionPool[randomIndex];
+            
+            // ★ 關鍵：從池子中移除這題，避免重複 ★
+        currentBossQuestionPool.splice(randomIndex, 1);
+            
+        return q;
+
     }
+
 
     function handleBossVictory() {
         clearInterval(bossInterval);
@@ -1588,7 +1920,7 @@ document.addEventListener('click', function(e) {
     function useHint() {
         if (isFinalBoss) {
             msgArea.style.color = "#e74c3c";
-            msgArea.innerText = "魔王の威圧でヒントが使えない！";
+            msgArea.innerText = "作者の威圧でヒントが使えない！";
             return; // 禁止使用
         }
 
@@ -1803,6 +2135,25 @@ document.addEventListener('click', function(e) {
         nextBtn.style.display = "block";
     }
 
+    function typeWriter(text, elementId, speed = 50) {
+        const element = document.getElementById(elementId);
+        element.innerHTML = "";
+        let i = 0;
+        
+        return new Promise(resolve => {
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    resolve(); // 完成
+                }
+            }
+            type();
+        });
+    }
+
     function manualNext() {
         currentIndex++;
         loadQuestion();
@@ -1871,7 +2222,7 @@ document.addEventListener('click', function(e) {
         return newHint;
     }
     
-    function endGame(isWin) {
+function endGame(isWin) {
         clearInterval(bossInterval);
         document.body.classList.remove('stage-entering');
         
@@ -1881,32 +2232,84 @@ document.addEventListener('click', function(e) {
         const title = document.getElementById('result-title');
         const msg = document.getElementById('result-msg');
         const list = document.getElementById('review-list');
+        
+        // Boss UI Elements
+        const resultArea = document.getElementById('result-boss-area');
         const resultImg = document.getElementById('result-boss-img');
+        const resultTitle = document.getElementById('result-boss-title');
+        const resultName = document.getElementById('result-boss-name');
+        const resultKana = document.getElementById('result-boss-kana');
+        const resultDialogue = document.getElementById('result-dialogue');
+        
+        // Password UI Elements
+        const passContainer = document.getElementById('password-reward-container');
+        const passText = document.getElementById('password-reward-text');
         
         list.innerHTML = "";
-
-        playBGM(BGM_FILES.menu);
+        
+        // ★★★ 重置樣式 (預設為顯示所有資訊) ★★★
+        resultImg.classList.remove('boss-silhouette');
+        resultDialogue.style.display = "block";
+        resultTitle.style.display = "block";           // 重置標題顯示
+        resultName.parentElement.style.display = "block"; // 重置名字顯示
+        passContainer.style.display = "none";
 
         if (isWin) {
             title.innerText = "🎉 エリアクリア！ 🎉";
             title.style.color = "#2ecc71";
             msg.innerText = `見事、${correctCount}問正解で「${stageData[currentStageId].name}」を制覇しました！`;
-            // 如果有 activeBossData (即是有打過 Boss) 且設定了圖片
-            const currentStage = stageData[currentStageId];
-            
-            if (currentStage && currentStage.bossDefeatedImg) {
-                resultImg.src = currentStage.bossDefeatedImg;
-                resultImg.style.display = "block";
+
+            const bossData = activeBossData || stageData[currentStageId];
+
+            if (bossData && bossData.bossDefeatedImg) {
+                resultArea.style.display = "block";
+                resultTitle.innerText = bossData.bossTitle || "";
+                resultName.innerText = bossData.bossName || "";
+                resultKana.innerText = bossData.bossNameKana || "";
+                resultImg.src = bossData.bossDefeatedImg;
+                resultDialogue.innerText = bossData.dialogueWin || "見事だ…！";
             } else {
-                resultImg.style.display = "none";
+                resultArea.style.display = "none";
             }
+
+            const currentStage = stageData[currentStageId];
+            if (currentStage && currentStage.passwordHint) {
+                passText.innerText = currentStage.passwordHint;
+                passContainer.style.display = "block";
+            }
+
         } else {
             title.innerText = "💀 GAME OVER 💀";
             title.style.color = "#e74c3c";
             msg.innerText = `「${stageData[currentStageId].name}」の探索は失敗に終わりました…。`;
-            resultImg.style.display = "none";
+            
+            let displayBoss = activeBossData || stageData[currentStageId];
+
+            if (displayBoss) {
+                resultArea.style.display = "block";
+                resultImg.src = displayBoss.bossImg; 
+
+                // ★★★ 修改邏輯：判斷是否見過 Boss ★★★
+                if (!activeBossData) {
+                    // Case 1: Boss 未出現就輸了
+                    resultImg.classList.add('boss-silhouette'); // 變剪影
+                    
+                    resultDialogue.style.display = "none";      // 隱藏對白
+                    resultTitle.style.display = "none";         // 隱藏稱號
+                    resultName.parentElement.style.display = "none"; // 隱藏名字 (連同上面的假名)
+                } else {
+                    // Case 2: Boss 戰中輸了 (正常顯示)
+                    resultTitle.innerText = displayBoss.bossTitle || "";
+                    resultName.innerText = displayBoss.bossName || "";
+                    resultKana.innerText = displayBoss.bossNameKana || "";
+                    resultDialogue.innerText = displayBoss.dialogueLose || "出直してこい！";
+                }
+            } else {
+                resultArea.style.display = "none";
+            }
         }
 
+        // 生成回顧列表
         gameHistory.forEach((item, idx) => {
             const div = document.createElement('div');
             div.className = 'result-item';
@@ -1928,6 +2331,8 @@ document.addEventListener('click', function(e) {
             `;
             list.appendChild(div);
         });
+        
+        playBGM(BGM_FILES.menu);
     }
 </script>
 </body>
