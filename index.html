@@ -1241,7 +1241,10 @@ document.addEventListener('click', function(e) {
     const BGM_FILES = {
         menu: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/natsuyasuminotanken.mp3", 
         boss: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/norainutonoranekonokousou.mp3",
-        finalBoss: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/odysseia.mp3"
+        finalBoss: "https://github.com/xotarios/N2-kanji-yuusha/raw/refs/heads/main/bgm/odysseia.mp3",
+        win: "https://raw.githubusercontent.com/xotarios/kanji-game-assets/main/bgm/orchestrajingle.mp3",
+        winFinal: "https://raw.githubusercontent.com/xotarios/kanji-game-assets/main/bgm/tanoshiibouken.mp3",
+        lose: "https://raw.githubusercontent.com/xotarios/kanji-game-assets/main/bgm/elegy.mp3"
     };
 
     const SE_FILES = {
@@ -1256,14 +1259,15 @@ document.addEventListener('click', function(e) {
     const bgmPlayer = document.getElementById('bgm-player');
     bgmPlayer.volume = 0.4; // 設定音量 (0.0 - 1.0)
 
-    function playBGM(url) {
+    function playBGM(url, loop = true) {
         if (!url) return;
         
-        // 如果已經在播同一首，就不要重頭播
-        // 注意：有些 CDN URL 可能會變，這裡做簡單判斷
-        if (bgmPlayer.src === url && !bgmPlayer.paused) return;
+        // 如果正在播同一首，且循環狀態一樣，就不重播
+        // (如果不循環的歌，通常是 jingle，即使同一首也要重播，所以加判斷)
+        if (bgmPlayer.src === url && !bgmPlayer.paused && bgmPlayer.loop === loop) return;
 
         bgmPlayer.src = url;
+        bgmPlayer.loop = loop; // 設定是否循環
         bgmPlayer.play().catch(e => console.log("BGM Autoplay blocked:", e));
     }
 
@@ -2510,7 +2514,16 @@ function endGame(isWin) {
             list.appendChild(div);
         });
         
-        playBGM(BGM_FILES.menu);
+        if (isWin) {
+            // 判斷是否為魔王城 (Final Boss)
+            if (currentStageId === 'demon_castle') {
+                playBGM(BGM_FILES.winFinal, false); // Final Win
+            } else {
+                playBGM(BGM_FILES.win, false);      // Stage Win
+            }
+        } else {
+            playBGM(BGM_FILES.lose, false);         // Lose
+        }
     }
 </script>
 </body>
