@@ -1363,28 +1363,94 @@ document.addEventListener('click', function(e) {
     }
 
     function backToTitle() {
-        // 1. 隱藏 Stage Select
+        // 1. 定義影片連結
+        const INTRO_VIDEO_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/images/n2yuusha_moving.mp4"; // 原本的 Start 影片
+        const OUTRO_VIDEO_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/images/n2yuusha_moving2.mp4"; // ★★★ 新的：回程影片 ★★★
+
+        // 2. 清理現場 (隱藏遊戲與選單，停止音樂)
         stageScreen.style.display = 'none';
+        resultScreen.style.display = 'none';
+        gameScreen.style.display = 'none';
+        document.body.classList.remove('stage-entering');
         
-        // 2. 取得首頁相關元素
+        const bgm = document.getElementById('bgm-player');
+        bgm.pause();
+        bgm.currentTime = 0;
+
+        // 3. 準備 Loading 畫面 (逆轉模式)
+        const loadingScreen = document.getElementById('loading-screen');
+        const barFill = document.querySelector('.progress-bar-fill');
+        const loadText = document.querySelector('.loading-text');
+
+        loadingScreen.style.display = 'flex';
+        loadText.innerText = "元の場所へ戻っています...";
+        
+        // 瞬間設定為 100%
+        barFill.style.transition = 'none';
+        barFill.style.width = '100%';
+
+        void loadingScreen.offsetWidth; // 強制重繪
+
+        // 執行倒退動畫 (1秒內變 0%)
+        barFill.style.transition = 'width 1s linear';
+        barFill.style.width = '0%';
+
+        // 4. 準備 Start Screen (但先暫時隱藏背景圖)
         const startScreen = document.getElementById('start-screen');
         const content = document.querySelector('#start-screen .result-content');
         const video = document.getElementById('intro-video');
-        const bgm = document.getElementById('bgm-player');
 
-        // 3. 重置首頁狀態 (還原 Intro 動畫前的樣子)
-        startScreen.style.display = 'flex';       // 顯示首頁
-        startScreen.classList.remove('fading-out'); // 移除變暗濾鏡
-        content.style.display = 'block';          // 重新顯示標題與按鈕
+        // ★★★ 關鍵修改：暫時覆蓋 CSS 背景，設為純黑 ★★★
+        // 這樣在影片出來前，絕對不會看到原本的靜態圖
+        startScreen.style.background = '#000';
         
-        // 4. 重置影片
-        video.style.display = 'none';             // 隱藏影片
-        video.pause();
-        video.currentTime = 0;
+        startScreen.style.display = 'flex';
+        startScreen.classList.remove('fading-out');
+        content.style.display = 'none'; // 隱藏按鈕與標題
 
-        // 5. 停止 BGM (回到初始靜音狀態)
-        bgm.pause();
-        bgm.currentTime = 0;
+        // 設定影片為 Outro
+        video.style.display = 'block';
+        video.src = OUTRO_VIDEO_URL;
+        video.currentTime = 1.5;
+
+        // 5. 等待 Loading 動畫 (1秒) 後播放影片
+        setTimeout(() => {
+            
+            // 嘗試播放影片
+            video.play().then(() => {
+                // ★★★ 關鍵：影片真正開始播了，才把遮罩拿掉 ★★★
+                loadingScreen.style.display = 'none';
+            }).catch(e => {
+                console.error("Video play failed:", e);
+                // 萬一影片播不到，直接跳去結果
+                showStartContent();
+                loadingScreen.style.display = 'none';
+            });
+
+            // ★★★ 關鍵：只依賴 onended，確保影片播完 ★★★
+            video.onended = () => {
+                showStartContent();
+            };
+
+            function showStartContent() {
+                // 停止並隱藏影片
+                video.pause();
+                video.style.display = 'none';   
+                
+                // ★★★ 關鍵：移除 JS 加上的黑色背景，讓 CSS 的圖片背景恢復顯示 ★★★
+                startScreen.style.background = ''; 
+                
+                // 顯示標題與按鈕
+                content.style.display = 'block'; 
+                
+                // 將影片換回原本的 Intro，供下次使用
+                video.src = INTRO_VIDEO_URL;
+                
+                // 重置 Loading 文字
+                loadText.innerText = "漢字の町へ移動中...";
+            }
+
+        }, 1000); 
     }
 
     function renderStageButtons() {
@@ -2113,7 +2179,7 @@ document.addEventListener('click', function(e) {
             hintLevel = 1;
             mistakeCount = 1;
             hintDisp.innerText = q.hint1;
-            hintBtn.innerHTML = `ヒント2（ランダムかな表示） <span class="hint-cost">-5 HP</span>`;
+            hintBtn.innerHTML = `ヒント2（答え一部表示） <span class="hint-cost">-5 HP</span>`;
         } else if (hintLevel === 1) {
             updateHP(-5);
             hintLevel = 2;
@@ -2185,7 +2251,7 @@ document.addEventListener('click', function(e) {
                 hintDisp.innerHTML = `正解：${correctPrimary}`;
                 hintDisp.classList.add("hint-answer");
                 msgArea.style.color = "#e74c3c";
-                msgArea.innerText = `不正解！ダメージを受けた！」`;
+                msgArea.innerText = `不正解！ダメージを受けた！`;
                 // 扣血，然後當作 MistakeCount 3 (直接輸掉這題)
                 handleWrongAnswer(q, userVal, false, true); // true = force fail
             } else {
@@ -2439,7 +2505,8 @@ function endGame(isWin) {
         if (isWin) {
             title.innerText = "🎉 エリアクリア！ 🎉";
             title.style.color = "#2ecc71";
-            msg.innerText = `見事、${correctCount}問正解で「${stageData[currentStageId].name}」を制覇しました！`;
+            msg.innerText = `見事、「${stageData[currentStageId].name}」を制覇しました！`;
+            //msg.innerText = `見事、${correctCount}問正解で「${stageData[currentStageId].name}」を制覇しました！`;//
 
             const bossData = activeBossData || stageData[currentStageId];
 
