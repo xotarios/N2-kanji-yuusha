@@ -229,7 +229,7 @@
       { "kanji": "為替", "reading": "かわせ", "hint1": "●●●", "meaning": "匯率", "sentence": "<span class='highlight-word'>為替</span>レートの変動を注視する。", "trans": "望實匯率變動。" },
       { "kanji": "貨物船", "reading": "かもつせん", "hint1": "●●●●●", "meaning": "貨船", "sentence": "<span class='highlight-word'>貨物船</span>で製品を輸出する。", "trans": "用貨船出口產品。" },
       { "kanji": "株式会社", "reading": "かぶしきがいしゃ", "hint1": "●●●●●●●●", "meaning": "股份有限公司", "sentence": "<span class='highlight-word'>株式会社</span>を設立する。", "trans": "設立股份有限公司。" },
-      { "kanji": "書式設定", "reading": "しょしきせってい", "hint1": "●●●●●●●", "meaning": "格式設定", "sentence": "書類の<span class='highlight-word'>書式設定</span>を統一する。", "trans": "統一文件嘅格式設定。" }
+      { "kanji": "書式設定", "reading": "しょしきせってい", "hint1": "●●●●●●●●", "meaning": "格式設定", "sentence": "書類の<span class='highlight-word'>書式設定</span>を統一する。", "trans": "統一文件嘅格式設定。" }
     ]
   },
   "society": {
