@@ -1,6 +1,6 @@
 # N2漢字勇者
 
-## 日本語
+## 【日本語】
 
 https://xotarios.github.io/N2-kanji-yuusha/  
 
@@ -23,6 +23,13 @@ https://xotarios.github.io/N2-kanji-yuusha/
 * 正解：+5 HP（回復）  
 * 不正解：-5 HP（ミス回数に応じてヒント表示）  
 3回間違えると -15 HP となり、強制的に次の問題へ進みます（パス）。  
+
+## 主人公レベル
+これはあなた自身のレベルです（ゲーム内には表示されません）。負けても挫けないでください。挑戦し続けることで、経験値を獲得できます。  
+
+## 主人公の経験値
+これもあなた自身の経験値です（ゲーム内には表示されません）。戦えば戦うほど蓄積され、気づかないうちに自分自身のレベルアップに繋がります。  
+普通のRPGゲームと同じく、レベルが高ければ高いほどステージをクリアしやすいです。  
 
 ## ヒント機能
 * 1回目 (-5 HP): かな数を表示（例：「忙しい」の場合は「●●●しい」）  
@@ -57,7 +64,7 @@ https://xotarios.github.io/N2-kanji-yuusha/
 作者：Xotarios (ヴェオぼうや) - https://x.com/Xotarios  
 協力AI：Gemini 3 Pro、Midjourney 7、豆包  
 
-## 廣東話
+## 【廣東話】
 
 https://xotarios.github.io/N2-kanji-yuusha/  
 
@@ -80,6 +87,13 @@ https://xotarios.github.io/N2-kanji-yuusha/
 * 答啱：+5 HP (補血)。  
 * 答錯：-5 HP (會扣血，同時會出提示)。  
 錯 3 次會再扣血並強制 Pass 去下一題。  
+
+## 主角Level
+即係你自己嘅日文等級（遊戲入面顯示唔到㗎）。打輸咗唔好氣餒！每次挑戰你都會獲得經驗值。  
+
+## 主角經驗值
+即係你自己腦入面嘅經驗值（同樣顯示唔到）。打得越多，經驗值就儲得越多，不知不覺間你就會發現自己Level Up咗！  
+同普通 RPG 遊戲一樣，Level 越高就越易過關。  
 
 ## 提示 (Hint):
 * 撳第 1 次 (-5 HP)：顯示音節數量（例如：「忙しい」會出「●●●しい」）。  
@@ -113,7 +127,7 @@ https://xotarios.github.io/N2-kanji-yuusha/
 作者：Xotarios (翊天星少年) - https://x.com/Xotarios  
 協力AI：Gemini 3 Pro、Midjourney 7、豆包  
 
-## English
+## 【English】
 
 https://xotarios.github.io/N2-kanji-yuusha/  
 
@@ -135,6 +149,13 @@ Players explore various areas and defeat kanji questions by entering the correct
 * Correct Answer: +5 HP (Recovery)  
 * Incorrect Answer: -5 HP (Hints appear based on the number of mistakes)  
 3 Mistakes: -15 HP penalty, and the game forcibly moves to the next question (Pass).  
+
+## Hero Level
+This represents your own personal level (not displayed in-game). Don't be discouraged if you lose! By continuing to challenge yourself, you will gain experience points.  
+
+## Experience Points (EXP)
+This refers to your own actual experience (also not displayed in-game). The more you battle, the more it accumulates, leading to a personal level-up before you even realize it.  
+Just like in a standard RPG, the higher your level, the easier it becomes to clear the stages!  
 
 ## Hint Function
 * 1st Hint (-5 HP): Displays the number of characters (e.g., for "忙しい", it shows "●●●しい").  
