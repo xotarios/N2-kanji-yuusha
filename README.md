@@ -9,24 +9,24 @@ https://xotarios.github.io/N2-kanji-yuusha/
 プレイヤーは様々なエリアを探索し、漢字問題を正しい「読み方」で倒していきます。  
 
 ## 特徴
-臨場感のあるRPG演出：エリアごとの背景変化、BGM。  
-送り仮名対応：単語だけでなく、文脈に合わせた正しい送り仮名を含めた入力が必要。  
-ボスバトル：各ステージの最後には強力なボスが登場。制限時間内に倒さなければなりません。  
+* 臨場感のあるRPG演出：エリアごとの背景変化、BGM。  
+* 送り仮名対応：単語だけでなく、文脈に合わせた正しい送り仮名を含めた入力が必要。  
+* ボスバトル：各ステージの最後には強力なボスが登場。制限時間内に倒さなければなりません。  
 
 ## 遊び方
-ステージ選択：「企業本部」「住宅街」など、好きなエリアを選んで冒険を始めます。  
-問題に答える：画面に表示された見出しの漢字の読み方を**平仮名（送り仮名含む）**で入力してください。
+* ステージ選択：「企業本部」「住宅街」など、好きなエリアを選んで冒険を始めます。  
+* 問題に答える：画面に表示された **見出しの漢字** の読み方を平仮名（送り仮名含む）で入力してください。
 例：「忙しい」→「いそがしい」　「真ん中」→「まんなか」
 
 ## HPシステム
-初期HP：120  
-正解：+5 HP（回復）  
-不正解：-5 HP（ミス回数に応じてヒント表示）  
+* 初期HP：120  
+* 正解：+5 HP（回復）  
+* 不正解：-5 HP（ミス回数に応じてヒント表示）  
 3回間違えると -15 HP となり、強制的に次の問題へ進みます（パス）。  
 
 ## ヒント機能
-1回目 (-5 HP): かな数を表示（例：「忙しい」の場合は「●●●しい」）  
-2回目 (-5 HP): 一部の答えをランダムに表示（例：「忙しい」の場合は「い●●しい」、「●そ●しい」または「●●がしい」が表示させる）  
+* 1回目 (-5 HP): かな数を表示（例：「忙しい」の場合は「●●●しい」）  
+* 2回目 (-5 HP): 一部の答えをランダムに表示（例：「忙しい」の場合は「い●●しい」、「●そ●しい」または「●●がしい」が表示させる）  
 ※「終焉の城」のラスボス戦ではヒントは使用できません。  
 
 ## 操作方法（入力について）
@@ -66,24 +66,24 @@ https://xotarios.github.io/N2-kanji-yuusha/
 玩家要去唔同嘅地圖（Stage）探索，利用「正確嘅讀音」打倒唔同題目，目標係制霸所有地圖！  
 
 ## 遊戲特色
-RPG 氣氛：每個關卡都有唔同背景同 BGM。  
-嚴謹判定：唔止要識讀個漢字，連「送り仮名」（送假名）都要打啱先算贏。  
-打大佬 (Boss)：每個場景最後都有 Boss 戰，要喺限時之內答啱題目先過到關。  
+* RPG 氣氛：每個關卡都有唔同背景同 BGM。  
+* 嚴謹判定：唔止要識讀個漢字，連「送り仮名」（送假名）都要打啱先算贏。  
+* 打大佬 (Boss)：每個場景最後都有 Boss 戰，要喺限時之內答啱題目先過到關。  
 
 ## 點樣玩
-揀地圖: 開始畫面揀你想挑戰嘅地方，例如「企業總部」、「住宅街」等。  
-答問題: 畫面會出現一個好大隻字嘅含漢字詞語，你要以完整平假名（包含送假名）輸入佢嘅讀音。  
-例子：見到「忙しい」要打「いそがしい」；見到「真ん中」要打「まんなか」。  
+* 揀地圖: 開始畫面揀你想挑戰嘅地方，例如「企業總部」、「住宅街」等。  
+* 答問題: 畫面會出現一個 **含漢字詞語嘅標題**，你要以完整平假名（包含送假名）輸入佢嘅讀音。
+* 例子：見到「忙しい」要打「いそがしい」；見到「真ん中」要打「まんなか」。  
 
 ## HP 機制
-開始有 120 HP。  
-答啱：+5 HP (補血)。  
-答錯：-5 HP (會扣血，同時會出提示)。  
+* 開始有 120 HP。  
+* 答啱：+5 HP (補血)。  
+* 答錯：-5 HP (會扣血，同時會出提示)。  
 錯 3 次會再扣血並強制 Pass 去下一題。  
 
 ## 提示 (Hint):
-撳第 1 次 (-5 HP)：顯示音節數量（例如：「忙しい」會出「●●●しい」）。  
-撳第 2 次 (-5 HP)：隨機顯示部分答案（例：「忙しい」會出「い●●しい」、「●そ●しい」或者「●●がしい」）。  
+* 撳第 1 次 (-5 HP)：顯示音節數量（例如：「忙しい」會出「●●●しい」）。  
+* 撳第 2 次 (-5 HP)：隨機顯示部分答案（例：「忙しい」會出「い●●しい」、「●そ●しい」或者「●●がしい」）。  
 注意：打 Final Boss 嗰陣無得用提示！  
 
 ## 操作方法 (打字)
@@ -121,24 +121,24 @@ https://xotarios.github.io/N2-kanji-yuusha/
 Players explore various areas and defeat kanji questions by entering the correct readings.  
 
 ## Features
-Immersive RPG Production: Features background changes for each area and background music (BGM).  
-Okurigana Support: Inputs must include the correct okurigana (kana suffixes) appropriate for the context, not just the kanji itself.  
-Boss Battles: A powerful boss awaits at the end of each stage. You must defeat them within the time limit.  
+* Immersive RPG Production: Features background changes for each area and background music (BGM).  
+* Okurigana Support: Inputs must include the correct okurigana (kana suffixes) appropriate for the context, not just the kanji itself.  
+* Boss Battles: A powerful boss awaits at the end of each stage. You must defeat them within the time limit.  
 
 ## How to Play
-Select a Stage: Choose an area, such as "Corporate HQ" or "Residential Area" to begin your adventure.  
-Answer Questions: Enter the reading of the displayed Kanji (the one in the biggest font size) in Hiragana (including okurigana).  
-Example: "忙しい" → "いそがしい", "真ん中" → "まんなか"  
+* Select a Stage: Choose an area, such as "Corporate HQ" or "Residential Area" to begin your adventure.  
+* nswer Questions: Enter the reading of the **displayed Kanji (the one in the biggest font size)** in Hiragana (including okurigana).  
+* Example: "忙しい" → "いそがしい", "真ん中" → "まんなか"  
 
 ## HP System
-Initial HP: 120  
-Correct Answer: +5 HP (Recovery)  
-Incorrect Answer: -5 HP (Hints appear based on the number of mistakes)  
+* Initial HP: 120  
+* Correct Answer: +5 HP (Recovery)  
+* Incorrect Answer: -5 HP (Hints appear based on the number of mistakes)  
 3 Mistakes: -15 HP penalty, and the game forcibly moves to the next question (Pass).  
 
 ## Hint Function
-1st Hint (-5 HP): Displays the number of characters (e.g., for "忙しい", it shows "●●●しい").  
-2nd Hint (-5 HP): Randomly reveals parts of the answer (e.g., for "忙しい", it might show "い●●しい", "●そ●しい", or "●●がしい").  
+* 1st Hint (-5 HP): Displays the number of characters (e.g., for "忙しい", it shows "●●●しい").  
+* 2nd Hint (-5 HP): Randomly reveals parts of the answer (e.g., for "忙しい", it might show "い●●しい", "●そ●しい", or "●●がしい").  
 Note: Hints cannot be used during the Final Boss battle in the "Castle of Demise (終焉の城)".  
 
 ## Controls (Input)
