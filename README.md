@@ -42,7 +42,7 @@ https://xotarios.github.io/N2-kanji-yuusha/
 
 ## 通常ステージ、ボス戦
 通常ステージでは、制限時間はありません。20問正解するとボスが出現します。  
-制限時間（45秒）以内に、ボスが出題する5問の問題を正解すると勝利（ステージクリア）し、「終焉の城」の入城暗号を1文字手に入れます。  
+ボス戦では、制限時間（45秒）以内に、ボスが出題する5問の問題を正解すると勝利（ステージクリア）し、「終焉の城」の入城暗号を1文字手に入れます。  
 （獲得した入場暗号はゲーム内に保存しないため、自分でスクショして保存するのをおすすめです。）  
 ボスのHPが0になる前に時間が切れたり、自分のHPが0になってしまったりするとゲームオーバーです。  
 
@@ -106,7 +106,7 @@ https://xotarios.github.io/N2-kanji-yuusha/
 
 ## 普通地圖、Boss 戰系統
 普通地圖冇限時。答啱 20 題之後，Boss 就會殺出嚟。  
-喺 45 秒內答啱 Boss 出嘅 5 條題目就為之贏，並且會獲得「終焉の城」嘅入城暗號。  
+Boss 戰期間，喺 45 秒內答啱 Boss 出嘅 5 條題目就為之贏，並且會獲得「終焉の城」嘅入城暗號。  
 （你所獲得嘅「終焉の城」入城暗號唔會記錄喺隻 game 入面，所以最好自己 cap 圖記低。）  
 
 ## 終焉の城、最終 Boss 戰系統
@@ -167,7 +167,7 @@ The game features a built-in "Virtual Keyboard" that automatically converts Roma
 When playing on a smartphone, we recommend using the "Virtual Keyboard" to prevent interference from the system keyboard and predictive text.  
 
 ## Normal Stages & Boss Battles
-There is no time limit during normal stages. A boss appears after you answer 20 questions correctly.  
+There is no time limit during normal stages. However, a boss appears after you answer 20 questions correctly.  
 Victory: If you answer the boss's 5 questions correctly within the time limit (45 seconds), you win (Stage Clear) and obtain one character of the entry password for the "Castle of Demise".  
 (Note: Obtained passwords will not be saved within the game, so I recommend taking a screenshot to save them yourself.)  
 Game Over: You lose if the time runs out before the Boss's HP reaches 0, or if your own HP drops to 0.  
