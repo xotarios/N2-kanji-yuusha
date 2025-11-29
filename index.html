@@ -2096,7 +2096,7 @@ document.addEventListener('click', function(e) {
             targetCount = isDebugMode ? 3 : 20;
         }
         totalDisp.innerText = targetCount;
-        kanjiText.innerHTML = currentQ.kanji.replace(/（(.*?)）/g, '<span class="kanji-note">（$1）</span>');
+        kanjiText.innerHTML = currentQ.kanji.replace(/\((.*?)\)/g, '<span class="kanji-note">($1)</span>');
         meaningText.innerText = "【広東語訳】" + displayQ.meaning;
         sentenceText.innerHTML = "【例句】" + displayQ.sentence;
         transText.innerText = displayQ.trans;
