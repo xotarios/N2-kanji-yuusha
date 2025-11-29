@@ -173,7 +173,27 @@
       { "kanji": "重なる", "reading": "かさなる", "hint1": "●●なる", "meaning": "重疊", "sentence": "会議の日程が<span class='highlight-word'>重なる</span>。", "trans": "會議日程撞期。" },
       { "kanji": "依頼", "reading": "いらい", "hint1": "●●●", "meaning": "委託", "sentence": "外部に調査を<span class='highlight-word'>依頼</span>する。", "trans": "委託外部調查。" },
       { "kanji": "表す", "reading": "あらわす", "hint1": "●●●す", "meaning": "表示", "sentence": "数字で成果を<span class='highlight-word'>表す</span>。", "trans": "用數字表示成果。" },
-      { "kanji": "挨拶", "reading": "あいさつ", "hint1": "●●●●", "meaning": "打招呼", "sentence": "取引先へ年末の<span class='highlight-word'>挨拶</span>に行く。", "trans": "去客戶度進行年尾問候。" }
+      { "kanji": "挨拶", "reading": "あいさつ", "hint1": "●●●●", "meaning": "打招呼", "sentence": "取引先へ年末の<span class='highlight-word'>挨拶</span>に行く。", "trans": "去客戶度進行年尾問候。" },
+
+      { "kanji": "納得", "reading": "なっとく", "hint1": "●●●●", "meaning": "接受、信服", "sentence": "上司を<span class='highlight-word'>納得</span>させる説明。", "trans": "令上司信服嘅説明。" },
+      { "kanji": "憧れる", "reading": "あこがれる", "hint1": "●●●れる", "meaning": "憧憬、嚮往", "sentence": "<span class='highlight-word'>憧れる</span>先輩のようなリーダーになる。", "trans": "成為好似自己憧憬嘅前輩噉樣嘅領袖。" },
+      { "kanji": "卑怯", "reading": "ひきょう", "hint1": "●●●●", "meaning": "卑鄙、揦鮓", "sentence": "<span class='highlight-word'>卑怯</span>な手段で契約を取るな。", "trans": "唔好用啲揦鮓手段攞合約。" },
+      { "kanji": "羨ましい", "reading": "うらやましい", "hint1": "●●●ましい", "meaning": "羨慕", "sentence": "同期の昇進が<span class='highlight-word'>羨ましい</span>。", "trans": "羨慕同期入嚟嘅人升職。" },
+      { "kanji": "詳しい", "reading": "くわしい", "hint1": "●●しい", "meaning": "詳細、熟悉", "sentence": "この分野に<span class='highlight-word'>詳しい</span>担当者。", "trans": "熟悉呢個領域嘅負責人。" },
+      { "kanji": "至急", "reading": "しきゅう", "hint1": "●●●●", "meaning": "至急、趕急", "sentence": "<span class='highlight-word'>至急</span>、報告書を提出せよ。", "trans": "請趕緊提交報告書。" },
+      { "kanji": "総売上", "reading": "そううりあげ", "hint1": "●●●●●●", "meaning": "總營業額", "sentence": "今期の<span class='highlight-word'>総売上</span>が目標に届く。", "trans": "今期總營業額達標。" },
+      { "kanji": "短所", "reading": "たんしょ", "hint1": "●●●●", "meaning": "短處、弱點", "sentence": "製品の<span class='highlight-word'>短所</span>を改善する。", "trans": "改善產品嘅短處。" },
+      { "kanji": "有効", "reading": "ゆうこう", "hint1": "●●●●", "meaning": "有效", "sentence": "契約期間は一年間<span class='highlight-word'>有効</span>だ。", "trans": "合約期一年內有效。" },
+      { "kanji": "営業", "reading": "えいぎょう", "hint1": "●●●●●", "meaning": "營業", "sentence": "新規開拓の<span class='highlight-word'>営業</span>に回る。", "trans": "去跑新客。" },
+      { "kanji": "休暇", "reading": "きゅうか", "hint1": "●●●●", "meaning": "休假", "sentence": "有給<span class='highlight-word'>休暇</span>を取得して休む。", "trans": "攞有薪假唞下。" },
+      { "kanji": "極めて", "reading": "きわめて", "hint1": "●●めて", "meaning": "極之", "sentence": "<span class='highlight-word'>極めて</span>重要な会議がある。", "trans": "有個極之重要嘅會議。" },
+      { "kanji": "金融", "reading": "きんゆう", "hint1": "●●●●", "meaning": "金融", "sentence": "世界の<span class='highlight-word'>金融</span>市場を分析する。", "trans": "分析世界金融市場。" },
+      { "kanji": "急かす", "reading": "せかす", "hint1": "●かす", "meaning": "催促", "sentence": "納期を<span class='highlight-word'>急かす</span>電話が来る。", "trans": "電話打嚟催交貨。" },
+      { "kanji": "自営業", "reading": "じえいぎょう", "hint1": "●●●●●●", "meaning": "自僱人士", "sentence": "脱サラして<span class='highlight-word'>自営業</span>を始める。", "trans": "辭職做自僱人士。" },
+      { "kanji": "超一流", "reading": "ちょういちりゅう", "hint1": "●●●●●●●●", "meaning": "超一流", "sentence": "<span class='highlight-word'>超一流</span>のビジネスマンを目指す。", "trans": "目標係超一流嘅生意人。" },
+      { "kanji": "能率", "reading": "のうりつ", "hint1": "●●●●", "meaning": "效率", "sentence": "仕事の<span class='highlight-word'>能率</span>を上げる工夫。", "trans": "提升工作效率嘅計仔。" },
+      { "kanji": "予算案", "reading": "よさんあん", "hint1": "●●●●●", "meaning": "預算案", "sentence": "来年度の<span class='highlight-word'>予算案</span>を作成する。", "trans": "製作年度預算案。" },
+      { "kanji": "利息", "reading": "りそく", "hint1": "●●●", "meaning": "利息", "sentence": "銀行から<span class='highlight-word'>利息</span>を受け取る。", "trans": "由銀行收利息。" }
     ],
     "bossWords": [
       { "kanji": "終身雇用","reading": "しゅうしんこよう","hint1": "●●●●●●●●","meaning": "終身僱用","sentence": "<span class='highlight-word'>終身雇用</span>制度が崩れつつある。","trans": "終身僱用制度開始崩壞。"},
@@ -210,7 +230,8 @@
       { "kanji": "一生懸命", "reading": "いっしょうけんめい", "hint1": "●●●●●●●●●", "meaning": "拼命、努力", "sentence": "<span class='highlight-word'>一生懸命</span>、会社に尽くす。", "trans": "拚命為公司盡力。" },
       { "kanji": "為替", "reading": "かわせ", "hint1": "●●●", "meaning": "匯率", "sentence": "<span class='highlight-word'>為替</span>レートの変動を注視する。", "trans": "注視匯率變動。" },
       { "kanji": "貨物船", "reading": "かもつせん", "hint1": "●●●●●", "meaning": "貨船", "sentence": "<span class='highlight-word'>貨物船</span>で製品を輸出する。", "trans": "用貨船出口產品。" },
-      { "kanji": "株式会社", "reading": "かぶしきがいしゃ", "hint1": "●●●●●●●●", "meaning": "股份有限公司", "sentence": "<span class='highlight-word'>株式会社</span>を設立する。", "trans": "設立股份有限公司。" }
+      { "kanji": "株式会社", "reading": "かぶしきがいしゃ", "hint1": "●●●●●●●●", "meaning": "股份有限公司", "sentence": "<span class='highlight-word'>株式会社</span>を設立する。", "trans": "設立股份有限公司。" },
+      { "kanji": "書式設定", "reading": "しょしきせってい", "hint1": "●●●●●●●", "meaning": "格式設定", "sentence": "書類の<span class='highlight-word'>書式設定</span>を統一する。", "trans": "統一文件嘅格式設定。" }
     ]
   },
   "society": {
@@ -382,12 +403,29 @@
       { "kanji": "煙突", "reading": "えんとつ", "hint1": "●●●●", "meaning": "煙通", "sentence": "工場の<span class='highlight-word'>煙突</span>から煙が出る。", "trans": "工廠煙通出煙。" },
       { "kanji": "運河", "reading": "うんが", "hint1": "●●●", "meaning": "運河", "sentence": "<span class='highlight-word'>運河</span>沿いの再開発計画。", "trans": "沿住運河嘅重建計劃。" },
       { "kanji": "映る", "reading": "うつる", "hint1": "●●る", "meaning": "映照", "sentence": "防犯カメラに犯人が<span class='highlight-word'>映る</span>。", "trans": "閉路電視影到犯人。" },
-      { "kanji": "至る", "reading": "いたる", "hint1": "●●る", "meaning": "至、到達", "sentence": "解決に<span class='highlight-word'>至る</span>道は遠い。", "trans": "達至解決嘅路途好遙遠。" }
+      { "kanji": "至る", "reading": "いたる", "hint1": "●●る", "meaning": "至、到達", "sentence": "解決に<span class='highlight-word'>至る</span>道は遠い。", "trans": "達至解決嘅路途好遙遠。" },
+
+      { "kanji": "危うい", "reading": "あやうい", "hint1": "●●うい", "meaning": "危危乎、有啲危、爭啲就", "sentence": "当選が<span class='highlight-word'>危うい</span>状況だ。", "trans": "個當選情況危危乎。" },
+      { "kanji": "若々しい", "reading": "わかわかしい", "hint1": "●●●●しい", "meaning": "年輕有活力", "sentence": "<span class='highlight-word'>若々しい</span>リーダーが誕生した。", "trans": "年輕有活力嘅領袖誕生。" },
+      { "kanji": "要求", "reading": "ようきゅう", "hint1": "●●●●●", "meaning": "要求", "sentence": "組合が賃上げを<span class='highlight-word'>要求</span>する。", "trans": "工會要求加人工。" },
+      { "kanji": "視察", "reading": "しさつ", "hint1": "●●●", "meaning": "視察", "sentence": "被災地を<span class='highlight-word'>視察</span>する知事。", "trans": "知事視察災區。" },
+      { "kanji": "抵抗", "reading": "ていこう", "hint1": "●●●●", "meaning": "抵抗", "sentence": "新しい条例案に<span class='highlight-word'>抵抗</span>する。", "trans": "抵抗新條例案。" },
+      { "kanji": "演説", "reading": "えんぜつ", "hint1": "●●●●", "meaning": "演説", "sentence": "駅前で候補者が<span class='highlight-word'>演説</span>する。", "trans": "候選人喺車站前面演説。" },
+      { "kanji": "外交官", "reading": "がいこうかん", "hint1": "●●●●●●", "meaning": "外交官", "sentence": "各国の<span class='highlight-word'>外交官</span>が集まる。", "trans": "各國嘅外交官聚集。" },
+      { "kanji": "お詫び", "reading": "おわび", "hint1": "お●び", "meaning": "道歉", "sentence": "紙面で訂正して<span class='highlight-word'>お詫び</span>する。", "trans": "喺報紙更正並道歉。" },
+      { "kanji": "外務省", "reading": "がいむしょう", "hint1": "●●●●●●", "meaning": "外務省", "sentence": "<span class='highlight-word'>外務省</span>からの公式発表。", "trans": "外務省嘅官方發佈。" },
+      { "kanji": "重役", "reading": "じゅうやく", "hint1": "●●●●●", "meaning": "董事、高層", "sentence": "企業の<span class='highlight-word'>重役</span>が会見を開く。", "trans": "企業高層開記者會。" },
+      { "kanji": "取材", "reading": "しゅざい", "hint1": "●●●●", "meaning": "採訪", "sentence": "事件の現場を<span class='highlight-word'>取材</span>する。", "trans": "採訪案發現場。" },
+      { "kanji": "政治欄", "reading": "せいじらん", "hint1": "●●●●●", "meaning": "政治版", "sentence": "新聞の<span class='highlight-word'>政治欄</span>を読む。", "trans": "睇報紙政治版。" },
+      { "kanji": "名場面", "reading": "めいばめん", "hint1": "●●●●●", "meaning": "經典場面", "sentence": "五輪の<span class='highlight-word'>名場面</span>を振り返る。", "trans": "回顧奧運嘅經典場面。" },
+      { "kanji": "野党", "reading": "やとう", "hint1": "●●●", "meaning": "在野黨", "sentence": "<span class='highlight-word'>野党</span>が政府案に反対する。", "trans": "在野黨反對政府方案。" },
+      { "kanji": "与党", "reading": "よとう", "hint1": "●●●", "meaning": "執政黨", "sentence": "<span class='highlight-word'>与党</span>が過半数を維持した。", "trans": "執政黨維持過半數。" },
+      { "kanji": "法廷", "reading": "ほうてい", "hint1": "●●●●", "meaning": "法庭", "sentence": "<span class='highlight-word'>法廷</span>で証言を行う。", "trans": "喺法庭作證。" }
     ],
     "bossWords": [
       { "kanji": "多様性","reading": "たようせい","hint1": "●●●●●","meaning": "多樣性","sentence": "<span class='highlight-word'>多様性</span>を認める社会。","trans": "承認多樣性嘅社會。"},
       { "kanji": "南半球","reading": "みなみはんきゅう","hint1": "●●●●●●●●","meaning": "南半球","sentence": "オーストラリアは<span class='highlight-word'>南半球</span>にある。","trans": "澳洲喺南半球。"},
-      { "kanji": "官庁街","reading": "かんちょうがい","hint1": "●●●●●●●","meaning": "政府機關區","sentence": "<span class='highlight-word'>官庁街</span>を歩く。","trans": "行過政府機關區。"},
+      { "kanji": "官庁街","reading": "かんちょうがい","hint1": "●●●●●●●","meaning": "政府機構區","sentence": "<span class='highlight-word'>官庁街</span>を歩く。","trans": "行過政府機構區。"},
       { "kanji": "憲法","reading": "けんぽう","hint1": "●●●●","meaning": "憲法","sentence": "<span class='highlight-word'>憲法</span>を改正する。","trans": "修改憲法。"},
       { "kanji": "先進国", "reading": "せんしんこく", "hint1": "●●●●●●", "meaning": "先進國", "sentence": "<span class='highlight-word'>先進国</span>の首脳が集まる会議。", "trans": "先進國首腦聚集嘅會議。" },
       { "kanji": "離婚届", "reading": "りこんとどけ", "hint1": "●●●●●●", "meaning": "離婚書", "sentence": "役所に<span class='highlight-word'>離婚届</span>を提出した。", "trans": "向政府機關交離婚書。" },
@@ -424,7 +462,9 @@
       { "kanji": "外科手術", "reading": "げかしゅじゅつ", "hint1": "●●●●●●●", "meaning": "外科手術", "sentence": "最新の<span class='highlight-word'>外科手術</span>ロボット。", "trans": "最新嘅外科手術機械人。" },
       { "kanji": "駄洒落", "reading": "だじゃれ", "hint1": "●●●●", "meaning": "冷笑話、爛gag", "sentence": "親父の寒い<span class='highlight-word'>駄洒落</span>（親父ギャグ）。", "trans": "老竇嘅爛gag。" },
       { "kanji": "共産党", "reading": "きょうさんとう", "hint1": "●●●●●●●", "meaning": "共產黨", "sentence": "<span class='highlight-word'>共産党</span>が声明を発表。", "trans": "共產黨發表聲明。" },
-      { "kanji": "罹る", "reading": "かかる", "hint1": "●●る", "meaning": "患病", "sentence": "インフルエンザに<span class='highlight-word'>罹る</span>人が急増。", "trans": "患上流感嘅人急增。" }
+      { "kanji": "罹る", "reading": "かかる", "hint1": "●●る", "meaning": "患病", "sentence": "インフルエンザに<span class='highlight-word'>罹る</span>人が急増。", "trans": "患上流感嘅人急增。" },
+      { "kanji": "欧州連合", "reading": "おうしゅうれんごう", "hint1": "●●●●●●●●", "meaning": "歐盟", "sentence": "<span class='highlight-word'>欧州連合</span>との協定を結ぶ。", "trans": "同歐盟締結協定。" },
+      { "kanji": "老朽化", "reading": "ろうきゅうか", "hint1": "●●●●●●", "meaning": "老化", "sentence": "<span class='highlight-word'>老朽化</span>した橋の補修工事。", "trans": "老化橋樑嘅修補工程。" }
     ]
   },
   "life": {
@@ -599,7 +639,25 @@
       { "kanji": "髪の毛", "reading": "かみのけ", "hint1": "●●の●", "meaning": "頭髮", "sentence": "部屋に落ちた<span class='highlight-word'>髪の毛</span>を掃除する。", "trans": "打掃間房地下啲頭髮。" },
       { "kanji": "気体", "reading": "きたい", "hint1": "●●●", "meaning": "氣體", "sentence": "ガスは<span class='highlight-word'>気体</span>だ。", "trans": "燃氣係氣體。" },
       { "kanji": "井戸", "reading": "いど", "hint1": "●●", "meaning": "井", "sentence": "庭に古い<span class='highlight-word'>井戸</span>がある。", "trans": "花園有個古井。" },
-      { "kanji": "余る", "reading": "あまる", "hint1": "●●る", "meaning": "剩低", "sentence": "カレーを作りすぎて<span class='highlight-word'>余る</span>。", "trans": "煮太多咖喱食剩。" }
+      { "kanji": "余る", "reading": "あまる", "hint1": "●●る", "meaning": "剩低", "sentence": "カレーを作りすぎて<span class='highlight-word'>余る</span>。", "trans": "煮太多咖喱食剩。" },
+
+      { "kanji": "慌てる", "reading": "あわてる", "hint1": "●●てる", "meaning": "慌張", "sentence": "寝坊して<span class='highlight-word'>慌てて</span>家を出る。", "trans": "瞓過龍慌失失出門口。" },
+      { "kanji": "焦る", "reading": "あせる", "hint1": "●●る", "meaning": "焦急", "sentence": "バスに遅れそうで<span class='highlight-word'>焦る</span>。", "trans": "就嚟送巴士車尾好以好焦急。" },
+      { "kanji": "騒々しい", "reading": "そうぞうしい", "hint1": "●●●●しい", "meaning": "嘈吵", "sentence": "隣の工事が<span class='highlight-word'>騒々しい</span>。", "trans": "隔籬裝修好嘈。" },
+      { "kanji": "幼い", "reading": "おさない", "hint1": "●●●い", "meaning": "年幼", "sentence": "<span class='highlight-word'>幼い</span>子供が遊んでいる。", "trans": "年幼嘅小朋友喺度玩緊。" },
+      { "kanji": "勿体ない", "reading": "もったいない", "hint1": "●●●●ない", "meaning": "浪費、嘥嘢", "sentence": "食べ残すのは<span class='highlight-word'>勿体ない</span>。", "trans": "食剩嘢好浪費。" },
+      { "kanji": "過剰", "reading": "かじょう", "hint1": "●●●●", "meaning": "過剩", "sentence": "<span class='highlight-word'>過剰</span>な包装を断る。", "trans": "拒絕過度包裝。" },
+      { "kanji": "拍手", "reading": "はくしゅ", "hint1": "●●●●", "meaning": "拍手", "sentence": "町内会で<span class='highlight-word'>拍手</span>が起こる。", "trans": "町內會有人拍手。" },
+      { "kanji": "飾る", "reading": "かざる", "hint1": "●●る", "meaning": "裝飾", "sentence": "玄関に花を<span class='highlight-word'>飾る</span>。", "trans": "裝飾啲花喺玄關度。" },
+      { "kanji": "駆け込む", "reading": "かけこむ", "hint1": "●●●む", "meaning": "衝入", "sentence": "発車ベルが鳴り、列車に<span class='highlight-word'>駆け込む</span>。", "trans": "開車嘅鐘聲響嗰陣衝入架列車度。" },
+      { "kanji": "旧姓", "reading": "きゅうせい", "hint1": "●●●●●", "meaning": "舊姓", "sentence": "<span class='highlight-word'>旧姓</span>で仕事をしている。", "trans": "用舊姓做嘢。" },
+      { "kanji": "苦情", "reading": "くじょう", "hint1": "●●●●", "meaning": "投訴", "sentence": "騒音の<span class='highlight-word'>苦情</span>を言う。", "trans": "投訴噪音。" },
+      { "kanji": "下水道", "reading": "げすいどう", "hint1": "●●●●●", "meaning": "下水道", "sentence": "<span class='highlight-word'>下水道</span>の工事が始まる。", "trans": "下水道嘅工程開始。" },
+      { "kanji": "降水量", "reading": "こうすいりょう", "hint1": "●●●●●●●", "meaning": "降雨量", "sentence": "今年の<span class='highlight-word'>降水量</span>は少ない。", "trans": "今年降雨量少。" },
+      { "kanji": "洗面器", "reading": "せんめんき", "hint1": "●●●●●", "meaning": "面盆", "sentence": "<span class='highlight-word'>洗面器</span>にお湯を張る。", "trans": "喺面盆度裝熱水。" },
+      { "kanji": "託児所", "reading": "たくじしょ", "hint1": "●●●●●", "meaning": "托兒所", "sentence": "駅前の<span class='highlight-word'>託児所</span>に預ける。", "trans": "放喺車站前面間托兒所。" },
+      { "kanji": "四歳児", "reading": "よんさいじ", "hint1": "●●●●●", "meaning": "四歲細路", "sentence": "元気な<span class='highlight-word'>四歳児</span>。", "trans": "精靈嘅四歲細路。" },
+      { "kanji": "保健", "reading": "ほけん", "hint1": "●●●", "meaning": "保健", "sentence": "<span class='highlight-word'>保健</span>所で検診を受ける。", "trans": "喺保健中心接受檢查。" }
     ],
     "bossWords": [
       { "kanji": "一家団欒","reading": "いっかだんらん","hint1": "●●●●●●●","meaning": "一家團聚","sentence": "<span class='highlight-word'>一家団欒</span>の時間を過ごす。","trans": "過一家團聚嘅時間。"},
@@ -643,7 +701,8 @@
       { "kanji": "絨毯", "reading": "じゅうたん", "hint1": "●●●●●", "meaning": "地氈", "sentence": "リビングに新しい<span class='highlight-word'>絨毯</span>を敷く。", "trans": "喺客廳鋪新地氈。" },
       { "kanji": "紙屑", "reading": "かみくず", "hint1": "●●●●", "meaning": "廢紙", "sentence": "ポケットから<span class='highlight-word'>紙屑</span>が出てきた。", "trans": "褲袋有廢紙。" },
       { "kanji": "剃刀", "reading": "かみそり", "hint1": "●●●●", "meaning": "剃刀", "sentence": "髭を<span class='highlight-word'>剃刀</span>で剃る。", "trans": "用剃刀剃鬚。" },
-      { "kanji": "瓦", "reading": "かわら", "hint1": "●●●", "meaning": "瓦片", "sentence": "台風で屋根の<span class='highlight-word'>瓦</span>が飛んだ。", "trans": "颱風吹走咗屋頂啲瓦片。" }
+      { "kanji": "瓦", "reading": "かわら", "hint1": "●●●", "meaning": "瓦片", "sentence": "台風で屋根の<span class='highlight-word'>瓦</span>が飛んだ。", "trans": "颱風吹走咗屋頂啲瓦片。" },
+      { "kanji": "栄える", "reading": "さかえる", "hint1": "●●える", "meaning": "繁榮、興旺", "sentence": "昔から<span class='highlight-word'>栄え</span>ている商店街。", "trans": "自古以嚟就好興旺嘅商店街。" }
     ]
   },
   "gourmet": {
@@ -830,7 +889,19 @@
       { "kanji": "当てる", "reading": "あてる", "hint1": "●てる", "meaning": "估中、命中", "sentence": "隠し味を<span class='highlight-word'>当てる</span>。", "trans": "估中調味祕方。" },
       { "kanji": "圧縮", "reading": "あっしゅく", "hint1": "●●●●●", "meaning": "壓縮", "sentence": "食材を真空<span class='highlight-word'>圧縮</span>する。", "trans": "真空壓縮食材。" },
       { "kanji": "真空", "reading": "しんくう", "hint1": "●●●●", "meaning": "真空", "sentence": "肉を<span class='highlight-word'>真空</span>パックにする。", "trans": "將肉真空包裝。" },
-      { "kanji": "浅い", "reading": "あさい", "hint1": "●●い", "meaning": "淺", "sentence": "漬かりがまだ<span class='highlight-word'>浅い</span>。", "trans": "醃得仲好淺（未入味）。" }
+      { "kanji": "浅い", "reading": "あさい", "hint1": "●●い", "meaning": "淺", "sentence": "漬かりがまだ<span class='highlight-word'>浅い</span>。", "trans": "醃得仲好淺（未入味）。" },
+
+      { "kanji": "挟む", "reading": "はさむ", "hint1": "●●む", "meaning": "夾", "sentence": "パンに具材を<span class='highlight-word'>挟む</span>。", "trans": "麵包夾配料。" },
+      { "kanji": "美味い", "reading": "うまい", "hint1": "●●い", "meaning": "好味", "sentence": "この店の酒は<span class='highlight-word'>美味い</span>。", "trans": "呢間舖啲酒好飲。" },
+      { "kanji": "消耗（慣用音）", "reading": "しょうもう", "hint1": "●●●●●", "meaning": "消耗", "sentence": "在庫を激しく<span class='highlight-word'>消耗</span>する。", "trans": "庫存消耗激烈。" },
+      { "kanji": "満ちる", "reading": "みちる", "hint1": "●ちる", "meaning": "充滿", "sentence": "店内がいい香りに<span class='highlight-word'>満ちる</span>。", "trans": "店內充滿香味。" },
+      { "kanji": "供給", "reading": "きょうきゅう", "hint1": "●●●●●●", "meaning": "供應", "sentence": "新鮮な魚を<span class='highlight-word'>供給</span>する。", "trans": "供應新鮮魚。" },
+      { "kanji": "主産地", "reading": "しゅさんち", "hint1": "●●●●●", "meaning": "主要產地", "sentence": "北海道はジャガイモの<span class='highlight-word'>主産地</span>。", "trans": "北海道係薯仔嘅主要產地。" },
+      { "kanji": "食糧", "reading": "しょくりょう", "hint1": "●●●●●●", "meaning": "糧食", "sentence": "世界の<span class='highlight-word'>食糧</span>問題を考える。", "trans": "思考世界糧食問題。" },
+      { "kanji": "湯沸かし器", "reading": "ゆわかしき", "hint1": "●●かし●", "meaning": "熱水爐", "sentence": "<span class='highlight-word'>湯沸かし器</span>でお湯を出す。", "trans": "開熱水爐出熱水。" },
+      { "kanji": "舌", "reading": "した", "hint1": "●●", "meaning": "脷", "sentence": "熱いスープで<span class='highlight-word'>舌</span>を火傷した。", "trans": "飲熱湯焫親條脷。" },
+      { "kanji": "食道", "reading": "しょくどう", "hint1": "●●●●●", "meaning": "食道", "sentence": "冷たいビールが<span class='highlight-word'>食道</span>を流れる。", "trans": "凍啤酒流過食道。" },
+      { "kanji": "胃", "reading": "い", "hint1": "●", "meaning": "胃", "sentence": "<span class='highlight-word'>胃</span>に優しい料理を注文する。", "trans": "叫啲對個胃好嘅嘢食。" }
     ],
     "bossWords": [
       { "kanji": "調味料","reading": "ちょうみりょう","hint1": "●●●●●●●","meaning": "調味料","sentence": "<span class='highlight-word'>調味料</span>で味を整える。","trans": "用調味料調味。"},
@@ -871,7 +942,8 @@
       { "kanji": "水産物", "reading": "すいさんぶつ", "hint1": "●●●●●●", "meaning": "水產", "sentence": "地元の<span class='highlight-word'>水産物</span>を使う。", "trans": "用當地嘅水產。" },
       { "kanji": "台湾海峡", "reading": "たいわんかいきょう", "hint1": "●●●●●●●●●", "meaning": "台灣海峽", "sentence": "<span class='highlight-word'>台湾海峡</span>で獲れた魚。", "trans": "台灣海峽捉嘅魚。" },
       { "kanji": "漁業", "reading": "ぎょぎょう", "hint1": "●●●●●", "meaning": "漁業", "sentence": "持続可能な<span class='highlight-word'>漁業</span>を支援する。", "trans": "支援可持續漁業。" },
-      { "kanji": "献立", "reading": "こんだて", "hint1": "●●●●", "meaning": "餐單、菜式", "sentence": "今夜の<span class='highlight-word'>献立</span>を考える。", "trans": "諗今晚食乜餸。" }
+      { "kanji": "献立", "reading": "こんだて", "hint1": "●●●●", "meaning": "餐單、菜式", "sentence": "今夜の<span class='highlight-word'>献立</span>を考える。", "trans": "諗今晚食乜餸。" },
+      { "kanji": "水玉模様", "reading": "みずたまもよう", "hint1": "●●●●●●●", "meaning": "波點花紋", "sentence": "<span class='highlight-word'>水玉模様</span>のテーブルクロス。", "trans": "波點花紋嘅檯布。" }
     ]
   },
   "drama": {
@@ -1057,7 +1129,23 @@
       { "kanji": "遅れる", "reading": "おくれる", "hint1": "●●れる", "meaning": "遲到", "sentence": "授業に<span class='highlight-word'>遅れる</span>。", "trans": "上堂遲到。" },
       { "kanji": "絵の具", "reading": "えのぐ", "hint1": "●の●", "meaning": "顏料", "sentence": "美術で<span class='highlight-word'>絵の具</span>を使う。", "trans": "美術堂用顏料。" },
       { "kanji": "余り", "reading": "あまり", "hint1": "●●り", "meaning": "餘數", "sentence": "割り算の<span class='highlight-word'>余り</span>を出す。", "trans": "計出除數嘅餘數。" },
-      { "kanji": "愛情", "reading": "あいじょう", "hint1": "●●●●●", "meaning": "愛情", "sentence": "先生の厳しい<span class='highlight-word'>愛情</span>。", "trans": "老師嚴厲嘅愛。" }
+      { "kanji": "愛情", "reading": "あいじょう", "hint1": "●●●●●", "meaning": "愛情", "sentence": "先生の厳しい<span class='highlight-word'>愛情</span>。", "trans": "老師嚴厲嘅愛。" },
+
+      { "kanji": "朗らか", "reading": "ほがらか", "hint1": "●●らか", "meaning": "開朗", "sentence": "<span class='highlight-word'>朗らか</span>な人はいつも笑顔を絶やさない。", "trans": "開朗嘅人總係笑容滿面。" },
+      { "kanji": "恋しい", "reading": "こいしい", "hint1": "●●しい", "meaning": "懷念、掛住", "sentence": "卒業して学校が<span class='highlight-word'>恋しい</span>。", "trans": "畢業後好掛住學校。" },
+      { "kanji": "呆れる", "reading": "あきれる", "hint1": "●●れる", "meaning": "O嘴、無言", "sentence": "彼の悪ふざけに<span class='highlight-word'>呆れる</span>。", "trans": "對佢啲惡作劇好無言。" },
+      { "kanji": "落ち込む", "reading": "おちこむ", "hint1": "●ち●む", "meaning": "低落", "sentence": "テストが悪くて<span class='highlight-word'>落ち込む</span>。", "trans": "測驗考得差，心情好低落。" },
+      { "kanji": "叶う", "reading": "かなう", "hint1": "●●う", "meaning": "實現", "sentence": "努力して夢が<span class='highlight-word'>叶う</span>。", "trans": "努力令夢想成真。" },
+      { "kanji": "長所", "reading": "ちょうしょ", "hint1": "●●●●●", "meaning": "長處", "sentence": "自分の<span class='highlight-word'>長所</span>を伸ばす。", "trans": "伸展自己嘅長處。" },
+      { "kanji": "克服", "reading": "こくふく", "hint1": "●●●●", "meaning": "克服", "sentence": "苦手科目を<span class='highlight-word'>克服</span>する。", "trans": "克服唔擅長嘅科目。" },
+      { "kanji": "気が散る", "reading": "きがちる", "hint1": "●が●る", "meaning": "心散、分心", "sentence": "騒音で勉強の<span class='highlight-word'>気が散る</span>。", "trans": "啲噪音搞到我溫書分心。" },
+      { "kanji": "間隔", "reading": "かんかく", "hint1": "●●●●", "meaning": "間隔", "sentence": "机の<span class='highlight-word'>間隔</span>を空ける。", "trans": "隔開啲枱。" },
+      { "kanji": "好対照", "reading": "こうたいしょう", "hint1": "●●●●●●●", "meaning": "鮮明對比", "sentence": "性格が<span class='highlight-word'>好対照</span>な二人。", "trans": "性格對比鮮明嘅兩個人。" },
+      { "kanji": "裁縫", "reading": "さいほう", "hint1": "●●●●", "meaning": "縫紉", "sentence": "家庭科で<span class='highlight-word'>裁縫</span>を習う。", "trans": "家政堂學縫紉。" },
+      { "kanji": "操作", "reading": "そうさ", "hint1": "●●●", "meaning": "操作", "sentence": "パソコンの<span class='highlight-word'>操作</span>を覚える。", "trans": "記電腦嘅操作。" },
+      { "kanji": "診る", "reading": "みる", "hint1": "●る", "meaning": "診斷", "sentence": "保健室で先生に<span class='highlight-word'>診</span>てもらう。", "trans": "喺保健室俾老師檢查。" },
+      { "kanji": "無気力", "reading": "むきりょく", "hint1": "●●●●●", "meaning": "無氣力、頹", "sentence": "夏休み明けで<span class='highlight-word'>無気力</span>だ。", "trans": "暑假完咗好頹。" },
+      { "kanji": "利害", "reading": "りがい", "hint1": "●●●", "meaning": "利害", "sentence": "クラスの<span class='highlight-word'>利害</span>が対立する。", "trans": "班上面嘅利害關係對立。" }
     ],
     "bossWords": [
       { "kanji": "妬む","reading": "ねたむ","hint1": "●●む","meaning": "嫉妒","sentence": "仲間の才能を<span class='highlight-word'>妬む</span>。","trans": "嫉妒同伴嘅才能。"},      
@@ -1101,7 +1189,8 @@
       { "kanji": "金槌", "reading": "かなづち", "hint1": "●●●●", "meaning": "鐵鎚、唔識游水嘅人", "sentence": "僕は<span class='highlight-word'>金槌</span>だから泳げない。", "trans": "我係「鐵鎚」嚟，唔識游水。" },
       { "kanji": "演劇鑑賞", "reading": "えんげきかんしょう", "hint1": "●●●●●●●●●", "meaning": "話劇鑑賞", "sentence": "芸術教室で<span class='highlight-word'>演劇鑑賞</span>。", "trans": "喺藝術教室鑑賞話劇。" },
       { "kanji": "敬う", "reading": "うやまう", "hint1": "●●●う", "meaning": "尊敬", "sentence": "恩師を<span class='highlight-word'>敬う</span>。", "trans": "尊敬恩師。" },
-      { "kanji": "所謂", "reading": "いわゆる", "hint1": "●●●●", "meaning": "所謂", "sentence": "彼はいわゆる（<span class='highlight-word'>所謂</span>）秀才だ。", "trans": "佢係所謂嘅秀才。" }
+      { "kanji": "所謂", "reading": "いわゆる", "hint1": "●●●●", "meaning": "所謂", "sentence": "彼はいわゆる（<span class='highlight-word'>所謂</span>）秀才だ。", "trans": "佢係所謂嘅秀才。" },
+      { "kanji": "参考文献", "reading": "さんこうぶんけん", "hint1": "●●●●●●●●", "meaning": "參考文獻", "sentence": "レポートの<span class='highlight-word'>参考文献</span>を書く。", "trans": "寫份Report嘅參考文獻。" }
     ]
   },
 
@@ -1215,7 +1304,7 @@
       { "kanji": "細やか", "reading": "こまやか", "hint1": "●●やか", "meaning": "細緻、深厚", "sentence": "「君の<span class='highlight-word'>細やか</span>な優しさに救われたよ。」", "trans": "「我被你無微不至嘅溫柔拯救咗。」" },
       { "kanji": "納める", "reading": "おさめる", "hint1": "●●める", "meaning": "交、繳納", "sentence": "「部費を<span class='highlight-word'>納め</span>忘れてた！」", "trans": "「我唔記得交學會會費！」" },
       { "kanji": "蒸し暑い", "reading": "むしあつい", "hint1": "●し●●い", "meaning": "悶熱", "sentence": "「今日は湿度が高くて<span class='highlight-word'>蒸し暑い</span>ね。」", "trans": "「今日濕度好高，好焗啊可。」" },
-      { "kanji": "触れ合う", "reading": "ふれあう", "hint1": "●れ●う", "meaning": "接觸", "sentence": "「動物と<span class='highlight-word'>触れ合</span>えるカフェに行こう。」", "trans": "「不如去間可以摸下動物嘅Cafe啦。」" },
+      { "kanji": "触れ合う", "reading": "ふれあう", "hint1": "●れ●う", "meaning": "互相觸碰、親近交流", "sentence": "「動物と<span class='highlight-word'>触れ合</span>えるカフェに行こう。」", "trans": "「不如去間可以摸下動物嘅Cafe啦。」" },
       { "kanji": "匂い", "reading": "におい", "hint1": "●●い", "meaning": "氣味", "sentence": "「食堂からいい<span class='highlight-word'>匂い</span>がする。」", "trans": "「個飯堂傳咗𠹻好香嘅味過嚟。」" },
       { "kanji": "粗い", "reading": "あらい", "hint1": "●●い", "meaning": "粗糙、求其", "sentence": "「作戦がちょっと<span class='highlight-word'>粗い</span>んじゃない？」", "trans": "「個作戰計劃係咪有啲求其呢？」" },
       { "kanji": "肘", "reading": "ひじ", "hint1": "●●", "meaning": "手踭", "sentence": "「<span class='highlight-word'>肘</span>をぶつけて痛いよ。」", "trans": "「我撞親手踭好痛。」" },
@@ -1259,7 +1348,17 @@
       { "kanji": "打つ", "reading": "うつ", "hint1": "●つ", "meaning": "打", "sentence": "「壁に頭を<span class='highlight-word'>打っ</span>ちゃった。」", "trans": "「個頭撼親埲牆。」" },
       { "kanji": "嫌がる", "reading": "いやがる", "hint1": "●●がる", "meaning": "厭惡、不情願", "sentence": "「猫がシャワーを<span class='highlight-word'>嫌がっ</span>てる。」", "trans": "「隻貓好唔鍾意沖涼。」" },
       { "kanji": "従兄弟", "reading": "いとこ", "hint1": "●●●", "meaning": "表/堂兄弟姊妹", "sentence": "「夏休みに<span class='highlight-word'>従兄弟</span>と遊ぶんだ。」", "trans": "「我暑假去同表兄弟玩。」" },
-      { "kanji": "甘やかす", "reading": "あまやかす", "hint1": "●●やかす", "meaning": "縱容", "sentence": "「親は僕を<span class='highlight-word'>甘やかし</span>すぎだよ。」", "trans": "「阿爸阿媽太縱我啦喇。」" }
+      { "kanji": "甘やかす", "reading": "あまやかす", "hint1": "●●やかす", "meaning": "縱容", "sentence": "「親は僕を<span class='highlight-word'>甘やかし</span>すぎだよ。」", "trans": "「阿爸阿媽太縱我啦喇。」" },
+      { "kanji": "親しい", "reading": "したしい", "hint1": "●●●い", "meaning": "親密", "sentence": "「僕たち、けっこう<span class='highlight-word'>親しい</span>よね。」", "trans": "「我哋都幾好朋友（親密）吖。」" },
+
+      { "kanji": "諦める", "reading": "あきらめる", "hint1": "●●●める", "meaning": "放棄", "sentence": "「まだ<span class='highlight-word'>諦める</span>のは早いよ。」", "trans": "「而家放棄仲言之尚早。」" },
+      { "kanji": "堪らない", "reading": "たまらない", "hint1": "●●らない", "meaning": "正到痺、受唔住", "sentence": "「このスイーツ、<span class='highlight-word'>堪らない</span>ね！」", "trans": "「呢個甜品正到痺！」" },
+      { "kanji": "祝う", "reading": "いわう", "hint1": "●●う", "meaning": "慶祝", "sentence": "「みんなで誕生日を<span class='highlight-word'>祝お</span>うよ。」", "trans": "「大家一齊慶祝生日啦。」" },
+      { "kanji": "黙る", "reading": "だまる", "hint1": "●●る", "meaning": "沉默、收聲", "sentence": "「急に<span class='highlight-word'>黙っ</span>てどうしたの？」", "trans": "「做咩突然唔出聲？」" },
+      { "kanji": "固める", "reading": "かためる", "hint1": "●●める", "meaning": "鞏固", "sentence": "「友情をさらに<span class='highlight-word'>固め</span>ようぜ。」", "trans": "「我哋再鞏固下我哋嘅友情啦。」" },
+      { "kanji": "強いる", "reading": "しいる", "hint1": "●いる", "meaning": "強迫", "sentence": "「無理を<span class='highlight-word'>強いる</span>のはよくないよ。」", "trans": "「強人所難係唔好㗎。」" },
+      { "kanji": "湧く", "reading": "わく", "hint1": "●く", "meaning": "湧現", "sentence": "「その話、すごく興味が<span class='highlight-word'>湧く</span>な。」", "trans": "「嗰個話題好令人有興趣。」" },
+      { "kanji": "触れる", "reading": "ふれる", "hint1": "●れる", "meaning": "掂下", "sentence": "「ちょっとそのボタンに<span class='highlight-word'>触れて</span>みて。」", "trans": "「試下掂下嗰粒掣。」" }
     ],
     "bossWords": [
       { "kanji": "犯す", "reading": "おかす", "hint1": "●●す", "meaning": "犯", "sentence": "「彼がそんなミスを<span class='highlight-word'>犯す</span>とは思えない。」", "trans": "「唔信佢會犯啲咁嘅錯。」" },
@@ -1288,7 +1387,7 @@
       { "kanji": "呟く", "reading": "つぶやく", "hint1": "●●●く", "meaning": "嘀咕", "sentence": "「何かブツブツ<span class='highlight-word'>呟い</span>てるね。」", "trans": "「佢吟吟沉沉唔知吟緊啲乜。」" },
       { "kanji": "占う", "reading": "うらなう", "hint1": "●●●う", "meaning": "占卜", "sentence": "「明日の運勢を<span class='highlight-word'>占っ</span>てあげる。」", "trans": "「幫你占卜聽日嘅運程。」" },
       { "kanji": "密か", "reading": "ひそか", "hint1": "●●か", "meaning": "秘密、暗中", "sentence": "「<span class='highlight-word'>密か</span>に計画してるんだ。」", "trans": "「佢哋暗中計劃緊喎。」" },
-      { "kanji": "束ねる", "reading": "たばねる", "hint1": "●●ねる", "meaning": "束起", "sentence": "「髪をゴムで<span class='highlight-word'>束ねる</span>よ。」", "trans": "「我會用橡筋綁起啲頭髮。」" },
+      { "kanji": "束ねる", "reading": "たばねる", "hint1": "●●ねる", "meaning": "紥起、束起", "sentence": "「髪をゴムで<span class='highlight-word'>束ねる</span>よ。」", "trans": "「我會用橡筋紥起啲頭髮。」" },
       { "kanji": "狭める", "reading": "せばめる", "hint1": "●●める", "meaning": "縮窄", "sentence": "「選択肢を<span class='highlight-word'>狭め</span>ない方がいいよ。」", "trans": "「唔好縮窄啲選項比較好。」" },
       { "kanji": "潜む", "reading": "ひそむ", "hint1": "●●む", "meaning": "潛伏", "sentence": "「教室に誰か<span class='highlight-word'>潜ん</span>でるかも。」", "trans": "「班房可能有人潛伏緊。」" },
       { "kanji": "痺れる", "reading": "しびれる", "hint1": "●●れる", "meaning": "麻痺", "sentence": "「正座で足が<span class='highlight-word'>痺れ</span>ちゃった。」", "trans": "「跪坐搞到腳痺。」" },
@@ -1309,7 +1408,10 @@
       { "kanji": "纏める", "reading": "まとめる", "hint1": "●●める", "meaning": "總結、整理", "sentence": "「みんなの意見を<span class='highlight-word'>纏め</span>よう。」", "trans": "「你總結大家嘅意見啦。」" },
       { "kanji": "微笑む", "reading": "ほほえむ", "hint1": "●●●む", "meaning": "微笑", "sentence": "「彼女が僕に<span class='highlight-word'>微笑ん</span>だ！」", "trans": "「個女仔對住我微笑！」" },
       { "kanji": "凸凹", "reading": "でこぼこ", "hint1": "●●●●", "meaning": "凹凸不平", "sentence": "「この道、<span class='highlight-word'>凸凹</span>して歩きにくい。」", "trans": "「呢條路凹凸不平好難行。」" },
-      { "kanji": "備える", "reading": "そなえる", "hint1": "●●える", "meaning": "準備、防備", "sentence": "「テストに<span class='highlight-word'>備え</span>て勉強するよ。」", "trans": "「我要做好測驗嘅準備去溫書。」" }
+      { "kanji": "備える", "reading": "そなえる", "hint1": "●●える", "meaning": "準備、防備", "sentence": "「テストに<span class='highlight-word'>備え</span>て勉強するよ。」", "trans": "「我要做好測驗嘅準備去溫書。」" },
+      { "kanji": "躊躇う", "reading": "ためらう", "hint1": "●●●う", "meaning": "猶豫", "sentence": "「告白するのを<span class='highlight-word'>躊躇っ</span>てるの？」", "trans": "「你猶豫緊表唔表白？」" },
+      { "kanji": "噂", "reading": "うわさ", "hint1": "●●●", "meaning": "傳聞", "sentence": "「あの<span class='highlight-word'>噂</span>、本当だったんだね。」", "trans": "「嗰個傳聞原來係真嘅。」" },
+      { "kanji": "虫の居所", "reading": "むしのいどころ", "hint1": "●●の●●●●", "meaning": "心情(用於慣用句「虫の居所が悪い」)", "sentence": "「今日はあいつ、<span class='highlight-word'>虫の居所</span>が悪いみたい。」", "trans": "「佢今日好似心情好差。」" }
     ]
   },
   "knowledge": {
@@ -1516,7 +1618,27 @@
       { "kanji": "決裂", "reading": "けつれつ", "hint1": "●●●●", "meaning": "決裂", "sentence": "交渉<span class='highlight-word'>決裂</span>の記録。", "trans": "談判破裂嘅紀錄。" },
       { "kanji": "領土", "reading": "りょうど", "hint1": "●●●", "meaning": "領土", "sentence": "<span class='highlight-word'>領土</span>問題の資料。", "trans": "領土問題嘅資料。" },
       { "kanji": "習慣", "reading": "しゅうかん", "hint1": "●●●●●", "meaning": "習慣", "sentence": "読書の<span class='highlight-word'>習慣</span>をつける。", "trans": "養成閱讀習慣。" },
-      { "kanji": "深刻", "reading": "しんこく", "hint1": "●●●●", "meaning": "深刻、嚴重", "sentence": "<span class='highlight-word'>深刻</span>な環境問題についての本。", "trans": "關於嚴重環境問題嘅書。" }
+      { "kanji": "深刻", "reading": "しんこく", "hint1": "●●●●", "meaning": "深刻、嚴重", "sentence": "<span class='highlight-word'>深刻</span>な環境問題についての本。", "trans": "關於嚴重環境問題嘅書。" },
+
+      { "kanji": "悔む", "reading": "くやむ", "hint1": "●●む", "meaning": "後悔", "sentence": "過去の過ちを<span class='highlight-word'>悔む</span>主人公。", "trans": "後悔以往錯誤嘅主角。" },
+      { "kanji": "惨め", "reading": "みじめ", "hint1": "●●め", "meaning": "悲慘", "sentence": "敗北して<span class='highlight-word'>惨め</span>な思いをする。", "trans": "輸咗覺得好慘。" },
+      { "kanji": "気の毒", "reading": "きのどく", "hint1": "●の●●", "meaning": "感到心痛", "sentence": "悲劇の結末が<span class='highlight-word'>気の毒</span>だ。", "trans": "悲劇嘅結局令我好心痛。" },
+      { "kanji": "登録", "reading": "とうろく", "hint1": "●●●●", "meaning": "登錄、註冊", "sentence": "図書カードを<span class='highlight-word'>登録</span>する。", "trans": "登錄圖書證。" },
+      { "kanji": "非公式", "reading": "ひこうしき", "hint1": "●●●●●", "meaning": "非公式", "sentence": "これは<span class='highlight-word'>非公式</span>の記録だ。", "trans": "呢個係非官方紀錄嚟。" },
+      { "kanji": "現段階", "reading": "げんだんかい", "hint1": "●●●●●●", "meaning": "現階段", "sentence": "<span class='highlight-word'>現段階</span>では結論が出ない。", "trans": "現階段未有結論。" },
+      { "kanji": "伝記", "reading": "でんき", "hint1": "●●●", "meaning": "傳記", "sentence": "エジソンの<span class='highlight-word'>伝記</span>を読む。", "trans": "睇愛迪生嘅傳記。" },
+      { "kanji": "飢饉", "reading": "ききん", "hint1": "●●●", "meaning": "饑荒", "sentence": "江戸時代の<span class='highlight-word'>飢饉</span>について。", "trans": "關於江戶時代嘅饑荒。" },
+      { "kanji": "外相", "reading": "がいしょう", "hint1": "●●●●●", "meaning": "外相", "sentence": "各国の<span class='highlight-word'>外相</span>が集まる会議。", "trans": "各國外相聚集嘅會議。" },
+      { "kanji": "引用", "reading": "いんよう", "hint1": "●●●●", "meaning": "引用", "sentence": "有名な詩を<span class='highlight-word'>引用</span>する。", "trans": "引用出名嘅詩。" },
+      { "kanji": "革命", "reading": "かくめい", "hint1": "●●●●", "meaning": "革命", "sentence": "フランス<span class='highlight-word'>革命</span>の歴史。", "trans": "法國大革命嘅歷史。" },
+      { "kanji": "加熱", "reading": "かねつ", "hint1": "●●●", "meaning": "加熱", "sentence": "試験管を<span class='highlight-word'>加熱</span>する実験。", "trans": "加熱試管嘅實驗。" },
+      { "kanji": "血圧計", "reading": "けつあつけい", "hint1": "●●●●●●", "meaning": "血壓計", "sentence": "<span class='highlight-word'>血圧計</span>の原理を学ぶ。", "trans": "學血壓計嘅原理。" },
+      { "kanji": "試供品", "reading": "しきょうひん", "hint1": "●●●●●●", "meaning": "試用品", "sentence": "化粧品の<span class='highlight-word'>試供品</span>を配る。", "trans": "派化妝品試用品。" },
+      { "kanji": "受賞", "reading": "じゅしょう", "hint1": "●●●●●", "meaning": "獲獎", "sentence": "ノーベル賞を<span class='highlight-word'>受賞</span>した学者。", "trans": "獲得諾貝爾獎嘅學者。" },
+      { "kanji": "捜査", "reading": "そうさ", "hint1": "●●●", "meaning": "搜查", "sentence": "科学<span class='highlight-word'>捜査</span>の手法。", "trans": "科學鑑證嘅手法。" },
+      { "kanji": "貯蓄", "reading": "ちょちく", "hint1": "●●●●", "meaning": "儲蓄", "sentence": "日本人の<span class='highlight-word'>貯蓄</span>率の推移。", "trans": "日本人儲蓄率嘅演變。" },
+      { "kanji": "内閣", "reading": "ないかく", "hint1": "●●●●", "meaning": "內閣", "sentence": "<span class='highlight-word'>内閣</span>総理大臣の指名。", "trans": "內閣總理大臣嘅指名。" },
+      { "kanji": "面積", "reading": "めんせき", "hint1": "●●●●", "meaning": "面積", "sentence": "三角形の<span class='highlight-word'>面積</span>を求める。", "trans": "求三角形嘅面積。" }
     ],
     "bossWords": [
       { "kanji": "想像力", "reading": "そうぞうりょく", "hint1": "●●●●●●●", "meaning": "想像力", "sentence": "豊かな<span class='highlight-word'>想像力</span>で物語を書く。", "trans": "用豐富想像力寫故事。" },
@@ -1558,7 +1680,8 @@
       { "kanji": "貸出期間", "reading": "かしだしきかん", "hint1": "●●●●●●●", "meaning": "借閱期", "sentence": "本の<span class='highlight-word'>貸出期間</span>を守る。", "trans": "遵守圖書借閱期。" },
       { "kanji": "承る", "reading": "うけたまわる", "hint1": "●●●●●る", "meaning": "接受(謙讓)", "sentence": "予約を<span class='highlight-word'>承る</span>。", "trans": "接受預約。" },
       { "kanji": "暦", "reading": "こよみ", "hint1": "●●●", "meaning": "曆法", "sentence": "昔の<span class='highlight-word'>暦</span>について調べる。", "trans": "調查關於舊時嘅曆法。" },
-      { "kanji": "予防注射", "reading": "よぼうちゅうしゃ", "hint1": "●●●●●●●●", "meaning": "預防針", "sentence": "感染症の<span class='highlight-word'>予防注射</span>。", "trans": "傳染病預防針。" }
+      { "kanji": "予防注射", "reading": "よぼうちゅうしゃ", "hint1": "●●●●●●●●", "meaning": "預防針", "sentence": "感染症の<span class='highlight-word'>予防注射</span>。", "trans": "傳染病預防針。" },
+      { "kanji": "自産自消", "reading": "じさんじしょう", "hint1": "●●●●●●", "meaning": "自產自消(自己生產、自己消費)", "sentence": "エネルギーの<span class='highlight-word'>自産自消</span>。", "trans": "能源自給自足。" }
     ]
   },
   "nature": {
@@ -1772,7 +1895,30 @@
       { "kanji": "熱中", "reading": "ねっちゅう", "hint1": "●●●●●", "meaning": "熱衷", "sentence": "虫取りに<span class='highlight-word'>熱中</span>する。", "trans": "熱衷捉蟲。" },
       { "kanji": "相違", "reading": "そうい", "hint1": "●●●", "meaning": "相違、不同", "sentence": "予想との<span class='highlight-word'>相違</span>に驚く。", "trans": "對與預想不同感到驚訝。" },
       { "kanji": "柔軟", "reading": "じゅうなん", "hint1": "●●●●●", "meaning": "柔軟", "sentence": "<span class='highlight-word'>柔軟</span>な体で木に登る。", "trans": "用柔軟雷雨身體爬樹。" },
-      { "kanji": "反面", "reading": "はんめん", "hint1": "●●●●", "meaning": "反面、另一方面", "sentence": "美しい<span class='highlight-word'>反面</span>、危険もある。", "trans": "有美麗嘅一面，亦有危險嘅一面。" }
+      { "kanji": "反面", "reading": "はんめん", "hint1": "●●●●", "meaning": "反面、另一方面", "sentence": "美しい<span class='highlight-word'>反面</span>、危険もある。", "trans": "有美麗嘅一面，亦有危險嘅一面。" },
+
+      { "kanji": "眩しい", "reading": "まぶしい", "hint1": "●●しい", "meaning": "刺眼、掁眼", "sentence": "真夏の日差しが<span class='highlight-word'>眩しい</span>。", "trans": "盛夏嘅陽光好掁眼。" },
+      { "kanji": "懐かしい", "reading": "なつかしい", "hint1": "●●かしい", "meaning": "懷念", "sentence": "故郷の山が<span class='highlight-word'>懐かしい</span>。", "trans": "好懷念故鄉座山。" },
+      { "kanji": "掻く", "reading": "かく", "hint1": "●く", "meaning": "𢯎痕", "sentence": "虫刺されを<span class='highlight-word'>掻く</span>。", "trans": "𢯎笪蚊𧕴。" },
+      { "kanji": "薄暗い", "reading": "うすぐらい", "hint1": "●●●●い", "meaning": "昏暗", "sentence": "鬱蒼とした<span class='highlight-word'>薄暗い</span>森。", "trans": "茂密昏暗嘅森林。" },
+      { "kanji": "清い", "reading": "きよい", "hint1": "●●い", "meaning": "清澈", "sentence": "山奥の<span class='highlight-word'>清い</span>水。", "trans": "深山清澈嘅水。" },
+      { "kanji": "収穫", "reading": "しゅうかく", "hint1": "●●●●●", "meaning": "收穫", "sentence": "秋は<span class='highlight-word'>収穫</span>の季節だ。", "trans": "秋天係收穫嘅季節。" },
+      { "kanji": "平凡", "reading": "へいぼん", "hint1": "●●●●", "meaning": "平凡", "sentence": "<span class='highlight-word'>平凡</span>な田舎の風景。", "trans": "平凡嘅鄉下風景。" },
+      { "kanji": "永遠", "reading": "えいえん", "hint1": "●●●●", "meaning": "永遠", "sentence": "自然は<span class='highlight-word'>永遠</span>に続くようだ。", "trans": "大自然好似會永續。" },
+      { "kanji": "過去", "reading": "かこ", "hint1": "●●", "meaning": "過去", "sentence": "<span class='highlight-word'>過去</span>の噴火の跡。", "trans": "過去火山爆發嘅痕跡。" },
+      { "kanji": "茎", "reading": "くき", "hint1": "●●", "meaning": "莖", "sentence": "植物の<span class='highlight-word'>茎</span>を観察する。", "trans": "觀察植物嘅莖。" },
+      { "kanji": "航空券", "reading": "こうくうけん", "hint1": "●●●●●●", "meaning": "機票", "sentence": "北海道行きの<span class='highlight-word'>航空券</span>。", "trans": "去北海道嘅機票。" },
+      { "kanji": "宿泊", "reading": "しゅくはく", "hint1": "●●●●", "meaning": "住宿", "sentence": "山小屋に<span class='highlight-word'>宿泊</span>する。", "trans": "喺山中嘅小屋住宿。" },
+      { "kanji": "正午過ぎ", "reading": "しょうごすぎ", "hint1": "●●●●●ぎ", "meaning": "過咗正午", "sentence": "<span class='highlight-word'>正午過ぎ</span>に頂上に着く。", "trans": "過咗正午就到達山頂。" },
+      { "kanji": "砂", "reading": "すな", "hint1": "●●", "meaning": "沙", "sentence": "海岸の白い<span class='highlight-word'>砂</span>。", "trans": "海岸嘅白沙。" },
+      { "kanji": "谷", "reading": "たに", "hint1": "●●", "meaning": "山谷", "sentence": "深い<span class='highlight-word'>谷</span>底を覗く。", "trans": "𥅾下深谷嘅底。" },
+      { "kanji": "上り", "reading": "のぼり", "hint1": "●●り", "meaning": "上行、上斜", "sentence": "きつい<span class='highlight-word'>上り</span>坂が続く。", "trans": "一路都係好難行嘅上斜斜路。" },
+      { "kanji": "下り", "reading": "くだり", "hint1": "●●り", "meaning": "下行、落斜", "sentence": "<span class='highlight-word'>下り</span>の山道は滑りやすい。", "trans": "落山路好易跣親。" },
+      { "kanji": "湾", "reading": "わん", "hint1": "●●", "meaning": "灣", "sentence": "静かな<span class='highlight-word'>湾</span>に船が浮かぶ。", "trans": "平靜嘅海灣有船浮喺度。" },
+      { "kanji": "岬", "reading": "みさき", "hint1": "●●●", "meaning": "海角", "sentence": "<span class='highlight-word'>岬</span>の灯台が見える。", "trans": "見到海角嘅燈塔。" },
+      { "kanji": "紅葉（訓読み）", "reading": "もみじ", "hint1": "●●●", "meaning": "紅葉", "sentence": "秋になって<span class='highlight-word'>紅葉</span>が美しい。", "trans": "入秋嘅紅葉好靚。" },
+      { "kanji": "綿", "reading": "わた", "hint1": "●●", "meaning": "棉", "sentence": "<span class='highlight-word'>綿</span>のような雲が浮かぶ。", "trans": "好似棉花噉嘅雲喺天度浮。" },
+      { "kanji": "夕立", "reading": "ゆうだち", "hint1": "●●●●", "meaning": "黃昏驟雨", "sentence": "突然の<span class='highlight-word'>夕立</span>に遭う。", "trans": "遇到突然嘅黃昏驟雨。" }
     ],
     "bossWords": [
       
@@ -1817,7 +1963,8 @@
       { "kanji": "耕す", "reading": "たがやす", "hint1": "●●●す", "meaning": "耕種", "sentence": "荒れ地を<span class='highlight-word'>耕す</span>。", "trans": "耕種荒地。" },
       { "kanji": "凍える", "reading": "こごえる", "hint1": "●●える", "meaning": "凍僵", "sentence": "手足が<span class='highlight-word'>凍える</span>寒さ。", "trans": "手腳凍僵嘅寒冷程度。" },
       { "kanji": "不法投棄", "reading": "ふほうとうき", "hint1": "●●●●●●", "meaning": "非法棄置", "sentence": "ゴミの<span class='highlight-word'>不法投棄</span>を許さない。", "trans": "唔容許非法棄置垃圾。" },
-      { "kanji": "残高不足", "reading": "ざんだかぶそく", "hint1": "●●●●●●●", "meaning": "餘額不足", "sentence": "ICカードが<span class='highlight-word'>残高不足</span>だ。", "trans": "IC咭餘額不足。" }
+      { "kanji": "残高不足", "reading": "ざんだかぶそく", "hint1": "●●●●●●●", "meaning": "餘額不足", "sentence": "ICカードが<span class='highlight-word'>残高不足</span>だ。", "trans": "IC咭餘額不足。" },
+      { "kanji": "見誤る", "reading": "みあやまる", "hint1": "●●●●る", "meaning": "睇錯", "sentence": "山でルートを<span class='highlight-word'>見誤る</span>。", "trans": "喺山度睇錯路線。" }
     ]
   },
   "action": {
@@ -1837,37 +1984,37 @@
     "passwordHint": "◯◯◯◯◯◯◯◯の◯",
     "words": [
       { "kanji": "開始","reading": "かいし","hint1": "●●●","meaning": "開始","sentence": "作業を<span class='highlight-word'>開始</span>する。","trans": "開始作業。"},
-      { "kanji": "完了","reading": "かんりょう","hint1": "●●●●●","meaning": "完了/完成","sentence": "準備が<span class='highlight-word'>完了</span>した。","trans": "準備完成。"},
-      { "kanji": "批判","reading": "ひはん","hint1": "●●●","meaning": "批判/批評","sentence": "政府を<span class='highlight-word'>批判</span>する。","trans": "批評政府。"},
+      { "kanji": "完了","reading": "かんりょう","hint1": "●●●●●","meaning": "完成","sentence": "準備が<span class='highlight-word'>完了</span>した。","trans": "準備完成。"},
+      { "kanji": "批判","reading": "ひはん","hint1": "●●●","meaning": "批判、批評","sentence": "政府を<span class='highlight-word'>批判</span>する。","trans": "批評政府。"},
       { "kanji": "長期的","reading": "ちょうきてき","hint1": "●●●●●●","meaning": "長期的","sentence": "<span class='highlight-word'>長期的</span>な視野に立つ。","trans": "以長期視野去睇。"},
-      { "kanji": "伝わる","reading": "つたわる","hint1": "●●●る","meaning": "傳達/傳播","sentence": "気持ちが<span class='highlight-word'>伝わる</span>。","trans": "傳達到心意。"},
-      { "kanji": "示す","reading": "しめす","hint1": "●●す","meaning": "展示/表示","sentence": "実力を<span class='highlight-word'>示す</span>。","trans": "展示實力。"},
-      { "kanji": "利点","reading": "りてん","hint1": "●●●","meaning": "好處/優點","sentence": "この方法の<span class='highlight-word'>利点</span>は速さだ。","trans": "呢個方法嘅好處係快。"},
+      { "kanji": "伝わる","reading": "つたわる","hint1": "●●●る","meaning": "傳達、傳播","sentence": "気持ちが<span class='highlight-word'>伝わる</span>。","trans": "傳達到心意。"},
+      { "kanji": "示す","reading": "しめす","hint1": "●●す","meaning": "展示、表示","sentence": "実力を<span class='highlight-word'>示す</span>。","trans": "展示實力。"},
+      { "kanji": "利点","reading": "りてん","hint1": "●●●","meaning": "好處、優點","sentence": "この方法の<span class='highlight-word'>利点</span>は速さだ。","trans": "呢個方法嘅好處係快。"},
       { "kanji": "行為","reading": "こうい","hint1": "●●●","meaning": "行為","sentence": "迷惑な<span class='highlight-word'>行為</span>。","trans": "令人困擾嘅行為。"},
       { "kanji": "元々","reading": "もともと","hint1": "●●●●","meaning": "原本","sentence": "<span class='highlight-word'>元々</span>行くつもりだった。","trans": "原本就打算去。"},
       { "kanji": "立場","reading": "たちば","hint1": "●●●","meaning": "立場","sentence": "苦しい<span class='highlight-word'>立場</span>に置かれる。","trans": "處於艱難嘅立場。"},
-      { "kanji": "場合","reading": "ばあい","hint1": "●●●","meaning": "場合/情況","sentence": "雨の<span class='highlight-word'>場合</span>は中止。","trans": "如果落雨就取消。"},
+      { "kanji": "場合","reading": "ばあい","hint1": "●●●","meaning": "場合、情況","sentence": "雨の<span class='highlight-word'>場合</span>は中止。","trans": "如果落雨就取消。"},
       { "kanji": "判定","reading": "はんてい","hint1": "●●●●","meaning": "判定","sentence": "ビデオ<span class='highlight-word'>判定</span>を行う。","trans": "進行視像判定。"},
       { "kanji": "心配","reading": "しんぱい","hint1": "●●●●","meaning": "擔心","sentence": "結果を<span class='highlight-word'>心配</span>する。","trans": "擔心結果。"},
-      { "kanji": "写る","reading": "うつる","hint1": "●●る","meaning": "映照/影到","sentence": "写真に<span class='highlight-word'>写る</span>。","trans": "上鏡（影相影到）。"},
+      { "kanji": "写る","reading": "うつる","hint1": "●●る","meaning": "映照、影到","sentence": "写真に<span class='highlight-word'>写る</span>。","trans": "上鏡（影相影到）。"},
       { "kanji": "普及","reading": "ふきゅう","hint1": "●●●●","meaning": "普及","sentence": "スマホが<span class='highlight-word'>普及</span>する。","trans": "智能電話普及。"},
-      { "kanji": "推移","reading": "すいい","hint1": "●●●","meaning": "推移/變化","sentence": "人口の<span class='highlight-word'>推移</span>を見る。","trans": "睇人口嘅變化（推移）。"},
-      { "kanji": "発達","reading": "はったつ","hint1": "●●●●","meaning": "發達/發展","sentence": "台風が<span class='highlight-word'>発達</span>する。","trans": "颱風增強（發展）。"},
+      { "kanji": "推移","reading": "すいい","hint1": "●●●","meaning": "演變、變遷","sentence": "人口の<span class='highlight-word'>推移</span>を見る。","trans": "睇人口嘅變遷。"},
+      { "kanji": "発達","reading": "はったつ","hint1": "●●●●","meaning": "發達、發展","sentence": "台風が<span class='highlight-word'>発達</span>する。","trans": "颱風增強（發展）。"},
       { "kanji": "集中","reading": "しゅうちゅう","hint1": "●●●●●●","meaning": "集中","sentence": "勉強に<span class='highlight-word'>集中</span>する。","trans": "集中精神溫書。"},
       { "kanji": "登場","reading": "とうじょう","hint1": "●●●●●","meaning": "登場","sentence": "新キャラが<span class='highlight-word'>登場</span>する。","trans": "新角色登場。"},
       { "kanji": "提供","reading": "ていきょう","hint1": "●●●●●","meaning": "提供","sentence": "情報を<span class='highlight-word'>提供</span>する。","trans": "提供情報。"},
       { "kanji": "一致","reading": "いっち","hint1": "●●●","meaning": "一致","sentence": "意見が<span class='highlight-word'>一致</span>する。","trans": "意見一致。"},
-      { "kanji": "不問","reading": "ふもん","hint1": "●●●","meaning": "不問/不追究","sentence": "経験は<span class='highlight-word'>不問</span>とする。","trans": "不問經驗（經驗不拘）。"},
+      { "kanji": "不問","reading": "ふもん","hint1": "●●●","meaning": "不問、不拘","sentence": "経験は<span class='highlight-word'>不問</span>とする。","trans": "不拘經驗。"},
       { "kanji": "説得","reading": "せっとく","hint1": "●●●●","meaning": "説服","sentence": "親を<span class='highlight-word'>説得</span>する。","trans": "説服父母。"},
-      { "kanji": "勧める","reading": "すすめる","hint1": "●●める","meaning": "推薦/勸","sentence": "保険への加入を<span class='highlight-word'>勧める</span>。","trans": "勸佢買保險。"},
-      { "kanji": "見逃す","reading": "みのがす","hint1": "●●●す","meaning": "睇漏/放過","sentence": "チャンスを<span class='highlight-word'>見逃す</span>な。","trans": "唔好錯失（睇漏）機會。"},
+      { "kanji": "勧める","reading": "すすめる","hint1": "●●める","meaning": "推薦、勸","sentence": "保険への加入を<span class='highlight-word'>勧める</span>。","trans": "勸佢買保險。"},
+      { "kanji": "見逃す","reading": "みのがす","hint1": "●●●す","meaning": "睇漏、錯過","sentence": "チャンスを<span class='highlight-word'>見逃す</span>な。","trans": "唔好錯失機會。"},
       { "kanji": "失う","reading": "うしなう","hint1": "●●●う","meaning": "失去","sentence": "自信を<span class='highlight-word'>失う</span>。","trans": "失去自信。"},
       { "kanji": "独自","reading": "どくじ","hint1": "●●●","meaning": "獨自","sentence": "<span class='highlight-word'>独自</span>の技術。","trans": "獨有嘅技術。"},
       { "kanji": "規模","reading": "きぼ","hint1": "●●","meaning": "規模","sentence": "会社の<span class='highlight-word'>規模</span>。","trans": "公司嘅規模。"},
-      { "kanji": "関わる","reading": "かかわる","hint1": "●●●る","meaning": "關於/牽涉","sentence": "命に<span class='highlight-word'>関わる</span>問題。","trans": "關於人命嘅問題。"},
+      { "kanji": "関わる","reading": "かかわる","hint1": "●●●る","meaning": "關於、牽涉","sentence": "命に<span class='highlight-word'>関わる</span>問題。","trans": "關於人命嘅問題。"},
       { "kanji": "及び","reading": "および","hint1": "●●び","meaning": "以及","sentence": "東京<span class='highlight-word'>及び</span>大阪。","trans": "東京以及大阪。"},
-      { "kanji": "着実","reading": "ちゃくじつ","hint1": "●●●●●","meaning": "確實/穩步","sentence": "<span class='highlight-word'>着実</span>に進歩する。","trans": "穩步進步。"},
-      { "kanji": "及ぼす","reading": "およぼす","hint1": "●●ぼす","meaning": "波及/帶來","sentence": "悪影響を<span class='highlight-word'>及ぼす</span>。","trans": "帶嚟壞影響。"},
+      { "kanji": "着実","reading": "ちゃくじつ","hint1": "●●●●●","meaning": "確實、穩步","sentence": "<span class='highlight-word'>着実</span>に進歩する。","trans": "穩步進步。"},
+      { "kanji": "及ぼす","reading": "およぼす","hint1": "●●ぼす","meaning": "波及、帶嚟","sentence": "悪影響を<span class='highlight-word'>及ぼす</span>。","trans": "帶嚟壞影響。"},
       { "kanji": "伝統的","reading": "でんとうてき","hint1": "●●●●●●","meaning": "傳統","sentence": "<span class='highlight-word'>伝統的</span>な祭り。","trans": "傳統祭典。"},
       { "kanji": "隅","reading": "すみ","hint1": "●●","meaning": "角落","sentence": "部屋の<span class='highlight-word'>隅</span>。","trans": "房嘅角落。"},
       { "kanji": "状況","reading": "じょうきょう","hint1": "●●●●●●","meaning": "狀況","sentence": "<span class='highlight-word'>状況</span>を把握する。","trans": "把握狀況。"},
@@ -2002,7 +2149,7 @@
       { "kanji": "損害", "reading": "そんがい", "hint1": "●●●●", "meaning": "損害", "sentence": "雨漏りの<span class='highlight-word'>損害</span>を調べる。", "trans": "調查漏水嘅損害。" },
       { "kanji": "葬式", "reading": "そうしき", "hint1": "●●●●", "meaning": "葬禮", "sentence": "昔の<span class='highlight-word'>葬式</span>の写真。", "trans": "以前葬禮嘅相。" },
       { "kanji": "背広", "reading": "せびろ", "hint1": "●●●", "meaning": "西裝", "sentence": "父の古い<span class='highlight-word'>背広</span>。", "trans": "阿爸套舊西裝。" },
-      { "kanji": "孝行", "reading": "こうこう", "hint1": "●●●●", "meaning": "孝行", "sentence": "親<span class='highlight-word'>孝行</span>な息子だった。", "trans": "曾經係孝順仔。" },
+      { "kanji": "親孝行", "reading": "おやこうこう", "hint1": "●●●●●●", "meaning": "孝順", "sentence": "<span class='highlight-word'>親孝行</span>な息子だった。", "trans": "曾經係孝順仔。" },
       { "kanji": "傑作", "reading": "けっさく", "hint1": "●●●●", "meaning": "傑作", "sentence": "床の間の掛け軸は<span class='highlight-word'>傑作</span>だ。", "trans": "床之間幅掛軸係傑作。" },
       { "kanji": "金属", "reading": "きんぞく", "hint1": "●●●●", "meaning": "金屬", "sentence": "<span class='highlight-word'>金属</span>片が落ちている。", "trans": "有塊金屬片跌咗喺度。" },
       { "kanji": "囲碁", "reading": "いご", "hint1": "●●", "meaning": "圍棋", "sentence": "縁側で<span class='highlight-word'>囲碁</span>を打つ。", "trans": "喺廊臺捉圍棋。" },
@@ -2030,7 +2177,25 @@
       { "kanji": "愛着", "reading": "あいちゃく", "hint1": "●●●●●", "meaning": "愛惜、留戀", "sentence": "この家に<span class='highlight-word'>愛着</span>がある。", "trans": "對呢間屋有感情。" },
       { "kanji": "多少", "reading": "たしょう", "hint1": "●●●●", "meaning": "多多少少", "sentence": "<span class='highlight-word'>多少</span>の傷はありますが綺麗です。", "trans": "多多少少有啲痕跡，但係靚嘅。" },
       { "kanji": "細々", "reading": "ほそぼそ", "hint1": "●●●●", "meaning": "勉強、微薄", "sentence": "<span class='highlight-word'>細々</span>ながら暮らしている。", "trans": "雖然係微薄但都生活緊。" },
-      { "kanji": "記念日", "reading": "きねんび", "hint1": "●●●●", "meaning": "紀念日", "sentence": "結婚<span class='highlight-word'>記念日</span>の写真。", "trans": "結婚紀念日嘅相。" }
+      { "kanji": "記念日", "reading": "きねんび", "hint1": "●●●●", "meaning": "紀念日", "sentence": "結婚<span class='highlight-word'>記念日</span>の写真。", "trans": "結婚紀念日嘅相。" },
+
+      { "kanji": "憎らしい", "reading": "にくらしい", "hint1": "●●らしい", "meaning": "可憎", "sentence": "<span class='highlight-word'>憎らしい</span>ほど頑丈な扉。", "trans": "道門堅固到令人討厭。" },
+      { "kanji": "旨い", "reading": "うまい", "hint1": "●●い", "meaning": "好味、高明", "sentence": "昔の人の<span class='highlight-word'>旨い</span>知恵。", "trans": "古人高明嘅智慧。" },
+      { "kanji": "重たい", "reading": "おもたい", "hint1": "●●たい", "meaning": "重、沉重", "sentence": "古い家具はずっしり<span class='highlight-word'>重たい</span>。", "trans": "啲舊傢俬好重。" },
+      { "kanji": "象徴", "reading": "しょうちょう", "hint1": "●●●●●●", "meaning": "象徵", "sentence": "家の繁栄の<span class='highlight-word'>象徴</span>である柱。", "trans": "象徵家族繁榮嘅柱。" },
+      { "kanji": "放映", "reading": "ほうえい", "hint1": "●●●●", "meaning": "播放", "sentence": "昔<span class='highlight-word'>放映</span>された時代劇の舞台。", "trans": "以前播過嘅時代劇舞台。" },
+      { "kanji": "解決", "reading": "かいけつ", "hint1": "●●●●", "meaning": "解決", "sentence": "雨漏りの問題を<span class='highlight-word'>解決</span>する。", "trans": "解決漏水問題。" },
+      { "kanji": "礼儀", "reading": "れいぎ", "hint1": "●●●", "meaning": "禮儀", "sentence": "茶室での<span class='highlight-word'>礼儀</span>を学ぶ。", "trans": "學茶室禮儀。" },
+      { "kanji": "作法", "reading": "さほう", "hint1": "●●●", "meaning": "禮法、做法", "sentence": "伝統的な<span class='highlight-word'>作法</span>に従う。", "trans": "跟隨傳統禮法。" },
+      { "kanji": "貴族", "reading": "きぞく", "hint1": "●●●", "meaning": "貴族", "sentence": "かつて<span class='highlight-word'>貴族</span>が住んでいた。", "trans": "以前有貴族住過。" },
+      { "kanji": "偶然", "reading": "ぐうぜん", "hint1": "●●●●", "meaning": "偶然", "sentence": "隠し扉を<span class='highlight-word'>偶然</span>見つける。", "trans": "偶然發現一道隱藏嘅門。" },
+      { "kanji": "軽金属", "reading": "けいきんぞく", "hint1": "●●●●●●", "meaning": "輕金屬", "sentence": "アルミなどの<span class='highlight-word'>軽金属</span>の廃材。", "trans": "鋁之類嘅輕金屬廢材。" },
+      { "kanji": "工芸", "reading": "こうげい", "hint1": "●●●●", "meaning": "工藝", "sentence": "素晴らしい木<span class='highlight-word'>工芸</span>品。", "trans": "極好嘅木工藝品。" },
+      { "kanji": "産出量", "reading": "さんしゅつりょう", "hint1": "●●●●●●●●", "meaning": "產量", "sentence": "木材の<span class='highlight-word'>産出量</span>が多い地域。", "trans": "木材產量多嘅地區。" },
+      { "kanji": "庶民", "reading": "しょみん", "hint1": "●●●●", "meaning": "庶民", "sentence": "昔の<span class='highlight-word'>庶民</span>の暮らし。", "trans": "舊時庶民嘅生活。" },
+      { "kanji": "随筆", "reading": "ずいひつ", "hint1": "●●●●", "meaning": "隨筆", "sentence": "古い<span class='highlight-word'>随筆</span>集が出てきた。", "trans": "搵到本舊嘅隨筆集。" },
+      { "kanji": "和風", "reading": "わふう", "hint1": "●●●", "meaning": "和風", "sentence": "落ち着いた<span class='highlight-word'>和風</span>の建築。", "trans": "平靜嘅和風建築。" },
+      { "kanji": "立方体", "reading": "りっぽうたい", "hint1": "●●●●●●", "meaning": "立方體、正方體", "sentence": "<span class='highlight-word'>立方体</span>の箱を見つけた。", "trans": "發現一個正方體嘅箱。" }
     ],
     "bossWords": [
       { "kanji": "中途半端","reading": "ちゅうとはんぱ","hint1": "●●●●●●●","meaning": "半桶水/唔湯唔水","sentence": "<span class='highlight-word'>中途半端</span>な態度。","trans": "半桶水（唔湯唔水）嘅態度。"},
@@ -2077,7 +2242,9 @@
       { "kanji": "団扇", "reading": "うちわ", "hint1": "●●●", "meaning": "團扇", "sentence": "夏の夕涼みに<span class='highlight-word'>団扇</span>。", "trans": "用嚟夏天唞涼用嘅團扇。" },
       { "kanji": "木造建築", "reading": "もくぞうけんちく", "hint1": "●●●●●●●●", "meaning": "木造建築", "sentence": "伝統的な<span class='highlight-word'>木造建築</span>。", "trans": "傳統嘅木造建築。" },
       { "kanji": "骨董品", "reading": "こっとうひん", "hint1": "●●●●●●", "meaning": "古董", "sentence": "屋根裏は<span class='highlight-word'>骨董品</span>の山だ。", "trans": "閣樓啲古董成座山咁多。" },
-      { "kanji": "単身赴任", "reading": "たんしんふにん", "hint1": "●●●●●●●", "meaning": "（留低配偶仔女）隻身去異地返工過活", "sentence": "父は<span class='highlight-word'>単身赴任</span>中だ。", "trans": "阿爸而家一個人喺異地工作生活緊。" }
+      { "kanji": "単身赴任", "reading": "たんしんふにん", "hint1": "●●●●●●●", "meaning": "（留低配偶仔女）隻身去異地返工過活", "sentence": "父は<span class='highlight-word'>単身赴任</span>中だ。", "trans": "阿爸而家一個人喺異地工作生活緊。" },
+      { "kanji": "従来通り", "reading": "じゅうらいどおり", "hint1": "●●●●●●●り", "meaning": "照舊", "sentence": "<span class='highlight-word'>従来通り</span>の工法で直す。", "trans": "用照舊嘅工法修理。" },
+      { "kanji": "象牙製品", "reading": "ぞうげせいひん", "hint1": "●●●●●●●", "meaning": "象牙製品", "sentence": "密輸された<span class='highlight-word'>象牙製品</span>。", "trans": "被走私嘅象牙製品。" }
     ]
   },
   "danger": {
@@ -2292,11 +2459,28 @@
       { "kanji": "地帯", "reading": "ちたい", "hint1": "●●●", "meaning": "地帶", "sentence": "危険<span class='highlight-word'>地帯</span>に足を踏み入れる。", "trans": "踏入危險地帶。" },
       { "kanji": "錠", "reading": "じょう", "hint1": "●●●", "meaning": "鎖頭", "sentence": "南京<span class='highlight-word'>錠</span>を破壊する。", "trans": "破壞鎖頭。" },
       { "kanji": "磁器", "reading": "じき", "hint1": "●●", "meaning": "瓷器", "sentence": "盗まれた高価な<span class='highlight-word'>磁器</span>。", "trans": "被偷嘅貴價瓷器。" },
-      { "kanji": "屋根裏", "reading": "やねうら", "hint1": "●●●●", "meaning": "閣樓", "sentence": "<span class='highlight-word'>屋根裏</span>に死体を隠す。", "trans": "收埋條屍喺閣樓。" }
+      { "kanji": "屋根裏", "reading": "やねうら", "hint1": "●●●●", "meaning": "閣樓", "sentence": "<span class='highlight-word'>屋根裏</span>に死体を隠す。", "trans": "收埋條屍喺閣樓。" },
+
+      { "kanji": "音声", "reading": "おんせい", "hint1": "●●●●", "meaning": "聲音", "sentence": "脅迫電話の<span class='highlight-word'>音声</span>を解析。", "trans": "解析恐嚇電話錄音。" },
+      { "kanji": "危害", "reading": "きがい", "hint1": "●●●", "meaning": "危害", "sentence": "人質に<span class='highlight-word'>危害</span>を加えるな。", "trans": "唔好危害人質。" },
+      { "kanji": "菌", "reading": "きん", "hint1": "●●", "meaning": "菌", "sentence": "致死性の<span class='highlight-word'>菌</span>をばら撒く。", "trans": "散播致死性細菌。" },
+      { "kanji": "混乱", "reading": "こんらん", "hint1": "●●●●", "meaning": "混亂", "sentence": "現場は<span class='highlight-word'>混乱</span>している。", "trans": "現場混亂。" },
+      { "kanji": "多方面", "reading": "たほうめん", "hint1": "●●●●●", "meaning": "多方面", "sentence": "<span class='highlight-word'>多方面</span>から恨まれている。", "trans": "被多方面怨恨。" },
+      { "kanji": "挑戦状", "reading": "ちょうせんじょう", "hint1": "●●●●●●●●", "meaning": "挑戰書", "sentence": "怪盗からの<span class='highlight-word'>挑戦状</span>。", "trans": "怪盜寄嚟嘅挑戰書。" },
+      { "kanji": "夕暮れ時", "reading": "ゆうぐれどき", "hint1": "●●●れ●●", "meaning": "黃昏時份", "sentence": "<span class='highlight-word'>夕暮れ時</span>に事件が起きる。", "trans": "案件發生喺黃昏時份。" },
+      { "kanji": "両脇", "reading": "りょうわき", "hint1": "●●●●", "meaning": "兩脇、兩邊胳肋底", "sentence": "警官に<span class='highlight-word'>両脇</span>を抱えられる。", "trans": "俾差人夾住兩邊胳肋底。" },
+      { "kanji": "お化け屋敷", "reading": "おばけやしき", "hint1": "お●け●●●", "meaning": "鬼屋", "sentence": "廃墟のような<span class='highlight-word'>お化け屋敷</span>に入る。", "trans": "入去間好似廢墟噉嘅鬼屋。" },
+      { "kanji": "敗北", "reading": "はいぼく", "hint1": "●●●●", "meaning": "輸、敗北", "sentence": "組織間の抗争で<span class='highlight-word'>敗北</span>した。", "trans": "喺組織之間嘅抗爭中輸咗。" },
+      { "kanji": "悲劇", "reading": "ひげき", "hint1": "●●●", "meaning": "悲劇", "sentence": "路地裏で起きた<span class='highlight-word'>悲劇</span>の現場。", "trans": "喺後巷發生悲劇嘅現場。" },
+      { "kanji": "結末", "reading": "けつまつ", "hint1": "●●●●", "meaning": "結局", "sentence": "逃走劇は最悪の<span class='highlight-word'>結末</span>を迎えた。", "trans": "着草單嘢迎嚟最壞嘅結局。" },
+      { "kanji": "貯蔵", "reading": "ちょぞう", "hint1": "●●●●", "meaning": "貯存", "sentence": "地下倉庫に武器を<span class='highlight-word'>貯蔵</span>する。", "trans": "喺地下倉庫貯存武器。" },
+      { "kanji": "直後", "reading": "ちょくご", "hint1": "●●●●", "meaning": "之後即刻就", "sentence": "爆発の<span class='highlight-word'>直後</span>にサイレンが鳴る。", "trans": "爆炸之後即刻響警鐘。" },
+      { "kanji": "手続", "reading": "てつづき", "hint1": "●●●●", "meaning": "手續", "sentence": "逮捕後の<span class='highlight-word'>手続</span>が進められる。", "trans": "進行緊被捕後嘅手續。" },
+      { "kanji": "扉", "reading": "とびら", "hint1": "●●●", "meaning": "門", "sentence": "鉄の<span class='highlight-word'>扉</span>を蹴り破って侵入する。", "trans": "踢爛度鐵門入侵。" }
     ],
     "bossWords": [
       
-      { "kanji": "誘拐","reading": "ゆうかい","hint1": "●●●●","meaning": "拐帶","sentence": "子供を<span class='highlight-word'>誘拐</span>する。","trans": "拐帶細路。"},
+      { "kanji": "誘拐","reading": "ゆうかい","hint1": "●●●●","meaning": "拐帶","sentence": "子供を<span class='highlight-word'>誘拐</span>した犯人だそうだ。","trans": "聽講佢係拐帶細路嘅犯人。"},
       { "kanji": "訴える", "reading": "うったえる", "hint1": "●●●●る", "meaning": "控訴", "sentence": "被害届を警察に<span class='highlight-word'>訴える</span>。", "trans": "向警察提出被害報告。" },
       { "kanji": "副作用", "reading": "ふくさよう", "hint1": "●●●●●", "meaning": "副作用", "sentence": "怪しい薬の<span class='highlight-word'>副作用</span>に苦しむ。", "trans": "受可疑藥物副作用折磨。" },
       { "kanji": "超能力", "reading": "ちょうのうりょく", "hint1": "●●●●●●●●", "meaning": "超能力", "sentence": "彼は<span class='highlight-word'>超能力</span>が使えるという噂だ。", "trans": "傳聞佢識用超能力。" },
@@ -2334,7 +2518,8 @@
       { "kanji": "吹奏楽", "reading": "すいそうがく", "hint1": "●●●●●●", "meaning": "管樂", "sentence": "葬送の<span class='highlight-word'>吹奏楽</span>が響く。", "trans": "葬禮管樂響起。" },
       { "kanji": "婚約解消", "reading": "こんやくかいしょう", "hint1": "●●●●●●●●", "meaning": "解除婚約", "sentence": "<span class='highlight-word'>婚約解消</span>の恨み。", "trans": "解除婚約嘅怨恨。" },
       { "kanji": "箪笥", "reading": "たんす", "hint1": "●●●", "meaning": "衣櫃", "sentence": "<span class='highlight-word'>箪笥</span>の裏に盗聴器。", "trans": "衣櫃後面有竊聽器。" },
-      { "kanji": "組立家具", "reading": "くみたてかぐ", "hint1": "●●●●●●", "meaning": "組裝傢俬", "sentence": "<span class='highlight-word'>組立家具</span>の中に隠す。", "trans": "收埋喺組裝傢俬入面。" }
+      { "kanji": "組立家具", "reading": "くみたてかぐ", "hint1": "●●●●●●", "meaning": "組裝傢俬", "sentence": "<span class='highlight-word'>組立家具</span>の中に隠す。", "trans": "收埋喺組裝傢俬入面。" },
+      { "kanji": "出生届", "reading": "しゅっしょうとどけ", "hint1": "●●●●●●●●", "meaning": "出世紙", "sentence": "偽造された<span class='highlight-word'>出生届</span>。", "trans": "偽造嘅出生紙。" }
     ]
   },
   "demon_castle": {
