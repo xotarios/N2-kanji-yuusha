@@ -58,11 +58,11 @@ https://xotarios.github.io/N2-kanji-yuusha/
 50問正解すると、ラスボス戦に突入します。  
 ラスボス、即ち作者本人は漢和辞典を抱えて登場します。  
 制限時間（80秒）以内に、ラスボス（僕）が出題する10問の問題を正解すると勝利（ステージクリア）します。  
-なお、ラスボス戦ではヒントは使用できず、不正解はパスと見做し、即座にHP -15になります。  
+なお、ラスボス戦ではヒントは使用できず、不正解はパスと見做し、即座にHP -15となります。  
 
 ## 制作
 作者：Xotarios (ヴェオぼうや) - https://x.com/Xotarios  
-協力AI：Gemini 3 Pro、Midjourney 7、豆包  
+協力AI：Gemini 3 Pro、Midjourney 7、Adobe Firefly、豆包  
 
 ## 【廣東話】
 
@@ -125,7 +125,7 @@ https://xotarios.github.io/N2-kanji-yuusha/
 
 ## 製作
 作者：Xotarios (翊天星少年) - https://x.com/Xotarios  
-協力AI：Gemini 3 Pro、Midjourney 7、豆包  
+協力AI：Gemini 3 Pro、Midjourney 7、Adobe Firefly、豆包  
 
 ## 【English】
 
@@ -187,4 +187,4 @@ Note: Hints cannot be used during the Final Boss battle. An incorrect answer is 
 
 ## Credits
 Author: Xotarios - https://x.com/Xotarios  
-AI Cooperation: Gemini 3 Pro, Midjourney 7, Doubao
+AI Cooperation: Gemini 3 Pro, Midjourney 7, Adobe Firefly, Doubao
