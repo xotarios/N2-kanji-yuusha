@@ -1676,7 +1676,6 @@ document.addEventListener('click', function(e) {
         const debugHash = "b18817606ef0f316d90e25070f0e0b88c84fc7cdc4b8e32959a365be43a0fe66"; 
 
         if (inputHash === debugHash) {
-            playSE('correct'); 
             isDebugMode = !isDebugMode; 
             
             if (isDebugMode) {
@@ -1693,7 +1692,6 @@ document.addEventListener('click', function(e) {
 
         // ★★★ 4. 正常密碼檢查 (比對 Hash) ★★★
         if (inputHash === demonCastleHash) {
-            playSE('correct');
             closePasswordOverlay();
             launchDemonCastle();
         } else {
@@ -1990,11 +1988,11 @@ document.addEventListener('click', function(e) {
         
         if (isFinal) {
             bossIntroText.innerHTML = "FINAL BOSS出現！<br>制限時間80秒 - 10問正解せよ！<br><span style='color:red; font-size:0.8em;'>※ヒント使用不可・ミス大ダメージ</span>";
-            // ★★★ 新增：在此處播放 Final Boss BGM ★★★
+            // ★★★ 在此處播放 Final Boss BGM ★★★
             playBGM(BGM_FILES.finalBoss);
         } else {
             bossIntroText.innerHTML = "ボスが現れました！<br>制限時間45秒 - 5問正解せよ！";
-            // ★★★ 新增：在此處播放 Boss BGM ★★★
+            // ★★★ 在此處播放 Boss BGM ★★★
             playBGM(BGM_FILES.boss);
         }
 
