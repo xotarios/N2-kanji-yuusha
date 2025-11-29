@@ -1646,12 +1646,10 @@ document.addEventListener('click', function(e) {
     // Help Overlay Logic
     // =========================================
     function openHelpOverlay() {
-        playSE('btn');
         document.getElementById('help-overlay').style.display = 'flex';
     }
 
     function closeHelpOverlay() {
-        playSE('btn'); // 或者用 cancel 音效
         document.getElementById('help-overlay').style.display = 'none';
     }
 
