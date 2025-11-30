@@ -2175,7 +2175,7 @@ document.addEventListener('click', function(e) {
         kanjiText.innerHTML = currentQ.kanji.replace(/\((.*?)\)/g, '<span class="kanji-note">($1)</span>');
         const langLabel = (currentLang === 'english') ? "【英語】" : "【広東語】";
         meaningText.innerText = langLabel + displayQ.meaning;
-        sentenceText.innerHTML = "【例句】" + displayQ.sentence;
+        sentenceText.innerHTML = "【例文】" + displayQ.sentence;
         transText.innerText = displayQ.trans;
         
         // Input Reset
