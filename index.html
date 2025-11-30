@@ -96,7 +96,7 @@
         }
 
         .start-credits {
-            margin-top: 30px;
+            margin-top: 10px;
             font-size: 0.8rem;
             color: #ddd;
             line-height: 1.6;
@@ -107,6 +107,68 @@
             border-radius: 8px;
             text-align: left;
             display: inline-block;
+        }
+
+        .lang-select-wrapper {
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: 1px solid #555;
+        }
+
+        .lang-select-wrapper label {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-right: 10px;
+            font-family: var(--font-ui);
+        }
+
+        #lang-select {
+            background: #222;
+            color: white;
+            border: 1px solid #777;
+            padding: 5px;
+            border-radius: 3px;
+            font-family: var(--font-ui);
+            cursor: pointer;
+        }
+
+        .start-btn-custom {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            /* 置中設定 */
+            margin: 0 auto; 
+
+            /* 大小設定 */
+            padding: 15px 40px;
+            line-height: 1.2;
+            
+            /* 繼承原本 button 的過渡效果 */
+            transition: all 0.2s;
+        }
+
+        /* 小字的預設樣式 */
+        .start-sub-label {
+            font-size: 0.8rem;
+            color: #ddd; /* 平時係淺灰色 */
+            margin-top: 5px;
+            font-family: sans-serif;
+            font-weight: normal;
+            transition: color 0.2s;
+        }
+
+        /* ★★★ 關鍵：當按鈕被 Hover 時，小字跟隨變色 ★★★ */
+        /* 原本 button:hover 會變成黃底黑字(var(--bg-color)) */
+        /* 這裡讓小字也變成那個黑色，確保睇得清楚 */
+        button:hover .start-sub-label {
+            color: var(--bg-color); 
         }
 
         .help-trigger-btn {
@@ -1009,9 +1071,21 @@
         <video id="intro-video" src="https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/images/n2yuusha_moving.mp4" playsinline muted></video>
         <div class="result-content">
             <h1 class="title-logo">N2漢字勇者</h1>
-            <p style="margin-bottom: 5px;">N2レベル日本語の漢字読みRPG　(v1.0.0)</p>
-            <button onclick="playIntroSequence()" style="font-size: 1.5rem; padding: 20px 50px; margin-top: 0;">冒険を始める</button>
-            
+            <p style="margin-bottom: 5px;">N2レベル日本語の漢字読みRPG　(v1.1.0)</p>
+            <div class="lang-select-wrapper">
+                <label for="lang-select">翻訳先言語 ▶</label>
+                <select id="lang-select" onchange="changeLanguage()">
+                    <option value="cantonese" selected>広東語 / Cantonese</option>
+                    <option value="english">英語 / English</option>
+                </select>
+            </div>
+            <button onclick="playIntroSequence()" id="start-btn" class="start-btn-custom">
+                <span style="font-size: 1.5rem; font-family: var(--font-ui);">冒険を始める</span>
+                <span id="start-sub-label" class="start-sub-label">
+                    （撳呢粒掣開始冒險）
+                </span>
+            </button>
+
             <div class="start-credits">
                 制　作：<a href="https://linktr.ee/Xotarios/" style="color:#c6f2ff;">Xotarios</a>（何先生＠香港）+ AI協力<br>
                 音　楽：<a href="https://amachamusic.chagasi.com/index.html" style="color:#c6f2ff;">甘茶の音楽工房</a> & <a href="https://youfulca.com/" style="color:#c6f2ff;">ユーフルカ</a><br>
@@ -1367,8 +1441,10 @@
 
 let stageData = null; 
 let currentQ = null;
-const DATA_URL = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/questions.json";
-//const DATA_URL = "/questions.json"; //
+//const DATA_URL_CN = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/questions.json";
+const DATA_URL_CN = "/questions.json";
+//const DATA_URL_EN = "https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/questions_EN.json";
+const DATA_URL_EN = "/questions_EN.json";
 
 document.addEventListener('click', function(e) {
         // 檢查點擊的元素是否為 Button 或者是 .stage-btn (關卡選擇鈕)
@@ -2097,7 +2173,8 @@ document.addEventListener('click', function(e) {
         }
         totalDisp.innerText = targetCount;
         kanjiText.innerHTML = currentQ.kanji.replace(/\((.*?)\)/g, '<span class="kanji-note">($1)</span>');
-        meaningText.innerText = "【広東語訳】" + displayQ.meaning;
+        const langLabel = (currentLang === 'english') ? "【英語】" : "【広東語】";
+        meaningText.innerText = langLabel + displayQ.meaning;
         sentenceText.innerHTML = "【例句】" + displayQ.sentence;
         transText.innerText = displayQ.trans;
         
@@ -2417,21 +2494,44 @@ document.addEventListener('click', function(e) {
         }
     }
 
+    function changeLanguage() {
+        const select = document.getElementById('lang-select');
+        const subLabel = document.getElementById('start-sub-label'); // 取得小字元素
+        currentLang = select.value;
+        
+        //更新小字邏輯
+        if (currentLang === 'english') {
+            subLabel.innerText = "(Click to start adventure!)";
+        } else {
+            subLabel.innerText = "（撳呢粒掣開始冒險）";
+        }
+
+        // 切換語言後，將 stageData 設為 null，強制按下開始時重新下載
+        stageData = null;
+        console.log("Language switched to:", currentLang);
+    }
+
      // ★★★負責下載 JSON ★★★
     async function loadStageData() {
         const container = document.getElementById('stage-container');
-        // 顯示載入中文字
-        container.innerHTML = '<div style="color:white; text-align:center; margin-top:50px; font-family:var(--font-ui);">データを読み込んでいます...<br>(Loading...)</div>';
+        container.innerHTML = '<div style="color:white; text-align:center; margin-top:50px; font-family:var(--font-ui); font-size:1.2rem;">データを読み込んでいます...<br><span style="font-size:0.8rem; color:#aaa;">(Loading Data...)</span></div>';
 
         try {
-            const response = await fetch(DATA_URL);
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            // 根據選擇的語言決定 URL
+            const targetUrl = (currentLang === 'english') ? DATA_URL_EN : DATA_URL_CN;
+
+            const response = await fetch(targetUrl);
             
-            stageData = await response.json(); // 將下載到的資料放入 stageData
-            renderStageButtons(); // 資料到了，產生按鈕
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            stageData = await response.json(); 
+            renderStageButtons(); 
+            
         } catch (error) {
-            console.error("Error loading stage data:", error);
-            container.innerHTML = '<div style="color:#e74c3c; text-align:center; margin-top:50px;">データの読み込みに失敗しました。<br>インターネット接続を確認してください。</div>';
+            console.error("Loading failed:", error);
+            container.innerHTML = '<div style="color:#e74c3c; text-align:center; margin-top:50px;">データの読み込みに失敗しました。<br>インターネット接続を確認してください。<br><br><button onclick="loadStageData()" style="padding:5px 10px;">再試行 (Retry)</button></div>';
         }
     }
 
@@ -2551,17 +2651,25 @@ document.addEventListener('click', function(e) {
     }
 
     function updateVirtualDisplay() {
+        const input = document.getElementById('answer-input');
+        
         let ghost = "";
         if (isVirtualKeyboard && romajiBuffer.length > 0) {
             ghost = `<span class="ghost-text">${romajiBuffer}</span>`;
+            // 有 Ghost Word 時隱藏 Placeholder
+            input.setAttribute('placeholder', '');
+        } else {
+            // 新增：沒有 Ghost Word 時恢復 Placeholder
+            // 只有當 input 本身也是空的時候才顯示 placeholder，避免閃爍
+            if (input.value === "") {
+                input.setAttribute('placeholder', '読み方（送り仮名含む）');
+            }
         }
-        virtualDisplay.innerHTML = answerInput.value + ghost;
+        virtualDisplay.innerHTML = input.value + ghost;
     }
 
     function vkPress(key) {
-        if (navigator.vibrate) {
-            navigator.vibrate(15);
-        }
+        if (navigator.vibrate) navigator.vibrate(15);
         if (answerInput.disabled) return;
 
         if (key === 'bs') {
@@ -2573,33 +2681,62 @@ document.addEventListener('click', function(e) {
         } else {
             romajiBuffer += key;
             
-            if (kanaTable[romajiBuffer]) {
-                answerInput.value += kanaTable[romajiBuffer];
-                romajiBuffer = "";
+            // ★★★ 新邏輯：檢查 Buffer 尾部是否形成假名 ★★★
+            let match = "";
+            let matchLen = 0;
+
+            // 優先檢查長字串 (3字 -> 2字 -> 1字)
+            // 例如 'shu' (3) 優先於 'su' (2) 優先於 'u' (1)
+            // 這裡我們只檢查 Buffer 的「最後幾位」
+            
+            if (romajiBuffer.length >= 3) {
+                let sub = romajiBuffer.slice(-3);
+                if (kanaTable[sub]) { match = kanaTable[sub]; matchLen = 3; }
+            }
+            if (!match && romajiBuffer.length >= 2) {
+                let sub = romajiBuffer.slice(-2);
+                if (kanaTable[sub]) { match = kanaTable[sub]; matchLen = 2; }
+            }
+            if (!match && romajiBuffer.length >= 1) {
+                let sub = romajiBuffer.slice(-1);
+                if (kanaTable[sub]) { match = kanaTable[sub]; matchLen = 1; }
+            }
+
+            if (match) {
+                // ★★★ 匹配成功：輸出假名，並清空整個 Buffer (刪除前面多餘的 ghost word) ★★★
+                answerInput.value += match;
+                romajiBuffer = ""; 
             } else {
-                // Special n handling
-                if (romajiBuffer.length >= 2 && romajiBuffer[0] === 'n' && !['y','a','i','u','e','o'].includes(romajiBuffer[1])) {
-                    if (romajiBuffer[1] === 'n') {
+                // 尚未匹配，檢查特殊規則
+                
+                // 1. 特殊 'n' 處理 (n + 子音 -> ん)
+                // 檢查倒數第二個字是否為 n，且最後一個字不是母音或 y
+                if (romajiBuffer.length >= 2) {
+                    const lastChar = romajiBuffer.slice(-1);
+                    const secondLastChar = romajiBuffer.slice(-2, -1);
+                    
+                    if (secondLastChar === 'n' && !['a','i','u','e','o','y','n'].includes(lastChar)) {
+                        answerInput.value += 'ん';
+                        // 保留最後輸入的那個子音，清除 n 及其之前的 ghost word
+                        romajiBuffer = lastChar;
+                    }
+                    // nn -> ん
+                    else if (romajiBuffer.endsWith("nn")) {
                         answerInput.value += 'ん';
                         romajiBuffer = "";
-                    } else {
-                        answerInput.value += 'ん';
-                        romajiBuffer = romajiBuffer.substring(1);
-                        if (kanaTable[romajiBuffer]) {
-                             answerInput.value += kanaTable[romajiBuffer];
-                             romajiBuffer = "";
-                        }
                     }
                 }
-                // Small tsu handling
-                if (romajiBuffer.length >= 2 && romajiBuffer[0] === romajiBuffer[1] && !['a','i','u','e','o','n'].includes(romajiBuffer[0])) {
-                    answerInput.value += 'っ';
-                    romajiBuffer = romajiBuffer.substring(1);
-                }
-                // Flush if too long
-                if (romajiBuffer.length > 3) {
-                    answerInput.value += romajiBuffer[0];
-                    romajiBuffer = romajiBuffer.substring(1);
+
+                // 2. 促音處理 (雙子音, e.g., tt, kk)
+                if (romajiBuffer.length >= 2) {
+                    const last2 = romajiBuffer.slice(-2);
+                    // 如果最後兩個字相同，且不是母音或 n
+                    if (last2[0] === last2[1] && !['a','i','u','e','o','n'].includes(last2[0])) {
+                        answerInput.value += 'っ';
+                        // 保留最後一個子音 (作為下一個音的開頭)
+                        // 這裡也符合您的要求：前面的 sjkf 等 ghost word 會被此動作清除
+                        romajiBuffer = last2[1];
+                    }
                 }
             }
         }
@@ -3046,6 +3183,11 @@ function endGame(isWin) {
             playBGM(BGM_FILES.lose, false);         // Lose
         }
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        changeLanguage(); 
+    });
+    
 </script>
 </body>
 </html>
