@@ -1488,7 +1488,7 @@
     { "kanji": "言葉遣い", "reading": "ことばづかい", "hint1": "●●●●●い", "meaning": "Wording / Language usage", "sentence": "正しい<span class='highlight-word'>言葉遣い</span>を身につける。", "trans": "Master correct language usage." },
     { "kanji": "文脈", "reading": "ぶんみゃく", "hint1": "●●●●●", "meaning": "Context", "sentence": "<span class='highlight-word'>文脈</span>から意味を推測する。", "trans": "Guess the meaning from the context." },
     { "kanji": "超す", "reading": "こす", "hint1": "●す", "meaning": "Exceed / Surpass", "sentence": "平均点を大きく<span class='highlight-word'>超し</span>た。", "trans": "Significantly exceeded the average score." },
-    { "kanji": "略語", "reading": "りゃくご", "hint1": "●●●●", "meaning": "Abbreviation", "sentence": "この単語は<span class='highlight-word'>略語</span>ですか。", "trans": "Is this word an abbreviation?" },
+    { "kanji": "略語", "reading": "りゃくご", "hint1": "●●●●", "meaning": "Abbreviation", "sentence": "「エンスト」は「エンジンストール」の<span class='highlight-word'>略語</span>です。", "trans": "\"Ensuto\" is an abbreviation for \"engine stall\"." },
     { "kanji": "惑星", "reading": "わくせい", "hint1": "●●●●", "meaning": "Planet", "sentence": "図鑑で太陽系の<span class='highlight-word'>惑星</span>を調べる。", "trans": "Look up the planets of the solar system in a picture book." },
     { "kanji": "石油", "reading": "せきゆ", "hint1": "●●●", "meaning": "Petroleum / Oil", "sentence": "<span class='highlight-word'>石油</span>の歴史に関する本。", "trans": "A book about the history of petroleum." },
     { "kanji": "地域", "reading": "ちいき", "hint1": "●●●", "meaning": "Region / Area", "sentence": "この<span class='highlight-word'>地域</span>の伝承を記録する。", "trans": "Record the folklore of this region." },
