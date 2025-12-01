@@ -588,7 +588,7 @@
     { "kanji": "足し算", "reading": "たしざん", "hint1": "●し●●", "meaning": "Addition", "sentence": "子供に<span class='highlight-word'>足し算</span>を教える。", "trans": "Teach addition to the child." },
     { "kanji": "雨戸", "reading": "あまど", "hint1": "●●●", "meaning": "Storm shutter", "sentence": "台風に備えて<span class='highlight-word'>雨戸</span>を閉める。", "trans": "Close the storm shutters in preparation for the typhoon." },
     { "kanji": "餌", "reading": "えさ", "hint1": "●●", "meaning": "Feed / Bait", "sentence": "金魚に<span class='highlight-word'>餌</span>をやる。", "trans": "Feed the goldfish." },
-    { "kanji": "お好み焼き", "reading": "おこのみやき", "hint1": "お●●み●き", "meaning": "Okonomiyaki", "sentence": "今夜は<span class='highlight-word'>お好み焼き</span>パーティーだ。", "trans": "Tonight is an Okonomiyaki party." },
+    { "kanji": "お好み焼き", "reading": "おこのみやき", "hint1": "お●●み●き", "meaning": "(Japanese cuisine name)", "sentence": "今夜は<span class='highlight-word'>お好み焼き</span>パーティーだ。", "trans": "Tonight is an ______ party." },
     { "kanji": "花柄", "reading": "はながら", "hint1": "●●●●", "meaning": "Floral pattern", "sentence": "<span class='highlight-word'>花柄</span>のカーテンを買う。", "trans": "Buy curtains with a floral pattern." },
     { "kanji": "楽観的", "reading": "らっかんてき", "hint1": "●●●●●●", "meaning": "Optimistic", "sentence": "彼はいつも<span class='highlight-word'>楽観的</span>だ。", "trans": "He is always optimistic." },
     { "kanji": "中指", "reading": "なかゆび", "hint1": "●●●●", "meaning": "Middle finger", "sentence": "<span class='highlight-word'>中指</span>を突き指した。", "trans": "Sprained the middle finger." },
