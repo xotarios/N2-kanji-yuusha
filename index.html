@@ -756,6 +756,48 @@
         .key-btn:active { transform: translateY(2px); box-shadow: none; }
         .key-btn.wide { width: 45px; font-size: 0.9rem; }
 
+        /* =========================================
+           Virtual Keyboard Custom Styles
+           ========================================= */
+    
+        /* 1. 母音 (a, i, u, e, o) - 偏黃底色 */
+        .key-btn.vowel {
+        background: #7d6a20; /* 暗黃色 */
+        border-color: #f1c40f;
+        }
+
+        /* 2. 停用 (q, l, v) - 深灰色，無反應 */
+        .key-btn.disabled-key {
+        background: #222;
+        color: #444;
+        border-color: #333;
+        cursor: default;
+        pointer-events: none; /* 禁止點擊 */
+        box-shadow: none;
+        }
+
+        /* 3. Backspace - 偏紅底色 */
+        .key-btn.backspace {
+        background: #752828; /* 暗紅色 */
+        border-color: #e74c3c;
+        }
+
+        /* 4. "x" 鍵 (小字) - 垂直排列 */
+        .key-btn.special-x {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 1;
+        }
+    
+        .key-sub {
+        font-size: 0.7rem;
+        color: #bbb;
+        transform: scale(0.8); /* 再縮小一點 */
+        margin-top: -2px;
+        }
+
         /* Buttons */
         .btn-group { display: flex; gap: 10px; }
 
@@ -1071,7 +1113,7 @@
         <video id="intro-video" src="https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/images/n2yuusha_moving.mp4" playsinline muted></video>
         <div class="result-content">
             <h1 class="title-logo">N2漢字勇者</h1>
-            <p style="margin-bottom: 5px;">N2レベル日本語の漢字読みRPG　(v1.1.0)</p>
+            <p style="margin-bottom: 5px;">N2レベル日本語の漢字読みRPG　(v1.1.1)</p>
             <div class="lang-select-wrapper">
                 <label for="lang-select">翻訳先言語 ▶</label>
                 <select id="lang-select" onchange="changeLanguage()">
@@ -1305,21 +1347,22 @@
         </div>
         
         <!-- Virtual Keyboard (QWERTY) -->
+        <!-- Virtual Keyboard (QWERTY) -->
         <div id="virtual-keyboard">
             <div class="key-row">
-                <div class="key-btn" onclick="vkPress('q')">q</div>
+                <div class="key-btn disabled-key">q</div>
                 <div class="key-btn" onclick="vkPress('w')">w</div>
-                <div class="key-btn" onclick="vkPress('e')">e</div>
+                <div class="key-btn vowel" onclick="vkPress('e')">e</div>
                 <div class="key-btn" onclick="vkPress('r')">r</div>
                 <div class="key-btn" onclick="vkPress('t')">t</div>
                 <div class="key-btn" onclick="vkPress('y')">y</div>
-                <div class="key-btn" onclick="vkPress('u')">u</div>
-                <div class="key-btn" onclick="vkPress('i')">i</div>
-                <div class="key-btn" onclick="vkPress('o')">o</div>
+                <div class="key-btn vowel" onclick="vkPress('u')">u</div>
+                <div class="key-btn vowel" onclick="vkPress('i')">i</div>
+                <div class="key-btn vowel" onclick="vkPress('o')">o</div>
                 <div class="key-btn" onclick="vkPress('p')">p</div>
             </div>
             <div class="key-row">
-                <div class="key-btn" onclick="vkPress('a')">a</div>
+                <div class="key-btn vowel" onclick="vkPress('a')">a</div>
                 <div class="key-btn" onclick="vkPress('s')">s</div>
                 <div class="key-btn" onclick="vkPress('d')">d</div>
                 <div class="key-btn" onclick="vkPress('f')">f</div>
@@ -1327,17 +1370,20 @@
                 <div class="key-btn" onclick="vkPress('h')">h</div>
                 <div class="key-btn" onclick="vkPress('j')">j</div>
                 <div class="key-btn" onclick="vkPress('k')">k</div>
-                <div class="key-btn" onclick="vkPress('l')">l</div>
+                <div class="key-btn disabled-key">l</div>
             </div>
             <div class="key-row">
                 <div class="key-btn" onclick="vkPress('z')">z</div>
-                <div class="key-btn" onclick="vkPress('x')">x</div>
+                <div class="key-btn special-x" onclick="vkPress('x')">
+                    <span>x</span>
+                    <span class="key-sub">小字</span>
+                </div>
                 <div class="key-btn" onclick="vkPress('c')">c</div>
-                <div class="key-btn" onclick="vkPress('v')">v</div>
+                <div class="key-btn disabled-key">v</div>
                 <div class="key-btn" onclick="vkPress('b')">b</div>
                 <div class="key-btn" onclick="vkPress('n')">n</div>
                 <div class="key-btn" onclick="vkPress('m')">m</div>
-                <div class="key-btn wide" onclick="vkPress('bs')">⌫</div>
+                <div class="key-btn wide backspace" onclick="vkPress('bs')">⌫</div>
             </div>
         </div>
 
