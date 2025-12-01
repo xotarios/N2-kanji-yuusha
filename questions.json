@@ -560,7 +560,7 @@
       { "kanji": "墓参り", "reading": "はかまいり", "hint1": "●●●●り", "meaning": "掃墓", "sentence": "お盆に家族で<span class='highlight-word'>墓参り</span>をする。", "trans": "盂蘭節一家去掃墓。" },
       { "kanji": "天才", "reading": "てんさい", "hint1": "●●●●", "meaning": "天才", "sentence": "うちの子は<span class='highlight-word'>天才</span>かもしれない。", "trans": "我個仔可能係天才。" },
       { "kanji": "庭園", "reading": "ていえん", "hint1": "●●●●", "meaning": "庭園", "sentence": "日本<span class='highlight-word'>庭園</span>のある家に憧れる。", "trans": "憧憬有日本庭園嘅屋。" },
-      { "kanji": "平気", "reading": "へいき", "hint1": "●●●", "meaning": "冇、內心平靜", "sentence": "転んでも<span class='highlight-word'>平気</span>な顔をする。", "trans": "跌親都一副冇事樣。" },
+      { "kanji": "平気", "reading": "へいき", "hint1": "●●●", "meaning": "冇事、內心平靜", "sentence": "転んでも<span class='highlight-word'>平気</span>な顔をする。", "trans": "跌親都一副冇事樣。" },
       { "kanji": "帰省", "reading": "きせい", "hint1": "●●●", "meaning": "回鄉", "sentence": "年末年始は実家に<span class='highlight-word'>帰省</span>する。", "trans": "年頭年尾返鄉下。" },
       { "kanji": "屋台", "reading": "やたい", "hint1": "●●●", "meaning": "路邊攤", "sentence": "近所の祭りで<span class='highlight-word'>屋台</span>が出る。", "trans": "附近祭典有路邊攤。" },
       { "kanji": "居心地", "reading": "いごこち", "hint1": "●●●●", "meaning": "舒適度", "sentence": "このカフェは<span class='highlight-word'>居心地</span>が良い。", "trans": "呢間Cafe好舒服。" },
