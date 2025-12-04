@@ -403,9 +403,46 @@
         /* Boss Battle UI tweaks */
         #boss-section {
         display: none;
-        flex-direction: column;
+        flex-direction: row; /* 横並び */
         align-items: center;
-        margin-bottom: 10px;
+        justify-content: center;
+        
+        /* 背景を追加して読みやすくする */
+        background: rgba(0, 0, 0, 0.6); 
+        border: 1px solid #555;
+        border-radius: 8px;
+        padding: 10px;
+        margin-bottom: 15px;
+        gap: 15px;
+        
+        width: 100%;
+        box-sizing: border-box;
+        }
+
+        /* 左側：ボス画像 (Battle UI専用サイズ) */
+        #boss-section .boss-image-container {
+        width: 80px; 
+        height: 80px;
+        flex-shrink: 0;
+        margin-bottom: 0; /* Intro用のマージンをリセット */
+        }
+
+        /* 右側：情報エリア */
+        .boss-info-right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        overflow: hidden; /* はみ出し防止 */
+        }
+
+        /* 名前表示 (Battle UI内では左揃え・コンパクトに) */
+        #boss-section .boss-display-container {
+        justify-content: flex-start; /* 左揃え */
+        align-items: baseline;
+        gap: 10px;
+        margin-bottom: 0;
         }
 
         .boss-image-container {
@@ -413,6 +450,15 @@
             width: 120px;
             height: 120px;
             margin-bottom: 5px;
+        }
+
+        .boss-info-right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        overflow: hidden; /* はみ出し防止 */
         }
 
         .boss-img {
@@ -444,6 +490,7 @@
             font-size: 1.5rem;
             color: #f1c40f;
             text-shadow: 2px 2px 0 #000;
+            text-align: left;
         }
 
         .boss-display-container {
@@ -1113,7 +1160,7 @@
         <video id="intro-video" src="https://raw.githubusercontent.com/xotarios/N2-kanji-yuusha/refs/heads/main/images/n2yuusha_moving.mp4" playsinline muted></video>
         <div class="result-content">
             <h1 class="title-logo">N2漢字勇者</h1>
-            <p style="margin-bottom: 5px;">N2レベル日本語の漢字読みRPG　(v1.1.1)</p>
+            <p style="margin-bottom: 5px;">N2レベル日本語の漢字読みRPG　(v1.1.2)</p>
             <div class="lang-select-wrapper">
                 <label for="lang-select">翻訳先言語 ▶</label>
                 <select id="lang-select" onchange="changeLanguage()">
@@ -1226,7 +1273,7 @@
 
                 <h3>制作</h3>
                 <p>作者：Xotarios (ヴェオぼうや) - <a href="https://x.com/Xotarios" target="_blank" style="color:#f1c40f;">https://x.com/Xotarios</a><br>
-                協力AI：Gemini 3 Pro、Midjourney 7、Adobe Firefly、豆包</p>
+                協力AI：Gemini 3 Pro、Midjourney 7、Adobe Firefly、Doubao</p>
             </div>
 
             <button onclick="closeHelpOverlay()" style="
@@ -1297,13 +1344,22 @@
 
         <!-- Boss UI -->
         <div id="boss-section">
+            <!-- 左側：画像 -->
             <div class="boss-image-container">
                 <img src="" class="boss-img" id="boss-img">
             </div>
-            <div class="boss-hp-bar-container">
-                <div class="boss-hp-bar" id="boss-hp-bar"></div>
+            
+            <!-- 右側：情報まとめ (名前、HP、タイマー) -->
+            <div class="boss-info-right">
+
+                <!-- HPバー -->
+                <div class="boss-hp-bar-container">
+                    <div class="boss-hp-bar" id="boss-hp-bar"></div>
+                </div>
+
+                <!-- タイマー -->
+                <div class="boss-timer">残り時間：<span id="boss-timer-val">45</span> 秒</div>
             </div>
-            <div class="boss-timer">残り時間：<span id="boss-timer-val">45</span> 秒</div>
         </div>
         
         <div class="kanji-display">
@@ -1419,6 +1475,10 @@
             <div id="password-reward-container" class="password-reward-box" style="display:none;">
                 <div style="font-size:0.9rem;">終焉の城　入城暗号獲得：</div>
                 <div id="password-reward-text" class="password-text"></div>
+                <div style="font-size:0.7rem; margin-top:10px; line-height:1.4; opacity:0.9;">
+                    必ずメモかスクショで保存してください。<br>
+                    忘れたか紛失した場合、再度ボスを撃破する必要があります。
+                </div>
             </div>
 
             <button onclick="goToStageSelect()" style="margin-top: 20px; padding: 15px 30px;">別のエリアへ</button>

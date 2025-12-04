@@ -1,5 +1,10 @@
 # 更新履歴
 
+[2025/12/04] ver.1.1.2  
+
+* Added: A reminder (reminding players to take note or screenshot the password) is added under the gained password.
+* Modified: In boss battle, the boss image is now placed to the left of his/her HP bar and the timer to reduce some space.
+
 [2025/12/01] ver.1.1.1  
 
 * Modified: Virtual keyboard
