@@ -192,7 +192,15 @@
     { "kanji": "超一流", "reading": "ちょういちりゅう", "hint1": "●●●●●●●●", "meaning": "Top-notch", "sentence": "<span class='highlight-word'>超一流</span>のビジネスマンを目指す。", "trans": "Aim to be a top-notch businessman." },
     { "kanji": "能率", "reading": "のうりつ", "hint1": "●●●●", "meaning": "Efficiency", "sentence": "仕事の<span class='highlight-word'>能率</span>を上げる工夫。", "trans": "Ideas to improve work efficiency." },
     { "kanji": "予算案", "reading": "よさんあん", "hint1": "●●●●●", "meaning": "Budget proposal", "sentence": "来年度の<span class='highlight-word'>予算案</span>を作成する。", "trans": "Create the budget proposal for the next fiscal year." },
-    { "kanji": "利息", "reading": "りそく", "hint1": "●●●", "meaning": "Interest", "sentence": "銀行から<span class='highlight-word'>利息</span>を受け取る。", "trans": "Receive interest from the bank." }
+    { "kanji": "利息", "reading": "りそく", "hint1": "●●●", "meaning": "Interest", "sentence": "銀行から<span class='highlight-word'>利息</span>を受け取る。", "trans": "Receive interest from the bank." },
+    { "kanji": "統一", "reading": "とういつ", "hint1": "●●●●", "meaning": "Unification", "sentence": "書類の書式を<span class='highlight-word'>統一</span>する。", "trans": "Standardize the document format." },
+    { "kanji": "拡充", "reading": "かくじゅう", "hint1": "●●●●●", "meaning": "Expansion", "sentence": "サービスの対象エリアを<span class='highlight-word'>拡充</span>する。", "trans": "Expand the service coverage area." },
+    { "kanji": "仮登録", "reading": "かりとうろく", "hint1": "●●●●●●", "meaning": "Temporary registration", "sentence": "ウェブサイトで<span class='highlight-word'>仮登録</span>を済ませる。", "trans": "Complete temporary registration on the website." },
+    { "kanji": "早急", "reading": "さっきゅう", "hint1": "●●●●●", "meaning": "Urgent", "sentence": "トラブルへの<span class='highlight-word'>早急</span>な対応。", "trans": "Urgent response to the trouble." },
+    { "kanji": "貢献", "reading": "こうけん", "hint1": "●●●●", "meaning": "Contribution", "sentence": "会社の利益に大きく<span class='highlight-word'>貢献</span>した。", "trans": "Contributed significantly to the company's profits." },
+    { "kanji": "検討", "reading": "けんとう", "hint1": "●●●●", "meaning": "Consideration", "sentence": "新商品の導入を<span class='highlight-word'>検討</span>している。", "trans": "We are considering introducing new products." },
+    { "kanji": "要約", "reading": "ようやく", "hint1": "●●●●", "meaning": "Summary", "sentence": "会議の内容を<span class='highlight-word'>要約</span>して伝える。", "trans": "Summarize and convey the content of the meeting." },
+    { "kanji": "休憩", "reading": "きゅうけい", "hint1": "●●●●●", "meaning": "Break", "sentence": "仕事の合間に<span class='highlight-word'>休憩</span>をとる。", "trans": "Take a break during work." }
   ],
   "bossWords": [
     { "kanji": "神奈川(県名)", "reading": "かながわ", "hint1": "●●●●", "meaning": "(Prefecture name)", "sentence": "<span class='highlight-word'>神奈川</span>支店を閉鎖する。", "trans": "Close the ______ branch." },
@@ -655,7 +663,9 @@
     { "kanji": "手入れ", "reading": "ていれ", "hint1": "●●●", "meaning": "Maintenance / Care", "sentence": "週末は庭木の<span class='highlight-word'>手入れ</span>をする。", "trans": "Take care of the garden trees on the weekend." },
     { "kanji": "街灯", "reading": "がいとう", "hint1": "●●●●", "meaning": "Streetlight", "sentence": "夕暮れ時に<span class='highlight-word'>街灯</span>が灯る。", "trans": "Streetlights turn on at dusk." },
     { "kanji": "街路樹", "reading": "がいろじゅ", "hint1": "●●●●●", "meaning": "Roadside trees", "sentence": "<span class='highlight-word'>街路樹</span>が美しい通りを歩く。", "trans": "Walk down a street with beautiful roadside trees." },
-    { "kanji": "街", "reading": "まち", "hint1": "●●", "meaning": "Town / City", "sentence": "買い物客で<span class='highlight-word'>街</span>が賑わう。", "trans": "The town is bustling with shoppers." }
+    { "kanji": "街", "reading": "まち", "hint1": "●●", "meaning": "Town / City", "sentence": "買い物客で<span class='highlight-word'>街</span>が賑わう。", "trans": "The town is bustling with shoppers." },
+    { "kanji": "先着順", "reading": "せんちゃくじゅん", "hint1": "●●●●●●●●", "meaning": "First come, first served", "sentence": "チケットは<span class='highlight-word'>先着順</span>で販売する。", "trans": "Tickets are sold on a first-come, first-served basis." },
+    { "kanji": "早速", "reading": "さっそく", "hint1": "●●●●", "meaning": "Immediately", "sentence": "買った靴を<span class='highlight-word'>早速</span>履いてみる。", "trans": "Try on the shoes I bought right away." }
   ],
   "bossWords": [
     { "kanji": "愛媛(県名)", "reading": "えひめ", "hint1": "●●●", "meaning": "(Prefecture name)", "sentence": "<span class='highlight-word'>愛媛</span>のみかんは甘い。", "trans": "______'s mandarins are sweet." },
@@ -896,7 +906,8 @@
     { "kanji": "湯沸かし器", "reading": "ゆわかしき", "hint1": "●●かし●", "meaning": "Water heater", "sentence": "<span class='highlight-word'>湯沸かし器</span>でお湯を出す。", "trans": "Run hot water from the water heater." },
     { "kanji": "舌", "reading": "した", "hint1": "●●", "meaning": "Tongue", "sentence": "熱いスープで<span class='highlight-word'>舌</span>を火傷した。", "trans": "Burned my tongue with hot soup." },
     { "kanji": "食道", "reading": "しょくどう", "hint1": "●●●●●", "meaning": "Esophagus", "sentence": "冷たいビールが<span class='highlight-word'>食道</span>を流れる。", "trans": "Cold beer flows down the esophagus." },
-    { "kanji": "胃", "reading": "い", "hint1": "●", "meaning": "Stomach", "sentence": "<span class='highlight-word'>胃</span>に優しい料理を注文する。", "trans": "Order food that is gentle on the stomach." }
+    { "kanji": "胃", "reading": "い", "hint1": "●", "meaning": "Stomach", "sentence": "<span class='highlight-word'>胃</span>に優しい料理を注文する。", "trans": "Order food that is gentle on the stomach." },
+    { "kanji": "濃厚", "reading": "のうこう", "hint1": "●●●●", "meaning": "Rich (flavor)", "sentence": "このスープは味が<span class='highlight-word'>濃厚</span>だ。", "trans": "This soup has a rich flavor." }
   ],
   "bossWords": [
     { "kanji": "三重(県名)", "reading": "みえ", "hint1": "●●", "meaning": "(Prefecture name)", "sentence": "<span class='highlight-word'>三重</span>県の松阪牛。", "trans": "Matsusaka beef from ______ Prefecture." },
@@ -1624,7 +1635,10 @@
     { "kanji": "捜査", "reading": "そうさ", "hint1": "●●●", "meaning": "Investigation", "sentence": "科学<span class='highlight-word'>捜査</span>の手法。", "trans": "Forensic investigation methods." },
     { "kanji": "貯蓄", "reading": "ちょちく", "hint1": "●●●●", "meaning": "Savings", "sentence": "日本人の<span class='highlight-word'>貯蓄</span>率の推移。", "trans": "Trends in the Japanese savings rate." },
     { "kanji": "内閣", "reading": "ないかく", "hint1": "●●●●", "meaning": "Cabinet (government)", "sentence": "<span class='highlight-word'>内閣</span>総理大臣の指名。", "trans": "Designation of the Prime Minister." },
-    { "kanji": "面積", "reading": "めんせき", "hint1": "●●●●", "meaning": "Area", "sentence": "三角形の<span class='highlight-word'>面積</span>を求める。", "trans": "Calculate the area of a triangle." }
+    { "kanji": "面積", "reading": "めんせき", "hint1": "●●●●", "meaning": "Area", "sentence": "三角形の<span class='highlight-word'>面積</span>を求める。", "trans": "Calculate the area of a triangle." },
+    { "kanji": "討論", "reading": "とうろん", "hint1": "●●●●", "meaning": "Discussion / Debate", "sentence": "環境問題について<span class='highlight-word'>討論</span>する。", "trans": "Discuss environmental issues." },
+    { "kanji": "略", "reading": "りゃく", "hint1": "●●●", "meaning": "Abbreviation", "sentence": "スマホはスマートフォンの<span class='highlight-word'>略して</span>ある。", "trans": "In Japan, smartphones are often abbreviated to \"Sumaho\"." },
+    { "kanji": "区切り", "reading": "くぎり", "hint1": "●●り", "meaning": "Pause / Break", "sentence": "勉強の<span class='highlight-word'>区切り</span>がいい所で休む。", "trans": "Take a rest when reaching a good stopping point in studying." }
   ],
   "bossWords": [
     { "kanji": "香川(県名)", "reading": "かがわ", "hint1": "●●●", "meaning": "(Prefecture name)", "sentence": "<span class='highlight-word'>香川</span>県のうどん文化。", "trans": "Udon culture of ______ Prefecture." },
@@ -1902,7 +1916,8 @@
     { "kanji": "紅葉(訓読み)", "reading": "もみじ", "hint1": "●●●", "meaning": "Autumn leaves (Maple)", "sentence": "秋になって<span class='highlight-word'>紅葉</span>が美しい。", "trans": "Autumn leaves become beautiful in autumn." },
     { "kanji": "綿", "reading": "わた", "hint1": "●●", "meaning": "Cotton", "sentence": "<span class='highlight-word'>綿</span>のような雲が浮かぶ。", "trans": "Cotton-like clouds float." },
     { "kanji": "夕立", "reading": "ゆうだち", "hint1": "●●●●", "meaning": "Evening shower", "sentence": "突然の<span class='highlight-word'>夕立</span>に遭う。", "trans": "Caught in a sudden evening shower." },
-    { "kanji": "狐", "reading": "きつね", "hint1": "●●●", "meaning": "Fox", "sentence": "雪山で白い<span class='highlight-word'>狐</span>を見かけた。", "trans": "Saw a white fox in the snowy mountains." }
+    { "kanji": "狐", "reading": "きつね", "hint1": "●●●", "meaning": "Fox", "sentence": "雪山で白い<span class='highlight-word'>狐</span>を見かけた。", "trans": "Saw a white fox in the snowy mountains." },
+    { "kanji": "敏感", "reading": "びんかん", "hint1": "●●●●", "meaning": "Sensitive", "sentence": "動物は音に対して<span class='highlight-word'>敏感</span>だ。", "trans": "Animals are sensitive to sound." }
     ],
     "bossWords": [
     { "kanji": "岐阜(県名)", "reading": "ぎふ", "hint1": "●●", "meaning": "(Prefecture name)", "sentence": "<span class='highlight-word'>岐阜</span>の山奥へ行く。", "trans": "Go deep into the mountains of ______." },
@@ -2176,7 +2191,8 @@
     { "kanji": "庶民", "reading": "しょみん", "hint1": "●●●●", "meaning": "Common people", "sentence": "昔の<span class='highlight-word'>庶民</span>の暮らし。", "trans": "Life of common people in the past." },
     { "kanji": "随筆", "reading": "ずいひつ", "hint1": "●●●●", "meaning": "Essay", "sentence": "古い<span class='highlight-word'>随筆</span>集が出てきた。", "trans": "An old collection of essays came out." },
     { "kanji": "和風", "reading": "わふう", "hint1": "●●●", "meaning": "Japanese style", "sentence": "落ち着いた<span class='highlight-word'>和風</span>の建築。", "trans": "Calm Japanese style architecture." },
-    { "kanji": "立方体", "reading": "りっぽうたい", "hint1": "●●●●●●", "meaning": "Cube", "sentence": "<span class='highlight-word'>立方体</span>の箱を見つけた。", "trans": "Found a cube box." }
+    { "kanji": "立方体", "reading": "りっぽうたい", "hint1": "●●●●●●", "meaning": "Cube", "sentence": "<span class='highlight-word'>立方体</span>の箱を見つけた。", "trans": "Found a cube box." },
+    { "kanji": "柱", "reading": "はしら", "hint1": "●●●", "meaning": "Pillar", "sentence": "家を支える太い<span class='highlight-word'>柱</span>。", "trans": "A thick pillar supporting the house." }
     ],
     "bossWords": [
     { "kanji": "新潟(県名)", "reading": "にいがた", "hint1": "●●●●", "meaning": "(Prefecture name)", "sentence": "<span class='highlight-word'>新潟</span>の豪雪地帯。", "trans": "Heavy snowfall area in ______." },
@@ -2453,7 +2469,11 @@
     { "kanji": "貯蔵", "reading": "ちょぞう", "hint1": "●●●●", "meaning": "Storage", "sentence": "地下倉庫に武器を<span class='highlight-word'>貯蔵</span>する。", "trans": "Store weapons in the underground warehouse." },
     { "kanji": "直後", "reading": "ちょくご", "hint1": "●●●●", "meaning": "Immediately after", "sentence": "爆発の<span class='highlight-word'>直後</span>にサイレンが鳴る。", "trans": "The siren sounds immediately after the explosion." },
     { "kanji": "手続", "reading": "てつづき", "hint1": "●●●●", "meaning": "Procedure", "sentence": "逮捕後の<span class='highlight-word'>手続</span>が進められる。", "trans": "Procedures after arrest are proceeding." },
-    { "kanji": "扉", "reading": "とびら", "hint1": "●●●", "meaning": "Door", "sentence": "鉄の<span class='highlight-word'>扉</span>を蹴り破って侵入する。", "trans": "Kick open the iron door and break in." }
+    { "kanji": "扉", "reading": "とびら", "hint1": "●●●", "meaning": "Door", "sentence": "鉄の<span class='highlight-word'>扉</span>を蹴り破って侵入する。", "trans": "Kick open the iron door and break in." },
+    { "kanji": "予防", "reading": "よぼう", "hint1": "●●●", "meaning": "Prevention", "sentence": "犯罪を未然に<span class='highlight-word'>予防</span>する。", "trans": "Prevent crime before it happens." },
+    { "kanji": "裏付ける", "reading": "うらづける", "hint1": "●●●ける", "meaning": "Corroborate / Support", "sentence": "証言を<span class='highlight-word'>裏付ける</span>証拠が出た。", "trans": "Evidence corroborating the testimony has emerged." },
+    { "kanji": "飛び散る", "reading": "とびちる", "hint1": "●び●る", "meaning": "Scatter", "sentence": "ガラスが粉々に<span class='highlight-word'>飛び散っ</span>た。", "trans": "The glass shattered and scattered." },
+    { "kanji": "用心", "reading": "ようじん", "hint1": "●●●●", "meaning": "Caution", "sentence": "夜道は火の<span class='highlight-word'>用心</span>が必要だ。", "trans": "One must be careful with fire on the streets at night." }
     ],
   "bossWords": [
     { "kanji": "栃木(県名)", "reading": "とちぎ", "hint1": "●●●", "meaning": "(Prefecture name)", "sentence": "<span class='highlight-word'>栃木</span>の山奥にアジトがある。", "trans": "There is a hideout deep in the mountains of ______." },

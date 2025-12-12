@@ -1,5 +1,10 @@
 # 更新履歴
 
+[2025/12/12] ver.1.2.0  
+
+* Added: A few new questions
+* Modified: Players can now adjust the countdown for boss battle slower by sacrificing the obtain rate of the password (or player's own HP in the last stage). 
+
 [2025/12/04] ver.1.1.2  
 
 * Added: A reminder (reminding players to take note or screenshot the password) is added under the gained password.
