@@ -1680,7 +1680,7 @@
     { "kanji": "承る", "reading": "うけたまわる", "hint1": "●●●●●る", "meaning": "Receive / Accept (humble)", "sentence": "予約を<span class='highlight-word'>承る</span>。", "trans": "Accept a reservation." },
     { "kanji": "暦", "reading": "こよみ", "hint1": "●●●", "meaning": "Calendar", "sentence": "昔の<span class='highlight-word'>暦</span>について調べる。", "trans": "Investigate old calendars." },
     { "kanji": "予防注射", "reading": "よぼうちゅうしゃ", "hint1": "●●●●●●●●", "meaning": "Vaccination", "sentence": "感染症の<span class='highlight-word'>予防注射</span>。", "trans": "Vaccination against infectious diseases." },
-    { "kanji": "自産自消", "reading": "じさんじしょう", "hint1": "●●●●●●", "meaning": "Local production for local consumption (Self-production and self-consumption)", "sentence": "エネルギーの<span class='highlight-word'>自産自消</span>。", "trans": "Self-production and self-consumption of energy." }
+    { "kanji": "自産自消", "reading": "じさんじしょう", "hint1": "●●●●●●●", "meaning": "Local production for local consumption (Self-production and self-consumption)", "sentence": "エネルギーの<span class='highlight-word'>自産自消</span>。", "trans": "Self-production and self-consumption of energy." }
   ]
 },
   "nature": {

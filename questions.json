@@ -119,7 +119,7 @@
       { "kanji": "下線", "reading": "かせん", "hint1": "●●●", "meaning": "底線", "sentence": "重要事項に<span class='highlight-word'>下線</span>を引く。", "trans": "喺重要事項畫底線。" },
       { "kanji": "編集", "reading": "へんしゅう", "hint1": "●●●●●", "meaning": "編輯", "sentence": "広報誌の<span class='highlight-word'>編集</span>を担当する。", "trans": "負責宣傳刊物嘅編輯。" },
       { "kanji": "怠け者", "reading": "なまけもの", "hint1": "●●け●●", "meaning": "懶人", "sentence": "<span class='highlight-word'>怠け者</span>はこの会社には不要だ。", "trans": "呢間公司唔需要懶人。" },
-      { "kanji": "履歴書", "reading": "りれきしょ", "hint1": "●●●●●", "meaning": "履歷書", "sentence": "面接に<span class='highlight-word'>履歴書</span>を持参する。", "trans": "帶埋履歷書去面試。" },
+      { "kanji": "履歴書", "reading": "りれきしょ", "hint1": "●●●●●", "meaning": "履歷、CV", "sentence": "面接に<span class='highlight-word'>履歴書</span>を持参する。", "trans": "帶份履歷去面試。" },
       { "kanji": "恐れ", "reading": "おそれ", "hint1": "●●れ", "meaning": "恐怕、風險", "sentence": "株価下落の<span class='highlight-word'>恐れ</span>がある。", "trans": "有股價下跌嘅風險。" },
       { "kanji": "昨年", "reading": "さくねん", "hint1": "●●●●", "meaning": "舊年", "sentence": "売上が<span class='highlight-word'>昨年</span>より増加した。", "trans": "營業額比舊年增加咗。" },
       { "kanji": "中旬", "reading": "ちゅうじゅん", "hint1": "●●●●●●", "meaning": "中旬", "sentence": "プロジェクトは来月<span class='highlight-word'>中旬</span>に開始だ。", "trans": "Project下個月中旬開始。" },
@@ -1680,7 +1680,7 @@
       { "kanji": "承る", "reading": "うけたまわる", "hint1": "●●●●●る", "meaning": "接受(謙讓)", "sentence": "予約を<span class='highlight-word'>承る</span>。", "trans": "接受預約。" },
       { "kanji": "暦", "reading": "こよみ", "hint1": "●●●", "meaning": "曆法", "sentence": "昔の<span class='highlight-word'>暦</span>について調べる。", "trans": "調查關於舊時嘅曆法。" },
       { "kanji": "予防注射", "reading": "よぼうちゅうしゃ", "hint1": "●●●●●●●●", "meaning": "預防針", "sentence": "感染症の<span class='highlight-word'>予防注射</span>。", "trans": "傳染病預防針。" },
-      { "kanji": "自産自消", "reading": "じさんじしょう", "hint1": "●●●●●●", "meaning": "自產自消(自己生產、自己消費)", "sentence": "エネルギーの<span class='highlight-word'>自産自消</span>。", "trans": "能源自給自足。" }
+      { "kanji": "自産自消", "reading": "じさんじしょう", "hint1": "●●●●●●●", "meaning": "自產自消(自己生產、自己消費)", "sentence": "エネルギーの<span class='highlight-word'>自産自消</span>。", "trans": "能源自給自足。" }
     ]
   },
   "nature": {
